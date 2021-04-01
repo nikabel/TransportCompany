@@ -52,51 +52,78 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormAuthentication.cs">
+    <Compile Include="DAO\DBUtil.cs" />
+    <Compile Include="DAO\StopTypeDAO.cs" />
+    <Compile Include="forms\FormAuthentication.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAuthentication.Designer.cs">
+    <Compile Include="forms\FormAuthentication.Designer.cs">
       <DependentUpon>FormAuthentication.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormChangeStopType.cs">
+    <Compile Include="forms\FormChangeStopType.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormChangeStopType.Designer.cs">
+    <Compile Include="forms\FormChangeStopType.Designer.cs">
       <DependentUpon>FormChangeStopType.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormInfo.cs">
+    <Compile Include="forms\FormInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormInfo.Designer.cs">
+    <Compile Include="forms\FormInfo.Designer.cs">
       <DependentUpon>FormInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormMainPage.cs">
+    <Compile Include="forms\FormMainPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMainPage.Designer.cs">
+    <Compile Include="forms\FormMainPage.Designer.cs">
       <DependentUpon>FormMainPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormStopType.cs">
+    <Compile Include="forms\FormStopType.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormStopType.Designer.cs">
+    <Compile Include="forms\FormStopType.Designer.cs">
       <DependentUpon>FormStopType.cs</DependentUpon>
     </Compile>
+    <Compile Include="models\Application.cs" />
+    <Compile Include="models\BankDetails.cs" />
+    <Compile Include="models\Cargo.cs" />
+    <Compile Include="models\CargoType.cs" />
+    <Compile Include="models\CertificateService.cs" />
+    <Compile Include="models\Contract.cs" />
+    <Compile Include="models\Customer.cs" />
+    <Compile Include="models\Department.cs" />
+    <Compile Include="models\Discharge.cs" />
+    <Compile Include="models\Driver.cs" />
+    <Compile Include="models\Employee.cs" />
+    <Compile Include="models\EntityCustomer.cs" />
+    <Compile Include="models\IndividualCustomer.cs" />
+    <Compile Include="models\Loading.cs" />
+    <Compile Include="models\OfficeEmployee.cs" />
+    <Compile Include="models\Route.cs" />
+    <Compile Include="models\Service.cs" />
+    <Compile Include="models\Specialization.cs" />
+    <Compile Include="models\Stop.cs" />
+    <Compile Include="models\StopRoute.cs" />
+    <Compile Include="models\StopType.cs" />
+    <Compile Include="models\Transport.cs" />
+    <Compile Include="models\TransportCompany.cs" />
+    <Compile Include="models\TransportModel.cs" />
+    <Compile Include="models\WorkCertificate.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormAuthentication.resx">
+    <EmbeddedResource Include="forms\FormAuthentication.resx">
       <DependentUpon>FormAuthentication.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormChangeStopType.resx">
+    <EmbeddedResource Include="forms\FormChangeStopType.resx">
       <DependentUpon>FormChangeStopType.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormInfo.resx">
+    <EmbeddedResource Include="forms\FormInfo.resx">
       <DependentUpon>FormInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormMainPage.resx">
+    <EmbeddedResource Include="forms\FormMainPage.resx">
       <DependentUpon>FormMainPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormStopType.resx">
+    <EmbeddedResource Include="forms\FormStopType.resx">
       <DependentUpon>FormStopType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -127,5 +154,6 @@
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

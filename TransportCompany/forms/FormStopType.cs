@@ -2,25 +2,25 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using TransportCompany.DAO;
+using TransportCompany.models;
 
 namespace TransportCompany
 {    public partial class StopTypeForm : Form
     {
-        private static string connectionString = "Data Source=COMPUTER;Initial Catalog=CargoCompany;Integrated Security=True";
-        SqlConnection connection = new SqlConnection(connectionString);
+        DBUtil connect= new DBUtil();
+        StopTypeDAO dao = new StopTypeDAO();
 
         public StopTypeForm()
         {
             InitializeComponent();
-            connection.Open();
+            connect.createConnection();
             updateTable();
         }
 
         public void updateTable()
         {
-            SqlDataAdapter command = new SqlDataAdapter("select * from StopType", connection);
-            DataTable data = new DataTable();
-            command.Fill(data);
+            DataTable data = dao.getAll();
             data.Columns["stop_type_name"].ColumnName = "Наименование типа остановки";
             data.Columns["stop_type_desc"].ColumnName = "Описание типа остановки";
             dataGridViewStopType.DataSource = data;
@@ -39,11 +39,8 @@ namespace TransportCompany
                 form.ShowDialog();
                 string name = form.textBoxUpdateStopTypeName.Text.ToString();
                 string desc = form.textBoxUpdateStopTypeDesc.Text.ToString();
-                string query = "insert into StopType values (@name, @desc)";
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@name", name);
-                command.Parameters.AddWithValue("@desc", desc);
-                command.ExecuteNonQuery();
+                StopType stopType = new StopType(name, desc);
+                dao.addType(stopType);
                 updateTable();
             }
             catch (Exception ex)
@@ -57,10 +54,7 @@ namespace TransportCompany
         {
             int rowNum = dataGridViewStopType.CurrentCell.RowIndex;
             string name = dataGridViewStopType[0, rowNum].Value.ToString();
-            string query = "delete from StopType where (stop_type_name = @name);";
-            SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@name", name);
-            command.ExecuteNonQuery();
+            dao.deleteByName(name);
             updateTable();
         }
 
@@ -68,10 +62,7 @@ namespace TransportCompany
         private void buttonSearchTransportType_Click(object sender, EventArgs e)
         {
             string name = textBoxSearchStopType.Text.ToString();
-            string query = String.Format("SELECT stop_type_name, stop_type_desc FROM StopType WHERE stop_type_name LIKE '{0}' + '%'", name);
-            SqlDataAdapter command = new SqlDataAdapter(query, connection);
-            DataTable data = new DataTable();
-            command.Fill(data);
+            DataTable data = dao.searchByName(name);
             data.Columns["stop_type_name"].ColumnName = "Наименование типа остановки";
             data.Columns["stop_type_desc"].ColumnName = "Описание типа остановки";
             dataGridViewStopType.DataSource = data;
@@ -89,9 +80,8 @@ namespace TransportCompany
                 form.ShowDialog();
                 string name = form.textBoxUpdateStopTypeName.Text.ToString();
                 string desc = form.textBoxUpdateStopTypeDesc.Text.ToString();
-                string query = String.Format("UPDATE StopType SET stop_type_name = '{0}', stop_type_desc = '{1}' WHERE stop_type_name = '{2}' ", name, desc, n);
-                SqlCommand command = new SqlCommand(query, connection);
-                command.ExecuteNonQuery();
+                StopType stopType = new StopType(name, desc);
+                dao.updateType(n, stopType);
                 updateTable();
             }
             catch (Exception ex)
