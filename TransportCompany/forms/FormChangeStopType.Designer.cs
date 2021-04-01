@@ -88,7 +88,7 @@
             this.Controls.Add(this.textBoxUpdateStopTypeDesc);
             this.Controls.Add(this.buttonChangeStopType);
             this.Name = "FormChangeStopType";
-            this.Text = "FormChangeStopType";
+            this.Text = "Информация о виде остановки";
             this.Load += new System.EventHandler(this.FormChangeStopType_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -80,16 +80,16 @@
             this.groupBox3.Size = new System.Drawing.Size(567, 90);
             this.groupBox3.TabIndex = 15;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Поиск информации";
+            this.groupBox3.Text = "Поиск информации о видах остановок";
             // 
             // labelSearch
             // 
             this.labelSearch.AutoSize = true;
             this.labelSearch.Location = new System.Drawing.Point(6, 40);
             this.labelSearch.Name = "labelSearch";
-            this.labelSearch.Size = new System.Drawing.Size(126, 17);
+            this.labelSearch.Size = new System.Drawing.Size(105, 17);
             this.labelSearch.TabIndex = 4;
-            this.labelSearch.Text = "Слово для поиска";
+            this.labelSearch.Text = "Вид остановки";
             // 
             // textBoxSearchStopType
             // 
@@ -132,7 +132,7 @@
             this.Controls.Add(this.buttonAddStopType);
             this.Controls.Add(this.groupBox3);
             this.Name = "StopTypeForm";
-            this.Text = "Справочная информация";
+            this.Text = "Информация о видах остановок";
             this.Load += new System.EventHandler(this.StopTypeForm_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
