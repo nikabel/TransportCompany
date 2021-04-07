@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TransportCompany.forms;
 
 namespace TransportCompany
 {
@@ -36,7 +37,7 @@ namespace TransportCompany
         {
             try
             {
-                StopTypeForm form = new StopTypeForm();
+                StopTypeForm form = new StopTypeForm("StopType");
                 form.ShowDialog();
             }
             catch (Exception ex)
@@ -52,6 +53,24 @@ namespace TransportCompany
             {
                 this.Close();
             }
+        }
+
+        private void сотрудникиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FormEmployee form = new FormEmployee();
+                form.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Что-то пошло не так!" + ex);
+            }
+        }
+
+        private void FormMainPage_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

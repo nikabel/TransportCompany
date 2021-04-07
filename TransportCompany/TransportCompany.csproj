@@ -52,8 +52,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\CargoTypeDAO.cs" />
     <Compile Include="DAO\DBUtil.cs" />
+    <Compile Include="DAO\DepartmentDAO.cs" />
+    <Compile Include="DAO\DriverDAO.cs" />
+    <Compile Include="DAO\EmployeeDAO.cs" />
+    <Compile Include="DAO\OfficeEmployeeDAO.cs" />
+    <Compile Include="DAO\SpecializationDAO.cs" />
     <Compile Include="DAO\StopTypeDAO.cs" />
+    <Compile Include="DAO\TransportDAO.cs" />
+    <Compile Include="DAO\TransportModelDAO.cs" />
     <Compile Include="forms\FormAuthentication.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +73,12 @@
     </Compile>
     <Compile Include="forms\FormChangeStopType.Designer.cs">
       <DependentUpon>FormChangeStopType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\FormEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\FormEmployee.Designer.cs">
+      <DependentUpon>FormEmployee.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\FormInfo.cs">
       <SubType>Form</SubType>
@@ -116,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\FormChangeStopType.resx">
       <DependentUpon>FormChangeStopType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\FormEmployee.resx">
+      <DependentUpon>FormEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\FormInfo.resx">
       <DependentUpon>FormInfo.cs</DependentUpon>
