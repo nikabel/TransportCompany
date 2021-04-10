@@ -72,5 +72,70 @@ namespace TransportCompany
         {
 
         }
+
+        private void отделыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                StopTypeForm form = new StopTypeForm("Department");
+                form.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Что-то пошло не так!" + ex);
+            }
+        }
+
+        private void видыГрузовToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                StopTypeForm form = new StopTypeForm("CargoType");
+                form.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Что-то пошло не так!" + ex);
+            }
+        }
+
+        private void специализацииСотрудниковToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                StopTypeForm form = new StopTypeForm("Specialization");
+                form.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Что-то пошло не так!" + ex);
+            }
+        }
+
+        private void транспортToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                StopTypeForm form = new StopTypeForm("Transport");
+                form.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Что-то пошло не так!" + ex);
+            }
+        }
+
+        private void транспортныеМоделиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                StopTypeForm form = new StopTypeForm("TransportModel");
+                form.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Что-то пошло не так!" + ex);
+            }
+        }
     }
 }

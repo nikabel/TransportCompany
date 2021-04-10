@@ -100,6 +100,7 @@
             this.отделыToolStripMenuItem.Name = "отделыToolStripMenuItem";
             this.отделыToolStripMenuItem.Size = new System.Drawing.Size(287, 26);
             this.отделыToolStripMenuItem.Text = "Отделы";
+            this.отделыToolStripMenuItem.Click += new System.EventHandler(this.отделыToolStripMenuItem_Click);
             // 
             // сотрудникиToolStripMenuItem
             // 
@@ -113,24 +114,28 @@
             this.специализацииСотрудниковToolStripMenuItem.Name = "специализацииСотрудниковToolStripMenuItem";
             this.специализацииСотрудниковToolStripMenuItem.Size = new System.Drawing.Size(287, 26);
             this.специализацииСотрудниковToolStripMenuItem.Text = "Специализации сотрудников";
+            this.специализацииСотрудниковToolStripMenuItem.Click += new System.EventHandler(this.специализацииСотрудниковToolStripMenuItem_Click);
             // 
             // транспортныеМоделиToolStripMenuItem
             // 
             this.транспортныеМоделиToolStripMenuItem.Name = "транспортныеМоделиToolStripMenuItem";
             this.транспортныеМоделиToolStripMenuItem.Size = new System.Drawing.Size(287, 26);
             this.транспортныеМоделиToolStripMenuItem.Text = "Транспортные модели";
+            this.транспортныеМоделиToolStripMenuItem.Click += new System.EventHandler(this.транспортныеМоделиToolStripMenuItem_Click);
             // 
             // транспортToolStripMenuItem
             // 
             this.транспортToolStripMenuItem.Name = "транспортToolStripMenuItem";
             this.транспортToolStripMenuItem.Size = new System.Drawing.Size(287, 26);
             this.транспортToolStripMenuItem.Text = "Транспорт";
+            this.транспортToolStripMenuItem.Click += new System.EventHandler(this.транспортToolStripMenuItem_Click);
             // 
             // видыГрузовToolStripMenuItem
             // 
             this.видыГрузовToolStripMenuItem.Name = "видыГрузовToolStripMenuItem";
             this.видыГрузовToolStripMenuItem.Size = new System.Drawing.Size(287, 26);
             this.видыГрузовToolStripMenuItem.Text = "Виды грузов";
+            this.видыГрузовToolStripMenuItem.Click += new System.EventHandler(this.видыГрузовToolStripMenuItem_Click);
             // 
             // видыОстановокToolStripMenuItem
             // 
