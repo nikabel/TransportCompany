@@ -8,22 +8,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TransportCompany.DAO;
-using TransportCompany.models;
 
-namespace TransportCompany
+namespace TransportCompany.forms
 {
-    public partial class FormChangeStopType : Form
+    public partial class FormChangeTransModel : Form
     {
         DBUtil connect = new DBUtil();
-        StopTypeDAO dao = new StopTypeDAO();
-        public FormChangeStopType(string n, string d)
+        TransportModelDAO dao = new TransportModelDAO();
+
+        public FormChangeTransModel(string n, string mn, string d, string mc)
         {
             InitializeComponent();
-            textBoxUpdateStopTypeName.Text = n;
-            textBoxUpdateStopTypeDesc.Text = d;
+            textBoxModelName.Text = n;
+            textBoxMarkName.Text = mn;
+            textBoxModelDesc.Text = d;
+            textBoxModelCount.Text = mc;
         }
 
-        private void FormChangeStopType_Load(object sender, EventArgs e)
+    private void FormChangeTransModel_Load(object sender, EventArgs e)
         {
 
         }

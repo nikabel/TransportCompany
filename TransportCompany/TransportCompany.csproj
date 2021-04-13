@@ -68,11 +68,41 @@
     <Compile Include="forms\FormAuthentication.Designer.cs">
       <DependentUpon>FormAuthentication.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\FormCargoType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\FormCargoType.Designer.cs">
+      <DependentUpon>FormCargoType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\FormChangeDepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\FormChangeDepartment.Designer.cs">
+      <DependentUpon>FormChangeDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\FormChangeSpec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\FormChangeSpec.Designer.cs">
+      <DependentUpon>FormChangeSpec.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\FormChangeStopType.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\FormChangeStopType.Designer.cs">
       <DependentUpon>FormChangeStopType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\FormChangeTrans.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\FormChangeTrans.Designer.cs">
+      <DependentUpon>FormChangeTrans.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\FormChangeTransModel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\FormChangeTransModel.Designer.cs">
+      <DependentUpon>FormChangeTransModel.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\FormEmployee.cs">
       <SubType>Form</SubType>
@@ -128,8 +158,23 @@
     <EmbeddedResource Include="forms\FormAuthentication.resx">
       <DependentUpon>FormAuthentication.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\FormCargoType.resx">
+      <DependentUpon>FormCargoType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\FormChangeDepartment.resx">
+      <DependentUpon>FormChangeDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\FormChangeSpec.resx">
+      <DependentUpon>FormChangeSpec.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\FormChangeStopType.resx">
       <DependentUpon>FormChangeStopType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\FormChangeTrans.resx">
+      <DependentUpon>FormChangeTrans.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\FormChangeTransModel.resx">
+      <DependentUpon>FormChangeTransModel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\FormEmployee.resx">
       <DependentUpon>FormEmployee.cs</DependentUpon>

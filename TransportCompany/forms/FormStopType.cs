@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using TransportCompany.DAO;
 using TransportCompany.models;
+using TransportCompany.forms;
 
 namespace TransportCompany
 {    public partial class StopTypeForm : Form
@@ -22,6 +23,51 @@ namespace TransportCompany
             InitializeComponent();
             connect.createConnection();
             directory = type;
+            switch (directory)
+            {
+                case "StopType":
+                    {
+                        this.Text = "Информация о видах остановок";
+                        labelSearch.Text = "Вид остановки";
+                        groupBox3.Text= "Поиск информации о видах остановок";
+                        break;
+                    }
+                case "Department":
+                    {
+                        this.Text = "Информация об отделах";
+                        labelSearch.Text = "Наименование отдела";
+                        groupBox3.Text = "Поиск информация об отделах";
+                        break;
+                    }
+                case "CargoType":
+                    {
+                        this.Text = "Информация о типах грузов";
+                        labelSearch.Text = "Тип груза";
+                        groupBox3.Text = "Поиск информации о типах грузов";
+                        break;
+                    }
+                case "Specialization":
+                    {
+                        this.Text = "Информация о специализациях";
+                        labelSearch.Text = "СпециализациЯ";
+                        groupBox3.Text = "Поиск информации о специализациях";
+                        break;
+                    }
+                case "Transport":
+                    {
+                        this.Text = "Информация о транспорте";
+                        labelSearch.Text = "Номер транспорта";
+                        groupBox3.Text = "Поиск информации о транспорте";
+                        break;
+                    }
+                case "TransportModel":
+                    {
+                        this.Text = "Информация о моделях транспорта";
+                        labelSearch.Text = "Наименование модели";
+                        groupBox3.Text = "Поиск информация о моделях транспорта";
+                        break;
+                    }
+            }
             updateTable();
         }
 
@@ -92,19 +138,114 @@ namespace TransportCompany
 
         private void buttonAddStopType_Click(object sender, EventArgs e)
         {
-            try
+            switch (directory)
             {
-                FormChangeStopType form = new FormChangeStopType("");
-                form.ShowDialog();
-                string name = form.textBoxUpdateStopTypeName.Text.ToString();
-                string desc = form.textBoxUpdateStopTypeDesc.Text.ToString();
-                StopType stopType = new StopType(name, desc);
-                daoST.addType(stopType);
-                updateTable();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Вид остановки не должен повторяться!"+ex);
+                case "StopType":
+                    {
+                        try
+                        {
+                            FormChangeStopType form = new FormChangeStopType("", "");
+                            form.ShowDialog();
+                            string name = form.textBoxUpdateStopTypeName.Text.ToString();
+                            string desc = form.textBoxUpdateStopTypeDesc.Text.ToString();
+                            StopType stopType = new StopType(name, desc);
+                            daoST.addType(stopType);
+                            updateTable();
+                            break;
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Вид остановки не должен повторяться!" + ex);
+                            break;
+                        }
+                    }
+                case "Department":
+                    {
+                        try
+                        {
+                            FormChangeDepartment form = new FormChangeDepartment("", "", "");
+                            form.ShowDialog();
+                            string name = form.textBoxDepName.Text.ToString();
+                            string compName = form.textBoxCompName.Text.ToString();
+                            string desc = form.textBoxDepDesc.Text.ToString();
+                            Department department = new Department(name, desc, compName);
+                            daoDep.addType(department);
+                            updateTable();
+                            break;
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Отдел не должен повторяться!" + ex);
+                            break;
+                        }
+                    }
+                case "CargoType":
+                    {
+                        try
+                        {
+                            FormCargoType form = new FormCargoType("", "");
+                            form.ShowDialog();
+                            string name = form.textBoxCargoTypeName.Text.ToString();
+                            string desc = form.textBoxCargoTypeDesc.Text.ToString();
+                            CargoType cargoType = new CargoType(name, desc);
+                            daoCT.addType(cargoType);
+                            updateTable();
+                            break;
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Вид груза не должен повторяться!" + ex);
+                            break;
+                        }
+                    }
+                case "Specialization":
+                    {
+                        try
+                        {
+                            FormChangeSpec form = new FormChangeSpec("", "");
+                            form.ShowDialog();
+                            string name = form.textBoxSpecName.Text.ToString();
+                            string desc = form.textBoxSpecDesc.Text.ToString();
+                            Specialization spec = new Specialization(name, desc);
+                            daoSpec.addType(spec);
+                            updateTable();
+                            break;
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Специализация не должна повторяться!" + ex);
+                            break;
+                        }
+                    }
+                case "TransportModel":
+                    {
+                        try
+                        {
+                            FormChangeTransModel form = new FormChangeTransModel("", "", "", "");
+                            form.ShowDialog();
+                            string modelName = form.textBoxModelName.Text.ToString();
+                            string markName = form.textBoxMarkName.Text.ToString();
+                            string desc = form.textBoxModelDesc.Text.ToString();
+                            string count = form.textBoxModelCount.Text.ToString();
+                            TransportModel model;
+                            if (Int32.TryParse(count, out int c))
+                            {
+                                model = new TransportModel(modelName, markName, desc, c);
+                                daoTransModel.addType(model);
+                                updateTable();
+                            }
+                            else { 
+                                MessageBox.Show("Неверно введено количество моделей в автопарке!");
+                                break;
+                            }
+                            break;
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Модел не должна повторяться!" + ex);
+                            break;
+                        }
+                    }
             }
 
         }
@@ -242,7 +383,8 @@ namespace TransportCompany
                         {
                             int rowNum = dataGridViewStopType.CurrentCell.RowIndex;
                             string n = dataGridViewStopType[0, rowNum].Value.ToString();
-                            FormChangeStopType form = new FormChangeStopType(n);
+                            string d = dataGridViewStopType[1, rowNum].Value.ToString();
+                            FormChangeStopType form = new FormChangeStopType(n, d);
                             form.ShowDialog();
                             string name = form.textBoxUpdateStopTypeName.Text.ToString();
                             string desc = form.textBoxUpdateStopTypeDesc.Text.ToString();
@@ -254,6 +396,109 @@ namespace TransportCompany
                         catch (Exception ex)
                         {
                             MessageBox.Show("Вид остановки не должен повторяться!" + ex);
+                            break;
+                        }
+                    }
+                case "Department":
+                    {
+                        try
+                        {
+                            int rowNum = dataGridViewStopType.CurrentCell.RowIndex;
+                            string n = dataGridViewStopType[0, rowNum].Value.ToString();
+                            string cn = dataGridViewStopType[1, rowNum].Value.ToString();
+                            string d = dataGridViewStopType[2, rowNum].Value.ToString();
+                            FormChangeDepartment form = new FormChangeDepartment(n, cn, d);
+                            form.ShowDialog();
+                            string name = form.textBoxDepName.Text.ToString();
+                            string compName = form.textBoxCompName.Text.ToString();
+                            string desc = form.textBoxDepDesc.Text.ToString();
+                            Department department = new Department(name, desc, compName);
+                            daoDep.updateType(n, department);
+                            updateTable();
+                            break;
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Отдел не должен повторяться!" + ex);
+                            break;
+                        }
+                    }
+                case "CargoType":
+                    {
+                        try
+                        {
+                            int rowNum = dataGridViewStopType.CurrentCell.RowIndex;
+                            string n = dataGridViewStopType[0, rowNum].Value.ToString();
+                            string d = dataGridViewStopType[1, rowNum].Value.ToString();
+                            FormCargoType form = new FormCargoType(n, d);
+                            form.ShowDialog();
+                            string name = form.textBoxCargoTypeName.Text.ToString();
+                            string desc = form.textBoxCargoTypeDesc.Text.ToString();
+                            CargoType cargoType = new CargoType(name, desc);
+                            daoCT.updateType(n, cargoType);
+                            updateTable();
+                            break;
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Вид груза не должен повторяться!" + ex);
+                            break;
+                        }
+                    }
+                case "Specialization":
+                    {
+                        try
+                        {
+                            int rowNum = dataGridViewStopType.CurrentCell.RowIndex;
+                            string n = dataGridViewStopType[0, rowNum].Value.ToString();
+                            string d = dataGridViewStopType[1, rowNum].Value.ToString();
+                            FormChangeSpec form = new FormChangeSpec(n, d);
+                            form.ShowDialog();
+                            string name = form.textBoxSpecName.Text.ToString();
+                            string desc = form.textBoxSpecDesc.Text.ToString();
+                            Specialization spec = new Specialization(name, desc);
+                            daoSpec.updateType(n, spec);
+                            updateTable();
+                            break;
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Специализация не должна повторяться!" + ex);
+                            break;
+                        }
+                    }
+                case "TransportModel":
+                    {
+                        try
+                        {
+                            int rowNum = dataGridViewStopType.CurrentCell.RowIndex;
+                            string n = dataGridViewStopType[0, rowNum].Value.ToString();
+                            string mn = dataGridViewStopType[1, rowNum].Value.ToString();
+                            string d = dataGridViewStopType[2, rowNum].Value.ToString();
+                            string mc = dataGridViewStopType[3, rowNum].Value.ToString();
+                            FormChangeTransModel form = new FormChangeTransModel(n, mn, d, mc);
+                            form.ShowDialog();
+                            string modelName = form.textBoxModelName.Text.ToString();
+                            string markName = form.textBoxMarkName.Text.ToString();
+                            string desc = form.textBoxModelDesc.Text.ToString();
+                            string count = form.textBoxModelCount.Text.ToString();
+                            TransportModel model;
+                            if (Int32.TryParse(count, out int c))
+                            {
+                                model = new TransportModel(modelName, markName, desc, c);
+                                daoTransModel.updateType(n, model);
+                                updateTable();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Неверно введено количество моделей в автопарке!");
+                                break;
+                            }
+                            break;
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Модел не должна повторяться!" + ex);
                             break;
                         }
                     }
