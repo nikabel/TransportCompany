@@ -49,7 +49,7 @@ namespace TransportCompany
                 case "Specialization":
                     {
                         this.Text = "Информация о специализациях";
-                        labelSearch.Text = "СпециализациЯ";
+                        labelSearch.Text = "Специализация";
                         groupBox3.Text = "Поиск информации о специализациях";
                         break;
                     }
@@ -214,6 +214,26 @@ namespace TransportCompany
                         catch (Exception ex)
                         {
                             MessageBox.Show("Специализация не должна повторяться!" + ex);
+                            break;
+                        }
+                    }
+                case "Transport":
+                    {
+                        try
+                        {
+                            FormChangeTrans form = new FormChangeTrans("", "", "");
+                            form.ShowDialog();
+                            string num = form.textBoxLicensePlate.Text.ToString();
+                            string driver = form.comboBoxDrivers.SelectedItem.ToString();
+                            string model = form.comboBoxModels.SelectedItem.ToString();
+                            Transport trans = new Transport(num, driver, model);
+                            daoTrans.addType(trans);
+                            updateTable();
+                            break;
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Транспортный номер не должен повторяться!" + ex);
                             break;
                         }
                     }
@@ -467,6 +487,30 @@ namespace TransportCompany
                             break;
                         }
                     }
+                case "Transport":
+                    {
+                        try
+                        {
+                            int rowNum = dataGridViewStopType.CurrentCell.RowIndex;
+                            string n = dataGridViewStopType[0, rowNum].Value.ToString();
+                            string d = dataGridViewStopType[1, rowNum].Value.ToString();
+                            string m = dataGridViewStopType[2, rowNum].Value.ToString();
+                            FormChangeTrans form = new FormChangeTrans(n, d, m);
+                            form.ShowDialog();
+                            string num = form.textBoxLicensePlate.Text.ToString();
+                            string driver = form.comboBoxDrivers.SelectedItem.ToString();
+                            string model = form.comboBoxModels.SelectedItem.ToString();
+                            Transport trans = new Transport(num, driver, model);
+                            daoTrans.updateType(n, trans);
+                            updateTable();
+                            break;
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Транспортный номер не должен повторяться!" + ex);
+                            break;
+                        }
+                    }
                 case "TransportModel":
                     {
                         try
@@ -498,7 +542,7 @@ namespace TransportCompany
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Модел не должна повторяться!" + ex);
+                            MessageBox.Show("Модель не должна повторяться!" + ex);
                             break;
                         }
                     }

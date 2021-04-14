@@ -44,7 +44,7 @@ namespace TransportCompany.DAO
         {
             try
             {
-                string query = String.Format("Insert Transport values ('{0}', '{1}', '{2}')", transport.LicensePlate, transport.DriverName, transport.ModelName);
+                string query = String.Format("Insert INTO Transport values ('{0}', '{1}', '{2}')", transport.LicensePlate, transport.DriverName, transport.ModelName);
                 connect.executeNonQuery(query);
                 return true;
             }

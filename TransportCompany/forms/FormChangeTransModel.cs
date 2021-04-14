@@ -13,8 +13,6 @@ namespace TransportCompany.forms
 {
     public partial class FormChangeTransModel : Form
     {
-        DBUtil connect = new DBUtil();
-        TransportModelDAO dao = new TransportModelDAO();
 
         public FormChangeTransModel(string n, string mn, string d, string mc)
         {

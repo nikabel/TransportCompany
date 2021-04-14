@@ -31,10 +31,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxLicensePlate = new System.Windows.Forms.TextBox();
-            this.textBoxDriverName = new System.Windows.Forms.TextBox();
             this.buttonChange = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBoxModelName = new System.Windows.Forms.TextBox();
+            this.comboBoxDrivers = new System.Windows.Forms.ComboBox();
+            this.comboBoxModels = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label3
@@ -45,6 +45,7 @@
             this.label3.Size = new System.Drawing.Size(108, 17);
             this.label3.TabIndex = 30;
             this.label3.Text = "ФИО водителя";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label5
             // 
@@ -54,6 +55,7 @@
             this.label5.Size = new System.Drawing.Size(161, 17);
             this.label5.TabIndex = 29;
             this.label5.Text = "Гос. номер транспорта";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // textBoxLicensePlate
             // 
@@ -61,13 +63,7 @@
             this.textBoxLicensePlate.Name = "textBoxLicensePlate";
             this.textBoxLicensePlate.Size = new System.Drawing.Size(238, 22);
             this.textBoxLicensePlate.TabIndex = 27;
-            // 
-            // textBoxDriverName
-            // 
-            this.textBoxDriverName.Location = new System.Drawing.Point(283, 59);
-            this.textBoxDriverName.Name = "textBoxDriverName";
-            this.textBoxDriverName.Size = new System.Drawing.Size(238, 22);
-            this.textBoxDriverName.TabIndex = 28;
+            this.textBoxLicensePlate.TextChanged += new System.EventHandler(this.textBoxLicensePlate_TextChanged);
             // 
             // buttonChange
             // 
@@ -77,6 +73,7 @@
             this.buttonChange.TabIndex = 26;
             this.buttonChange.Text = "Сохранить";
             this.buttonChange.UseVisualStyleBackColor = true;
+            this.buttonChange.Click += new System.EventHandler(this.buttonChange_Click);
             // 
             // label1
             // 
@@ -86,25 +83,39 @@
             this.label1.Size = new System.Drawing.Size(159, 17);
             this.label1.TabIndex = 32;
             this.label1.Text = "Наименование модели";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // textBoxModelName
+            // comboBoxDrivers
             // 
-            this.textBoxModelName.Location = new System.Drawing.Point(283, 99);
-            this.textBoxModelName.Name = "textBoxModelName";
-            this.textBoxModelName.Size = new System.Drawing.Size(238, 22);
-            this.textBoxModelName.TabIndex = 31;
+            this.comboBoxDrivers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxDrivers.FormattingEnabled = true;
+            this.comboBoxDrivers.Location = new System.Drawing.Point(283, 62);
+            this.comboBoxDrivers.Name = "comboBoxDrivers";
+            this.comboBoxDrivers.Size = new System.Drawing.Size(238, 24);
+            this.comboBoxDrivers.TabIndex = 33;
+            this.comboBoxDrivers.SelectedIndexChanged += new System.EventHandler(this.comboBoxDrivers_SelectedIndexChanged);
+            // 
+            // comboBoxModels
+            // 
+            this.comboBoxModels.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxModels.FormattingEnabled = true;
+            this.comboBoxModels.Location = new System.Drawing.Point(283, 102);
+            this.comboBoxModels.Name = "comboBoxModels";
+            this.comboBoxModels.Size = new System.Drawing.Size(238, 24);
+            this.comboBoxModels.TabIndex = 34;
+            this.comboBoxModels.SelectedIndexChanged += new System.EventHandler(this.comboBoxModels_SelectedIndexChanged);
             // 
             // FormChangeTrans
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(548, 192);
+            this.Controls.Add(this.comboBoxModels);
+            this.Controls.Add(this.comboBoxDrivers);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBoxModelName);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBoxLicensePlate);
-            this.Controls.Add(this.textBoxDriverName);
             this.Controls.Add(this.buttonChange);
             this.Name = "FormChangeTrans";
             this.Text = "Информация о транспорте";
@@ -118,9 +129,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.TextBox textBoxLicensePlate;
-        public System.Windows.Forms.TextBox textBoxDriverName;
         private System.Windows.Forms.Button buttonChange;
         private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.TextBox textBoxModelName;
+        public System.Windows.Forms.ComboBox comboBoxDrivers;
+        public System.Windows.Forms.ComboBox comboBoxModels;
     }
 }

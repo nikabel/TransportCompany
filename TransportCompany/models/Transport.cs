@@ -12,7 +12,7 @@ namespace TransportCompany.models
         private string _driverName;
         private string _licensePlate;
 
-        public Transport(string modelName, string driverName, string licensePlate)
+        public Transport(string licensePlate, string driverName, string modelName )
         {
             ModelName = modelName;
             DriverName = driverName;

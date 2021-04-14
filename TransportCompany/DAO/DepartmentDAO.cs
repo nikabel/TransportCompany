@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Data.SqlClient;
 using TransportCompany.models;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,31 @@ namespace TransportCompany.DAO
                 string query = "select * from Department";
                 DataTable dt = connect.executeQuery(query);
                 return dt;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public string[] getAllDepartments()
+        {
+            SqlConnection conn = connect.createConnection();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("select department_name from Department", conn);
+                conn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                var deps = new List<string>();
+                while (dr.Read())
+                {
+                    deps.Add(dr.GetString(0));
+                }
+
+                string[] depNames = deps.ToArray();
+                dr.Close();
+                conn.Close();
+                return depNames;
             }
             catch (Exception ex)
             {

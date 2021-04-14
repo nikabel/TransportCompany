@@ -40,7 +40,7 @@ namespace TransportCompany.DAO
             }
         }
 
-        public bool addDriver(OfficeEmployee emp)
+        public bool addEmployee(OfficeEmployee emp)
         {
             try
             {

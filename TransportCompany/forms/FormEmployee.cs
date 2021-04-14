@@ -54,12 +54,54 @@ namespace TransportCompany.forms
 
         private void buttonChangeStopType_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                int rowNum = dataGridViewOfficeEmployee.CurrentCell.RowIndex;
+                string n = dataGridViewOfficeEmployee[0, rowNum].Value.ToString();
+                string s = dataGridViewOfficeEmployee[1, rowNum].Value.ToString();
+                Employee emp = daoEmp.getEmployeeByName(n);
+                FormChangeEmployee form = new FormChangeEmployee(n, emp.EmployeePos, emp.EmployeeTel, emp.EmployeeAddress, s, emp.DepartmentName);
+                form.ShowDialog();
+                string name = form.textBoxName.Text.ToString();
+                string pos = form.textBoxPos.Text.ToString();
+                string tel = form.textBoxTel.Text.ToString();
+                string adr = form.textBoxAddress.Text.ToString();
+                string spec = form.comboBoxSpec.SelectedItem.ToString();
+                string dep = form.comboBoxDep.SelectedItem.ToString();
+                Employee newEmp = new Employee(name, dep, pos, tel, adr);
+                OfficeEmployee officeEmployee = new OfficeEmployee(name, dep, pos, tel, adr, spec);
+                daoEmp.updateEmployee(n, newEmp);
+                daoOf.updateEmployee(n, officeEmployee);
+                updateTable();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Имя сотрудника не должно повторяться!" + ex);
+            }
         }
 
         private void buttonAddStopType_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                FormChangeEmployee form = new FormChangeEmployee("", "", "", "", "", "");
+                form.ShowDialog();
+                string name = form.textBoxName.Text.ToString();
+                string pos = form.textBoxPos.Text.ToString();
+                string tel = form.textBoxTel.Text.ToString();
+                string adr = form.textBoxAddress.Text.ToString();
+                string spec = form.comboBoxSpec.SelectedItem.ToString();
+                string dep = form.comboBoxDep.SelectedItem.ToString();
+                Employee emp = new Employee(name, dep, pos, tel, adr);
+                OfficeEmployee officeEmployee = new OfficeEmployee(name, dep, pos, tel, adr, spec);
+                daoEmp.addEmployee(emp);
+                daoOf.addEmployee(officeEmployee);
+                updateTable();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Имя сотрудника не должно повторяться!" + ex);
+            }
         }
 
         private void dataGridViewStopType_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -97,6 +139,68 @@ namespace TransportCompany.forms
         private void dataGridViewDriver_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void FormEmployee_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonAddDriver_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FormChangeDriver form = new FormChangeDriver("", "", "", "", "", "", "");
+                form.ShowDialog();
+                string name = form.textBoxName.Text.ToString();
+                string pos = form.textBoxPos.Text.ToString();
+                string tel = form.textBoxTel.Text.ToString();
+                string adr = form.textBoxAddress.Text.ToString();
+                string cat = form.textBoxLicense.Text.ToString();
+                string exp = form.textBoxExp.Text.ToString();
+                string dep = form.comboBoxDep.SelectedItem.ToString();
+                Employee emp = new Employee(name, dep, pos, tel, adr);
+                Driver driver;
+                driver = new Driver(name, dep, pos, tel, adr, Int32.Parse(exp), cat);
+                daoEmp.addEmployee(emp);
+                daoDr.addDriver(driver);
+                updateTable();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Имя водителя не должно повторяться!" + ex);
+            }
+        }
+
+        private void buttonChangeDriver_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int rowNum = dataGridViewOfficeEmployee.CurrentCell.RowIndex;
+                string n = dataGridViewDriver[0, rowNum].Value.ToString();
+                string experience = dataGridViewDriver[1, rowNum].Value.ToString();
+                string c = dataGridViewDriver[2, rowNum].Value.ToString();
+                Employee emp = daoEmp.getEmployeeByName(n);
+                FormChangeDriver form = new FormChangeDriver(n, emp.EmployeePos, emp.EmployeeTel, emp.EmployeeAddress, experience, c, emp.DepartmentName);
+                form.ShowDialog();
+                string name = form.textBoxName.Text.ToString();
+                string pos = form.textBoxPos.Text.ToString();
+                string tel = form.textBoxTel.Text.ToString();
+                string adr = form.textBoxAddress.Text.ToString();
+                string cat = form.textBoxLicense.Text.ToString();
+                string exp = form.textBoxExp.Text.ToString();
+                string dep = form.comboBoxDep.SelectedItem.ToString();
+                Employee employee = new Employee(name, dep, pos, tel, adr);
+                Driver driver;
+                driver = new Driver(name, dep, pos, tel, adr, Int32.Parse(exp), cat);
+                daoEmp.updateEmployee(n, employee);
+                daoDr.updateEmployee(n, driver);
+                updateTable();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Имя водителя не должно повторяться!" + ex);
+            }
         }
     }
 }

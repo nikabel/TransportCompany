@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Data.SqlClient;
 using TransportCompany.models;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,37 @@ namespace TransportCompany.DAO
                 string query = "select * from Employee";
                 DataTable dt = connect.executeQuery(query);
                 return dt;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public Employee getEmployeeByName(string name)
+        {
+            SqlConnection conn = connect.createConnection();
+            try
+            {
+                string query = String.Format("select * from Employee where employee_name = '{0}'", name);
+                SqlCommand cmd = new SqlCommand(query, conn);
+                conn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                var emps = new List<Employee>();
+                while (dr.Read())
+                {
+                    string fio = dr.GetString(0);
+                    string pos = dr.GetString(1);
+                    string tel = dr.GetString(2);
+                    string adr = dr.GetString(3);
+                    string dep = dr.GetString(4);
+                    emps.Add(new Employee(fio, dep, pos, tel, adr));
+                }
+
+                Employee[] empNames = emps.ToArray();
+                dr.Close();
+                conn.Close();
+                return empNames[0];
             }
             catch (Exception ex)
             {
