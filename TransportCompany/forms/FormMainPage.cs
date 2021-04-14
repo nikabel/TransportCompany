@@ -137,5 +137,18 @@ namespace TransportCompany
                 MessageBox.Show("Что-то пошло не так!" + ex);
             }
         }
+
+        private void заказчикиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FormCustomer form = new FormCustomer();
+                form.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Что-то пошло не так!" + ex);
+            }
+        }
     }
 }

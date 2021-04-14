@@ -53,10 +53,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\CargoTypeDAO.cs" />
+    <Compile Include="DAO\CustomerDAO.cs" />
     <Compile Include="DAO\DBUtil.cs" />
     <Compile Include="DAO\DepartmentDAO.cs" />
     <Compile Include="DAO\DriverDAO.cs" />
     <Compile Include="DAO\EmployeeDAO.cs" />
+    <Compile Include="DAO\EntityCustomerDAO.cs" />
+    <Compile Include="DAO\IndividualCustomerDAO.cs" />
     <Compile Include="DAO\OfficeEmployeeDAO.cs" />
     <Compile Include="DAO\SpecializationDAO.cs" />
     <Compile Include="DAO\StopTypeDAO.cs" />
@@ -92,6 +95,18 @@
     <Compile Include="forms\FormChangeEmployee.Designer.cs">
       <DependentUpon>FormChangeEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\FormChangeEntity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\FormChangeEntity.Designer.cs">
+      <DependentUpon>FormChangeEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\FormChangeIndividual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\FormChangeIndividual.Designer.cs">
+      <DependentUpon>FormChangeIndividual.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\FormChangeSpec.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +130,12 @@
     </Compile>
     <Compile Include="forms\FormChangeTransModel.Designer.cs">
       <DependentUpon>FormChangeTransModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\FormCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\FormCustomer.Designer.cs">
+      <DependentUpon>FormCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\FormEmployee.cs">
       <SubType>Form</SubType>
@@ -182,6 +203,12 @@
     <EmbeddedResource Include="forms\FormChangeEmployee.resx">
       <DependentUpon>FormChangeEmployee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\FormChangeEntity.resx">
+      <DependentUpon>FormChangeEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\FormChangeIndividual.resx">
+      <DependentUpon>FormChangeIndividual.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\FormChangeSpec.resx">
       <DependentUpon>FormChangeSpec.cs</DependentUpon>
     </EmbeddedResource>
@@ -193,6 +220,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\FormChangeTransModel.resx">
       <DependentUpon>FormChangeTransModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\FormCustomer.resx">
+      <DependentUpon>FormCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\FormEmployee.resx">
       <DependentUpon>FormEmployee.cs</DependentUpon>

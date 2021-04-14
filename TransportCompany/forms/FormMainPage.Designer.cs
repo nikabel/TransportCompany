@@ -149,6 +149,7 @@
             this.заказчикиToolStripMenuItem.Name = "заказчикиToolStripMenuItem";
             this.заказчикиToolStripMenuItem.Size = new System.Drawing.Size(287, 26);
             this.заказчикиToolStripMenuItem.Text = "Заказчики";
+            this.заказчикиToolStripMenuItem.Click += new System.EventHandler(this.заказчикиToolStripMenuItem_Click);
             // 
             // оперативныеДанныеToolStripMenuItem
             // 
