@@ -7,15 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TransportCompany.DAO;
-using TransportCompany.models;
 
 namespace TransportCompany.forms
 {
     public partial class FormChangeDepartment : Form
     {
-        DBUtil connect = new DBUtil();
-        DepartmentDAO dao = new DepartmentDAO();
         public FormChangeDepartment(string n, string cn, string d)
         {
             InitializeComponent();

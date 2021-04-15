@@ -131,6 +131,18 @@
     <Compile Include="forms\FormChangeTransModel.Designer.cs">
       <DependentUpon>FormChangeTransModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\FormChooseEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\FormChooseEmployee.Designer.cs">
+      <DependentUpon>FormChooseEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\FormControlOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\FormControlOrder.Designer.cs">
+      <DependentUpon>FormControlOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\FormCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +166,12 @@
     </Compile>
     <Compile Include="forms\FormMainPage.Designer.cs">
       <DependentUpon>FormMainPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\FormRoute.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\FormRoute.Designer.cs">
+      <DependentUpon>FormRoute.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\FormStopType.cs">
       <SubType>Form</SubType>
@@ -221,6 +239,12 @@
     <EmbeddedResource Include="forms\FormChangeTransModel.resx">
       <DependentUpon>FormChangeTransModel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\FormChooseEmployee.resx">
+      <DependentUpon>FormChooseEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\FormControlOrder.resx">
+      <DependentUpon>FormControlOrder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\FormCustomer.resx">
       <DependentUpon>FormCustomer.cs</DependentUpon>
     </EmbeddedResource>
@@ -232,6 +256,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\FormMainPage.resx">
       <DependentUpon>FormMainPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\FormRoute.resx">
+      <DependentUpon>FormRoute.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\FormStopType.resx">
       <DependentUpon>FormStopType.cs</DependentUpon>

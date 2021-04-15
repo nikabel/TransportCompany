@@ -150,5 +150,20 @@ namespace TransportCompany
                 MessageBox.Show("Что-то пошло не так!" + ex);
             }
         }
+
+        private void сведенияОСоответствииГрафикуОказанияУслугToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void сведенияОВыполненныхРаботахЗаУказанныйПериодToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void сведенияОбОбьемеВыполненныхРаботToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
