@@ -37,6 +37,8 @@
             this.dateTimePickerService = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // comboBoxContractNum
@@ -86,7 +88,7 @@
             // 
             // buttonChoose
             // 
-            this.buttonChoose.Location = new System.Drawing.Point(210, 227);
+            this.buttonChoose.Location = new System.Drawing.Point(210, 279);
             this.buttonChoose.Name = "buttonChoose";
             this.buttonChoose.Size = new System.Drawing.Size(99, 28);
             this.buttonChoose.TabIndex = 60;
@@ -95,7 +97,7 @@
             // 
             // dateTimePickerService
             // 
-            this.dateTimePickerService.Location = new System.Drawing.Point(243, 177);
+            this.dateTimePickerService.Location = new System.Drawing.Point(243, 229);
             this.dateTimePickerService.Name = "dateTimePickerService";
             this.dateTimePickerService.Size = new System.Drawing.Size(238, 22);
             this.dateTimePickerService.TabIndex = 62;
@@ -103,7 +105,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(44, 182);
+            this.label4.Location = new System.Drawing.Point(44, 229);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(108, 17);
             this.label4.TabIndex = 61;
@@ -116,11 +118,31 @@
             this.textBox1.Size = new System.Drawing.Size(238, 22);
             this.textBox1.TabIndex = 63;
             // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(243, 179);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(238, 22);
+            this.textBox2.TabIndex = 65;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(44, 179);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(124, 17);
+            this.label5.TabIndex = 64;
+            this.label5.Text = "Стоимость услуги";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
             // FormChooseEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(521, 276);
+            this.ClientSize = new System.Drawing.Size(521, 323);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dateTimePickerService);
             this.Controls.Add(this.label4);
@@ -148,5 +170,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePickerService;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label5;
     }
 }

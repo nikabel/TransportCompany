@@ -28,107 +28,91 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridViewOrderStatus = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dateTimePickerUpdate = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBoxStatus = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.buttonUpdate = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrderStatus)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.buttonAddStop = new System.Windows.Forms.Button();
+            this.comboBoxStopType = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.dateTimePickerStop = new System.Windows.Forms.DateTimePicker();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // dataGridViewOrderStatus
+            // buttonAddStop
             // 
-            this.dataGridViewOrderStatus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewOrderStatus.Location = new System.Drawing.Point(12, 184);
-            this.dataGridViewOrderStatus.Name = "dataGridViewOrderStatus";
-            this.dataGridViewOrderStatus.RowHeadersWidth = 51;
-            this.dataGridViewOrderStatus.RowTemplate.Height = 24;
-            this.dataGridViewOrderStatus.Size = new System.Drawing.Size(776, 254);
-            this.dataGridViewOrderStatus.TabIndex = 0;
+            this.buttonAddStop.Location = new System.Drawing.Point(183, 160);
+            this.buttonAddStop.Name = "buttonAddStop";
+            this.buttonAddStop.Size = new System.Drawing.Size(89, 33);
+            this.buttonAddStop.TabIndex = 68;
+            this.buttonAddStop.Text = "Добавить";
+            this.buttonAddStop.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
+            // comboBoxStopType
             // 
-            this.groupBox1.Controls.Add(this.buttonUpdate);
-            this.groupBox1.Controls.Add(this.dateTimePickerUpdate);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBoxStatus);
-            this.groupBox1.Location = new System.Drawing.Point(12, 25);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(564, 119);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Обновить статус заказа";
+            this.comboBoxStopType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxStopType.FormattingEnabled = true;
+            this.comboBoxStopType.Location = new System.Drawing.Point(229, 65);
+            this.comboBoxStopType.Name = "comboBoxStopType";
+            this.comboBoxStopType.Size = new System.Drawing.Size(238, 24);
+            this.comboBoxStopType.TabIndex = 76;
             // 
-            // dateTimePickerUpdate
+            // label10
             // 
-            this.dateTimePickerUpdate.Location = new System.Drawing.Point(139, 79);
-            this.dateTimePickerUpdate.Name = "dateTimePickerUpdate";
-            this.dateTimePickerUpdate.Size = new System.Drawing.Size(238, 22);
-            this.dateTimePickerUpdate.TabIndex = 56;
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(17, 68);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(79, 17);
+            this.label10.TabIndex = 75;
+            this.label10.Text = "Остановка";
             // 
-            // label1
+            // label9
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 79);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 17);
-            this.label1.TabIndex = 55;
-            this.label1.Text = "Дата обновления";
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(19, 114);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(204, 17);
+            this.label9.TabIndex = 71;
+            this.label9.Text = "Фактическая дата остановки";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
-            // label6
+            // dateTimePickerStop
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 35);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 17);
-            this.label6.TabIndex = 54;
-            this.label6.Text = "Статус";
+            this.dateTimePickerStop.Location = new System.Drawing.Point(229, 114);
+            this.dateTimePickerStop.Name = "dateTimePickerStop";
+            this.dateTimePickerStop.Size = new System.Drawing.Size(238, 22);
+            this.dateTimePickerStop.TabIndex = 73;
             // 
-            // textBoxStatus
+            // comboBox2
             // 
-            this.textBoxStatus.Location = new System.Drawing.Point(139, 35);
-            this.textBoxStatus.Multiline = true;
-            this.textBoxStatus.Name = "textBoxStatus";
-            this.textBoxStatus.Size = new System.Drawing.Size(238, 27);
-            this.textBoxStatus.TabIndex = 53;
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(229, 21);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(238, 24);
+            this.comboBox2.TabIndex = 78;
             // 
-            // label2
+            // label8
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 164);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 17);
-            this.label2.TabIndex = 57;
-            this.label2.Text = "История заказа";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // buttonUpdate
-            // 
-            this.buttonUpdate.Location = new System.Drawing.Point(420, 48);
-            this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(97, 36);
-            this.buttonUpdate.TabIndex = 57;
-            this.buttonUpdate.Text = "Обновить";
-            this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(17, 28);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(121, 17);
+            this.label8.TabIndex = 77;
+            this.label8.Text = "Номер маршрута";
             // 
             // FormControlOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 667);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dataGridViewOrderStatus);
+            this.ClientSize = new System.Drawing.Size(488, 211);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.buttonAddStop);
+            this.Controls.Add(this.comboBoxStopType);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.dateTimePickerStop);
             this.Name = "FormControlOrder";
             this.Text = "Контроль за ходом выполнения заказа";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrderStatus)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -136,13 +120,12 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridViewOrderStatus;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button buttonUpdate;
-        private System.Windows.Forms.DateTimePicker dateTimePickerUpdate;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label6;
-        public System.Windows.Forms.TextBox textBoxStatus;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button buttonAddStop;
+        public System.Windows.Forms.ComboBox comboBoxStopType;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DateTimePicker dateTimePickerStop;
+        public System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label8;
     }
 }

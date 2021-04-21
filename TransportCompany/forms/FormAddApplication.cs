@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace TransportCompany.forms
 {
-    public partial class FormChooseEmployee : Form
+    public partial class FormAddApplication : Form
     {
-        public FormChooseEmployee()
+        public FormAddApplication()
         {
             InitializeComponent();
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void buttonAdd_Click(object sender, EventArgs e)
         {
 
         }
