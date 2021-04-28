@@ -42,12 +42,16 @@
             this.оперативныеДанныеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.формированиеДоговораToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.составлениеЗаявкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.определениеСотрудниковДляРаботыНадЗаказомToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.формированиеМаршрутаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.определениеСтатусаЗаказаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оформлениеАктаВыполненныхРаботПоЗаказуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.определениеСотрудниковДляРаботыНадЗаказомToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчетыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сведенияОбОбьемеВыполненныхРаботToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сведенияОЗавершенныхЗаказахToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.договорОбОказанииУслугToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.актВыполненныхРаботToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.заявкаНаПеревозкуГрузаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.запросыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчетОЗанятостиТранспортаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчетОЗанятостиВодителейToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,10 +62,6 @@
             this.buttonContract = new System.Windows.Forms.Button();
             this.buttonRequest = new System.Windows.Forms.Button();
             this.buttonCompletedWorks = new System.Windows.Forms.Button();
-            this.формированиеМаршрутаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.договорОбОказанииУслугToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.актВыполненныхРаботToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.заявкаНаПеревозкуГрузаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMainPage.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -173,30 +173,42 @@
             this.формированиеДоговораToolStripMenuItem.Name = "формированиеДоговораToolStripMenuItem";
             this.формированиеДоговораToolStripMenuItem.Size = new System.Drawing.Size(435, 26);
             this.формированиеДоговораToolStripMenuItem.Text = "Формирование договора";
+            this.формированиеДоговораToolStripMenuItem.Click += new System.EventHandler(this.формированиеДоговораToolStripMenuItem_Click);
             // 
             // составлениеЗаявкиToolStripMenuItem
             // 
             this.составлениеЗаявкиToolStripMenuItem.Name = "составлениеЗаявкиToolStripMenuItem";
             this.составлениеЗаявкиToolStripMenuItem.Size = new System.Drawing.Size(435, 26);
             this.составлениеЗаявкиToolStripMenuItem.Text = "Составление заявки на перевозку";
-            // 
-            // определениеСтатусаЗаказаToolStripMenuItem
-            // 
-            this.определениеСтатусаЗаказаToolStripMenuItem.Name = "определениеСтатусаЗаказаToolStripMenuItem";
-            this.определениеСтатусаЗаказаToolStripMenuItem.Size = new System.Drawing.Size(435, 26);
-            this.определениеСтатусаЗаказаToolStripMenuItem.Text = "Контроль за ходом выполнения заказа";
-            // 
-            // оформлениеАктаВыполненныхРаботПоЗаказуToolStripMenuItem
-            // 
-            this.оформлениеАктаВыполненныхРаботПоЗаказуToolStripMenuItem.Name = "оформлениеАктаВыполненныхРаботПоЗаказуToolStripMenuItem";
-            this.оформлениеАктаВыполненныхРаботПоЗаказуToolStripMenuItem.Size = new System.Drawing.Size(435, 26);
-            this.оформлениеАктаВыполненныхРаботПоЗаказуToolStripMenuItem.Text = "Оформление акта выполненных работ по заказу";
+            this.составлениеЗаявкиToolStripMenuItem.Click += new System.EventHandler(this.составлениеЗаявкиToolStripMenuItem_Click);
             // 
             // определениеСотрудниковДляРаботыНадЗаказомToolStripMenuItem
             // 
             this.определениеСотрудниковДляРаботыНадЗаказомToolStripMenuItem.Name = "определениеСотрудниковДляРаботыНадЗаказомToolStripMenuItem";
             this.определениеСотрудниковДляРаботыНадЗаказомToolStripMenuItem.Size = new System.Drawing.Size(435, 26);
             this.определениеСотрудниковДляРаботыНадЗаказомToolStripMenuItem.Text = "Назначение сотрудников для работы над заказом";
+            this.определениеСотрудниковДляРаботыНадЗаказомToolStripMenuItem.Click += new System.EventHandler(this.определениеСотрудниковДляРаботыНадЗаказомToolStripMenuItem_Click);
+            // 
+            // формированиеМаршрутаToolStripMenuItem
+            // 
+            this.формированиеМаршрутаToolStripMenuItem.Name = "формированиеМаршрутаToolStripMenuItem";
+            this.формированиеМаршрутаToolStripMenuItem.Size = new System.Drawing.Size(435, 26);
+            this.формированиеМаршрутаToolStripMenuItem.Text = "Формирование маршрута";
+            this.формированиеМаршрутаToolStripMenuItem.Click += new System.EventHandler(this.формированиеМаршрутаToolStripMenuItem_Click);
+            // 
+            // определениеСтатусаЗаказаToolStripMenuItem
+            // 
+            this.определениеСтатусаЗаказаToolStripMenuItem.Name = "определениеСтатусаЗаказаToolStripMenuItem";
+            this.определениеСтатусаЗаказаToolStripMenuItem.Size = new System.Drawing.Size(435, 26);
+            this.определениеСтатусаЗаказаToolStripMenuItem.Text = "Контроль за ходом выполнения заказа";
+            this.определениеСтатусаЗаказаToolStripMenuItem.Click += new System.EventHandler(this.определениеСтатусаЗаказаToolStripMenuItem_Click);
+            // 
+            // оформлениеАктаВыполненныхРаботПоЗаказуToolStripMenuItem
+            // 
+            this.оформлениеАктаВыполненныхРаботПоЗаказуToolStripMenuItem.Name = "оформлениеАктаВыполненныхРаботПоЗаказуToolStripMenuItem";
+            this.оформлениеАктаВыполненныхРаботПоЗаказуToolStripMenuItem.Size = new System.Drawing.Size(435, 26);
+            this.оформлениеАктаВыполненныхРаботПоЗаказуToolStripMenuItem.Text = "Оформление акта выполненных работ по заказу";
+            this.оформлениеАктаВыполненныхРаботПоЗаказуToolStripMenuItem.Click += new System.EventHandler(this.оформлениеАктаВыполненныхРаботПоЗаказуToolStripMenuItem_Click);
             // 
             // отчетыToolStripMenuItem
             // 
@@ -223,6 +235,24 @@
             this.сведенияОЗавершенныхЗаказахToolStripMenuItem.Name = "сведенияОЗавершенныхЗаказахToolStripMenuItem";
             this.сведенияОЗавершенныхЗаказахToolStripMenuItem.Size = new System.Drawing.Size(444, 26);
             this.сведенияОЗавершенныхЗаказахToolStripMenuItem.Text = "Сведения о завершенных заказах";
+            // 
+            // договорОбОказанииУслугToolStripMenuItem
+            // 
+            this.договорОбОказанииУслугToolStripMenuItem.Name = "договорОбОказанииУслугToolStripMenuItem";
+            this.договорОбОказанииУслугToolStripMenuItem.Size = new System.Drawing.Size(444, 26);
+            this.договорОбОказанииУслугToolStripMenuItem.Text = "Договор об оказании услуг";
+            // 
+            // актВыполненныхРаботToolStripMenuItem
+            // 
+            this.актВыполненныхРаботToolStripMenuItem.Name = "актВыполненныхРаботToolStripMenuItem";
+            this.актВыполненныхРаботToolStripMenuItem.Size = new System.Drawing.Size(444, 26);
+            this.актВыполненныхРаботToolStripMenuItem.Text = "Акт выполненных работ";
+            // 
+            // заявкаНаПеревозкуГрузаToolStripMenuItem
+            // 
+            this.заявкаНаПеревозкуГрузаToolStripMenuItem.Name = "заявкаНаПеревозкуГрузаToolStripMenuItem";
+            this.заявкаНаПеревозкуГрузаToolStripMenuItem.Size = new System.Drawing.Size(444, 26);
+            this.заявкаНаПеревозкуГрузаToolStripMenuItem.Text = "Заявка на перевозку груза";
             // 
             // запросыToolStripMenuItem
             // 
@@ -309,30 +339,6 @@
             this.buttonCompletedWorks.TabIndex = 3;
             this.buttonCompletedWorks.Text = "Составление акта выполненных работ";
             this.buttonCompletedWorks.UseVisualStyleBackColor = false;
-            // 
-            // формированиеМаршрутаToolStripMenuItem
-            // 
-            this.формированиеМаршрутаToolStripMenuItem.Name = "формированиеМаршрутаToolStripMenuItem";
-            this.формированиеМаршрутаToolStripMenuItem.Size = new System.Drawing.Size(435, 26);
-            this.формированиеМаршрутаToolStripMenuItem.Text = "Формирование маршрута";
-            // 
-            // договорОбОказанииУслугToolStripMenuItem
-            // 
-            this.договорОбОказанииУслугToolStripMenuItem.Name = "договорОбОказанииУслугToolStripMenuItem";
-            this.договорОбОказанииУслугToolStripMenuItem.Size = new System.Drawing.Size(444, 26);
-            this.договорОбОказанииУслугToolStripMenuItem.Text = "Договор об оказании услуг";
-            // 
-            // актВыполненныхРаботToolStripMenuItem
-            // 
-            this.актВыполненныхРаботToolStripMenuItem.Name = "актВыполненныхРаботToolStripMenuItem";
-            this.актВыполненныхРаботToolStripMenuItem.Size = new System.Drawing.Size(444, 26);
-            this.актВыполненныхРаботToolStripMenuItem.Text = "Акт выполненных работ";
-            // 
-            // заявкаНаПеревозкуГрузаToolStripMenuItem
-            // 
-            this.заявкаНаПеревозкуГрузаToolStripMenuItem.Name = "заявкаНаПеревозкуГрузаToolStripMenuItem";
-            this.заявкаНаПеревозкуГрузаToolStripMenuItem.Size = new System.Drawing.Size(444, 26);
-            this.заявкаНаПеревозкуГрузаToolStripMenuItem.Text = "Заявка на перевозку груза";
             // 
             // FormMainPage
             // 

@@ -165,5 +165,83 @@ namespace TransportCompany
         {
 
         }
+
+        private void формированиеДоговораToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FormAddContract form = new FormAddContract();
+                form.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Что-то пошло не так!" + ex);
+            }
+        }
+
+        private void составлениеЗаявкиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FormAddApplication form = new FormAddApplication();
+                form.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Что-то пошло не так!" + ex);
+            }
+        }
+
+        private void определениеСотрудниковДляРаботыНадЗаказомToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SetWorkChooseContractForm form = new SetWorkChooseContractForm();
+                form.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Что-то пошло не так!" + ex);
+            }
+        }
+
+        private void формированиеМаршрутаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FormRoute form = new FormRoute();
+                form.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Что-то пошло не так!" + ex);
+            }
+        }
+
+        private void определениеСтатусаЗаказаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FormControlOrderChooseRoute form = new FormControlOrderChooseRoute();
+                form.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Что-то пошло не так!" + ex);
+            }
+        }
+
+        private void оформлениеАктаВыполненныхРаботПоЗаказуToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FormAddCertificate form = new FormAddCertificate();
+                form.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Что-то пошло не так!" + ex);
+            }
+        }
     }
 }

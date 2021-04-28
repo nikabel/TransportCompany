@@ -10,23 +10,18 @@ using System.Windows.Forms;
 
 namespace TransportCompany.forms
 {
-    public partial class FormRoute : Form
+    public partial class FormControlOrderChooseRoute : Form
     {
-        public FormRoute()
+        public FormControlOrderChooseRoute()
         {
             InitializeComponent();
         }
 
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonAddStop_Click(object sender, EventArgs e)
+        private void buttonChoose_Click(object sender, EventArgs e)
         {
             try
             {
-                FormAddStop form = new FormAddStop();
+                FormControlOrder form = new FormControlOrder();
                 form.ShowDialog();
             }
             catch (Exception ex)

@@ -70,6 +70,7 @@
             this.buttonAdd.TabIndex = 82;
             this.buttonAdd.Text = "Оформить";
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // label3
             // 

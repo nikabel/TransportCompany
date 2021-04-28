@@ -71,6 +71,12 @@
     <Compile Include="forms\FormAddApplication.Designer.cs">
       <DependentUpon>FormAddApplication.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\FormAddCargo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\FormAddCargo.Designer.cs">
+      <DependentUpon>FormAddCargo.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\FormAddCertificate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +88,18 @@
     </Compile>
     <Compile Include="forms\FormAddContract.Designer.cs">
       <DependentUpon>FormAddContract.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\FormAddService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\FormAddService.Designer.cs">
+      <DependentUpon>FormAddService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\FormAddStop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\FormAddStop.Designer.cs">
+      <DependentUpon>FormAddStop.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\FormAuthentication.cs">
       <SubType>Form</SubType>
@@ -161,6 +179,12 @@
     <Compile Include="forms\FormControlOrder.Designer.cs">
       <DependentUpon>FormControlOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\FormControlOrderChooseRoute.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\FormControlOrderChooseRoute.Designer.cs">
+      <DependentUpon>FormControlOrderChooseRoute.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\FormCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +221,12 @@
     <Compile Include="forms\FormStopType.Designer.cs">
       <DependentUpon>FormStopType.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\SetWorkChooseContractForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\SetWorkChooseContractForm.Designer.cs">
+      <DependentUpon>SetWorkChooseContractForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="models\Application.cs" />
     <Compile Include="models\BankDetails.cs" />
     <Compile Include="models\Cargo.cs" />
@@ -227,11 +257,20 @@
     <EmbeddedResource Include="forms\FormAddApplication.resx">
       <DependentUpon>FormAddApplication.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\FormAddCargo.resx">
+      <DependentUpon>FormAddCargo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\FormAddCertificate.resx">
       <DependentUpon>FormAddCertificate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\FormAddContract.resx">
       <DependentUpon>FormAddContract.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\FormAddService.resx">
+      <DependentUpon>FormAddService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\FormAddStop.resx">
+      <DependentUpon>FormAddStop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\FormAuthentication.resx">
       <DependentUpon>FormAuthentication.cs</DependentUpon>
@@ -272,6 +311,9 @@
     <EmbeddedResource Include="forms\FormControlOrder.resx">
       <DependentUpon>FormControlOrder.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\FormControlOrderChooseRoute.resx">
+      <DependentUpon>FormControlOrderChooseRoute.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\FormCustomer.resx">
       <DependentUpon>FormCustomer.cs</DependentUpon>
     </EmbeddedResource>
@@ -289,6 +331,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\FormStopType.resx">
       <DependentUpon>FormStopType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\SetWorkChooseContractForm.resx">
+      <DependentUpon>SetWorkChooseContractForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

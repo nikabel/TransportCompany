@@ -27,6 +27,30 @@ namespace TransportCompany.DAO
             }
         }
 
+        public string[] getAllCustomers()
+        {
+            SqlConnection conn = connect.createConnection();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("select customer_name from Customer", conn);
+                conn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                var customers = new List<string>();
+                while (dr.Read())
+                {
+                    customers.Add(dr.GetString(0));
+                }
+
+                string[] customerNames = customers.ToArray();
+                dr.Close();
+                conn.Close();
+                return customerNames;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
         public Customer getCustomerByName(string name)
         {
             SqlConnection conn = connect.createConnection();

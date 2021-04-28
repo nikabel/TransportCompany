@@ -17,9 +17,17 @@ namespace TransportCompany.forms
             InitializeComponent();
         }
 
-        private void buttonAdd_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                FormAddCargo form = new FormAddCargo();
+                form.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Что-то пошло не так!" + ex);
+            }
         }
     }
 }
