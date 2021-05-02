@@ -70,7 +70,7 @@ namespace TransportCompany.DAO
         {
             try
             {
-                string query = String.Format("Insert Specialization values ('{0}', '{1}')", spec.SpecName, spec.SpecDesc);
+                string query = String.Format("Insert Specialization values ('{0}')", spec.SpecName);
                 connect.executeNonQuery(query);
                 return true;
             }
@@ -84,7 +84,7 @@ namespace TransportCompany.DAO
         {
             try
             {
-                string query = String.Format("SELECT spec_name, spec_desc FROM Specialization WHERE spec_name LIKE '{0}' + '%'", name);
+                string query = String.Format("SELECT spec_name FROM Specialization WHERE spec_name LIKE '{0}' + '%'", name);
                 DataTable dt = connect.executeQuery(query);
                 return dt;
             }
@@ -99,7 +99,7 @@ namespace TransportCompany.DAO
         {
             try
             {
-                string query = String.Format("UPDATE Specialization SET spec_name = '{0}', spec_desc = '{1}' WHERE spec_name = '{2}' ", newSpec.SpecName, newSpec.SpecDesc, oldName);
+                string query = String.Format("UPDATE Specialization SET spec_name = '{0}' WHERE spec_name = '{2}' ", newSpec.SpecName, oldName);
                 connect.executeNonQuery(query);
                 return true;
             }

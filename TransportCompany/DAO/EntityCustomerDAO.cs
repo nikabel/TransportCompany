@@ -45,8 +45,8 @@ namespace TransportCompany.DAO
         {
             try
             {
-                string query = String.Format("Insert EntityCustomer values ('{0}', '{1}')",
-                    customer.CustomerName, customer.OrgName);
+                string query = String.Format("Insert EntityCustomer values ('{0}', '{1}', '{2}')",
+                    customer.CustomerName, customer.OrgName, customer.CustomerBussinessAddress);
                 connect.executeNonQuery(query);
                 return true;
             }
@@ -60,7 +60,7 @@ namespace TransportCompany.DAO
         {
             try
             {
-                string query = String.Format("SELECT entity_director_name, entity_company_name FROM EntityCustomer where entity_director_name LIKE '{0}' + '%'", str);
+                string query = String.Format("SELECT entity_director_name, entity_company_name, customer_business_address FROM EntityCustomer where entity_director_name LIKE '{0}' + '%'", str);
                 DataTable dt = connect.executeQuery(query);
                 return dt;
             }
@@ -75,8 +75,8 @@ namespace TransportCompany.DAO
         {
             try
             {
-                string query = String.Format("UPDATE EntityCustomer SET entity_director_name = '{0}', entity_company_name = '{1}' WHERE entity_director_name = '{2}' ",
-                    newCustomer.CustomerName, newCustomer.OrgName, oldName);
+                string query = String.Format("UPDATE EntityCustomer SET entity_director_name = '{0}', entity_company_name = '{1}', customer_business_address = '{2}' WHERE entity_director_name = '{3}' ",
+                    newCustomer.CustomerName, newCustomer.OrgName, newCustomer.CustomerBussinessAddress, oldName);
                 connect.executeNonQuery(query);
                 return true;
             }

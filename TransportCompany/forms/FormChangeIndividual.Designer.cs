@@ -32,8 +32,6 @@
             this.textBoxAdr = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBoxBiAdr = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxTel = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -74,23 +72,6 @@
             this.textBoxEmail.Size = new System.Drawing.Size(238, 22);
             this.textBoxEmail.TabIndex = 90;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 217);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(143, 17);
-            this.label6.TabIndex = 88;
-            this.label6.Text = "Юридический адрес";
-            // 
-            // textBoxBiAdr
-            // 
-            this.textBoxBiAdr.Location = new System.Drawing.Point(274, 217);
-            this.textBoxBiAdr.Multiline = true;
-            this.textBoxBiAdr.Name = "textBoxBiAdr";
-            this.textBoxBiAdr.Size = new System.Drawing.Size(238, 54);
-            this.textBoxBiAdr.TabIndex = 87;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -125,7 +106,7 @@
             // 
             // buttonChange
             // 
-            this.buttonChange.Location = new System.Drawing.Point(196, 304);
+            this.buttonChange.Location = new System.Drawing.Point(209, 222);
             this.buttonChange.Name = "buttonChange";
             this.buttonChange.Size = new System.Drawing.Size(111, 39);
             this.buttonChange.TabIndex = 81;
@@ -137,13 +118,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(533, 363);
+            this.ClientSize = new System.Drawing.Size(533, 280);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxAdr);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBoxEmail);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBoxBiAdr);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBoxTel);
             this.Controls.Add(this.label5);
@@ -162,8 +141,6 @@
         public System.Windows.Forms.TextBox textBoxAdr;
         private System.Windows.Forms.Label label7;
         public System.Windows.Forms.TextBox textBoxEmail;
-        private System.Windows.Forms.Label label6;
-        public System.Windows.Forms.TextBox textBoxBiAdr;
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.TextBox textBoxTel;
         private System.Windows.Forms.Label label5;

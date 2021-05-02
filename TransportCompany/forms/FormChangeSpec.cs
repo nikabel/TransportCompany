@@ -7,20 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TransportCompany.DAO;
 
 namespace TransportCompany.forms
 {
     public partial class FormChangeSpec : Form
     {
-        DBUtil connect = new DBUtil();
-        SpecializationDAO dao = new SpecializationDAO();
 
-        public FormChangeSpec(string n, string d)
+        public FormChangeSpec(string n)
         {
             InitializeComponent();
             textBoxSpecName.Text = n;
-            textBoxSpecDesc.Text = d;
         }
 
         private void FormChangeSpec_Load(object sender, EventArgs e)

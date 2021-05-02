@@ -13,16 +13,14 @@ namespace TransportCompany.models
         private DateTime _expirationDate;
         private string _customerName;
         private string _companyName;
-        private string _applicationNum;
 
-        public Contract(string contractNum, DateTime signDate, DateTime expirationDate, string customerName, string companyName, string applicationNum)
+        public Contract(string contractNum, DateTime signDate, DateTime expirationDate, string customerName, string companyName)
         {
             ContractNum = contractNum;
             SignDate = signDate;
             ExpirationDate = expirationDate;
             CustomerName = customerName;
             CompanyName = companyName;
-            ApplicationNum = applicationNum;
         }
 
         public string ContractNum { get => _contractNum; set => _contractNum = value; }
@@ -30,6 +28,5 @@ namespace TransportCompany.models
         public DateTime ExpirationDate { get => _expirationDate; set => _expirationDate = value; }
         public string CustomerName { get => _customerName; set => _customerName = value; }
         public string CompanyName { get => _companyName; set => _companyName = value; }
-        public string ApplicationNum { get => _applicationNum; set => _applicationNum = value; }
     }
 }

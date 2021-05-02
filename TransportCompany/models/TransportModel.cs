@@ -10,20 +10,17 @@ namespace TransportCompany.models
     {
         private string _modelName;
         private string _markName;
-        private string _modelDesc;
         private int _modelCount;
 
-        public TransportModel(string modelName, string markName, string modelDesc, int modelCount)
+        public TransportModel(string modelName, string markName, int modelCount)
         {
             ModelName = modelName;
             MarkName = markName;
-            ModelDesc = modelDesc;
             ModelCount = modelCount;
         }
 
         public string ModelName { get => _modelName; set => _modelName = value; }
         public string MarkName { get => _markName; set => _markName = value; }
-        public string ModelDesc { get => _modelDesc; set => _modelDesc = value; }
         public int ModelCount { get => _modelCount; set => _modelCount = value; }
     }
 }

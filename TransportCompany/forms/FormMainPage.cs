@@ -37,7 +37,7 @@ namespace TransportCompany
         {
             try
             {
-                StopTypeForm form = new StopTypeForm("StopType");
+                StopTypeForm form = new StopTypeForm("Operation");
                 form.ShowDialog();
             }
             catch (Exception ex)

@@ -28,26 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxCargoTypeName = new System.Windows.Forms.TextBox();
-            this.textBoxCargoTypeDesc = new System.Windows.Forms.TextBox();
             this.buttonChange = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 64);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(148, 17);
-            this.label3.TabIndex = 20;
-            this.label3.Text = "Описание вида груза";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 27);
+            this.label5.Location = new System.Drawing.Point(13, 41);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(72, 17);
             this.label5.TabIndex = 19;
@@ -55,21 +44,14 @@
             // 
             // textBoxCargoTypeName
             // 
-            this.textBoxCargoTypeName.Location = new System.Drawing.Point(274, 22);
+            this.textBoxCargoTypeName.Location = new System.Drawing.Point(165, 38);
             this.textBoxCargoTypeName.Name = "textBoxCargoTypeName";
             this.textBoxCargoTypeName.Size = new System.Drawing.Size(238, 22);
             this.textBoxCargoTypeName.TabIndex = 17;
             // 
-            // textBoxCargoTypeDesc
-            // 
-            this.textBoxCargoTypeDesc.Location = new System.Drawing.Point(274, 61);
-            this.textBoxCargoTypeDesc.Name = "textBoxCargoTypeDesc";
-            this.textBoxCargoTypeDesc.Size = new System.Drawing.Size(238, 22);
-            this.textBoxCargoTypeDesc.TabIndex = 18;
-            // 
             // buttonChange
             // 
-            this.buttonChange.Location = new System.Drawing.Point(206, 109);
+            this.buttonChange.Location = new System.Drawing.Point(165, 89);
             this.buttonChange.Name = "buttonChange";
             this.buttonChange.Size = new System.Drawing.Size(101, 28);
             this.buttonChange.TabIndex = 16;
@@ -81,11 +63,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(531, 151);
-            this.Controls.Add(this.label3);
+            this.ClientSize = new System.Drawing.Size(432, 151);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBoxCargoTypeName);
-            this.Controls.Add(this.textBoxCargoTypeDesc);
             this.Controls.Add(this.buttonChange);
             this.Name = "FormCargoType";
             this.Text = "Информация о видах грузов";
@@ -96,11 +76,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.TextBox textBoxCargoTypeName;
-        public System.Windows.Forms.TextBox textBoxCargoTypeDesc;
         private System.Windows.Forms.Button buttonChange;
     }
 }

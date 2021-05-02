@@ -15,11 +15,10 @@ namespace TransportCompany.forms
     {
         DBUtil connect = new DBUtil();
         CargoTypeDAO dao = new CargoTypeDAO();
-        public FormCargoType(string n, string d)
+        public FormCargoType(string n)
         {
             InitializeComponent();
             textBoxCargoTypeName.Text = n;
-            textBoxCargoTypeDesc.Text = d;
         }
 
         private void FormCargoType_Load(object sender, EventArgs e)

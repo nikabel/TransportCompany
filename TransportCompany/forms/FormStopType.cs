@@ -10,7 +10,7 @@ namespace TransportCompany
 {    public partial class StopTypeForm : Form
     {
         DBUtil connect= new DBUtil();
-        StopTypeDAO daoST = new StopTypeDAO();
+        OperationDAO daoST = new OperationDAO();
         DepartmentDAO daoDep = new DepartmentDAO();
         SpecializationDAO daoSpec = new SpecializationDAO();
         CargoTypeDAO daoCT = new CargoTypeDAO();
@@ -25,7 +25,7 @@ namespace TransportCompany
             directory = type;
             switch (directory)
             {
-                case "StopType":
+                case "Operation":
                     {
                         this.Text = "Информация о видах остановок";
                         labelSearch.Text = "Вид остановки";
@@ -75,11 +75,10 @@ namespace TransportCompany
         {
             switch (directory)
             {
-                case "StopType":
+                case "Operation":
                     {
                         DataTable data = daoST.getAll();
-                        data.Columns["stop_type_name"].ColumnName = "Наименование типа остановки";
-                        data.Columns["stop_type_desc"].ColumnName = "Описание типа остановки";
+                        data.Columns["operation_name"].ColumnName = "Наименование операции";
                         dataGridViewStopType.DataSource = data;
                         break;
                     }
@@ -88,7 +87,6 @@ namespace TransportCompany
                         DataTable data = daoDep.getAll();
                         data.Columns["department_name"].ColumnName = "Наименование отдела";
                         data.Columns["company_name"].ColumnName = "Наименование компании";
-                        data.Columns["department_desc"].ColumnName = "Описание отдела";
                         dataGridViewStopType.DataSource = data;
                         break;
                     }
@@ -96,7 +94,6 @@ namespace TransportCompany
                     {
                         DataTable data = daoCT.getAll();
                         data.Columns["cargo_type_name"].ColumnName = "Наименование типа груза";
-                        data.Columns["cargo_type_desc"].ColumnName = "Описание типа груза";
                         dataGridViewStopType.DataSource = data;
                         break;
                     }
@@ -104,7 +101,6 @@ namespace TransportCompany
                     {
                         DataTable data = daoSpec.getAll();
                         data.Columns["spec_name"].ColumnName = "Наименование специализации";
-                        data.Columns["spec_desc"].ColumnName = "Описание специализации";
                         dataGridViewStopType.DataSource = data;
                         break;
                     }
@@ -114,6 +110,7 @@ namespace TransportCompany
                         data.Columns["license_plate"].ColumnName = "Гос. номер транспорта";
                         data.Columns["driver_name"].ColumnName = "ФИО водителя";
                         data.Columns["model_name"].ColumnName = "Наименование модели";
+                        data.Columns["occupation"].ColumnName = "Занятость транспорта";
                         dataGridViewStopType.DataSource = data;
                         break;
                     }
@@ -122,7 +119,6 @@ namespace TransportCompany
                         DataTable data = daoTransModel.getAll();
                         data.Columns["model_name"].ColumnName = "Наименование модели";
                         data.Columns["mark_name"].ColumnName = "Наименование марки";
-                        data.Columns["model_desc"].ColumnName = "Характеристика модели";
                         data.Columns["model_count"].ColumnName = "Количество в автопарке";
                         dataGridViewStopType.DataSource = data;
                         break;
@@ -140,15 +136,14 @@ namespace TransportCompany
         {
             switch (directory)
             {
-                case "StopType":
+                case "Operation":
                     {
                         try
                         {
-                            FormChangeStopType form = new FormChangeStopType("", "");
+                            FormChangeStopType form = new FormChangeStopType("");
                             form.ShowDialog();
                             string name = form.textBoxUpdateStopTypeName.Text.ToString();
-                            string desc = form.textBoxUpdateStopTypeDesc.Text.ToString();
-                            StopType stopType = new StopType(name, desc);
+                            Operation stopType = new Operation(name);
                             daoST.addType(stopType);
                             updateTable();
                             break;
@@ -163,12 +158,11 @@ namespace TransportCompany
                     {
                         try
                         {
-                            FormChangeDepartment form = new FormChangeDepartment("", "", "");
+                            FormChangeDepartment form = new FormChangeDepartment("", "");
                             form.ShowDialog();
                             string name = form.textBoxDepName.Text.ToString();
                             string compName = form.textBoxCompName.Text.ToString();
-                            string desc = form.textBoxDepDesc.Text.ToString();
-                            Department department = new Department(name, desc, compName);
+                            Department department = new Department(name, compName);
                             daoDep.addType(department);
                             updateTable();
                             break;
@@ -183,11 +177,10 @@ namespace TransportCompany
                     {
                         try
                         {
-                            FormCargoType form = new FormCargoType("", "");
+                            FormCargoType form = new FormCargoType("");
                             form.ShowDialog();
                             string name = form.textBoxCargoTypeName.Text.ToString();
-                            string desc = form.textBoxCargoTypeDesc.Text.ToString();
-                            CargoType cargoType = new CargoType(name, desc);
+                            CargoType cargoType = new CargoType(name);
                             daoCT.addType(cargoType);
                             updateTable();
                             break;
@@ -202,11 +195,10 @@ namespace TransportCompany
                     {
                         try
                         {
-                            FormChangeSpec form = new FormChangeSpec("", "");
+                            FormChangeSpec form = new FormChangeSpec("");
                             form.ShowDialog();
                             string name = form.textBoxSpecName.Text.ToString();
-                            string desc = form.textBoxSpecDesc.Text.ToString();
-                            Specialization spec = new Specialization(name, desc);
+                            Specialization spec = new Specialization(name);
                             daoSpec.addType(spec);
                             updateTable();
                             break;
@@ -221,12 +213,13 @@ namespace TransportCompany
                     {
                         try
                         {
-                            FormChangeTrans form = new FormChangeTrans("", "", "");
+                            FormChangeTrans form = new FormChangeTrans("", "", "", "");
                             form.ShowDialog();
                             string num = form.textBoxLicensePlate.Text.ToString();
                             string driver = form.comboBoxDrivers.SelectedItem.ToString();
                             string model = form.comboBoxModels.SelectedItem.ToString();
-                            Transport trans = new Transport(num, driver, model);
+                            string occup = form.textBoxOccupation.Text.ToString();
+                            Transport trans = new Transport(num, driver, model, occup);
                             daoTrans.addType(trans);
                             updateTable();
                             break;
@@ -241,16 +234,15 @@ namespace TransportCompany
                     {
                         try
                         {
-                            FormChangeTransModel form = new FormChangeTransModel("", "", "", "");
+                            FormChangeTransModel form = new FormChangeTransModel("", "", "");
                             form.ShowDialog();
                             string modelName = form.textBoxModelName.Text.ToString();
                             string markName = form.textBoxMarkName.Text.ToString();
-                            string desc = form.textBoxModelDesc.Text.ToString();
                             string count = form.textBoxModelCount.Text.ToString();
                             TransportModel model;
                             if (Int32.TryParse(count, out int c))
                             {
-                                model = new TransportModel(modelName, markName, desc, c);
+                                model = new TransportModel(modelName, markName, c);
                                 daoTransModel.addType(model);
                                 updateTable();
                             }
@@ -274,7 +266,7 @@ namespace TransportCompany
         {
             switch (directory)
             {
-                case "StopType":
+                case "Operation":
                     {
                         int rowNum = dataGridViewStopType.CurrentCell.RowIndex;
                         string name = dataGridViewStopType[0, rowNum].Value.ToString();
@@ -331,12 +323,11 @@ namespace TransportCompany
         {
             switch (directory)
             {
-                case "StopType":
+                case "Operation":
                     {
                         string name = textBoxSearchStopType.Text.ToString();
                         DataTable data = daoST.searchByName(name);
-                        data.Columns["stop_type_name"].ColumnName = "Наименование типа остановки";
-                        data.Columns["stop_type_desc"].ColumnName = "Описание типа остановки";
+                        data.Columns["operation_name"].ColumnName = "Наименование операции";
                         dataGridViewStopType.DataSource = data;
                         textBoxSearchStopType.Clear();
                         break;
@@ -347,7 +338,6 @@ namespace TransportCompany
                         DataTable data = daoDep.searchByName(name);
                         data.Columns["department_name"].ColumnName = "Наименование отдела";
                         data.Columns["company_name"].ColumnName = "Наименование компании";
-                        data.Columns["department_desc"].ColumnName = "Описание отдела";
                         dataGridViewStopType.DataSource = data;
                         break;
                     }
@@ -356,7 +346,6 @@ namespace TransportCompany
                         string name = textBoxSearchStopType.Text.ToString();
                         DataTable data = daoCT.searchByName(name);
                         data.Columns["cargo_type_name"].ColumnName = "Наименование типа груза";
-                        data.Columns["cargo_type_desc"].ColumnName = "Описание типа груза";
                         dataGridViewStopType.DataSource = data;
                         break;
                     }
@@ -365,7 +354,6 @@ namespace TransportCompany
                         string name = textBoxSearchStopType.Text.ToString();
                         DataTable data = daoSpec.searchByName(name);
                         data.Columns["spec_name"].ColumnName = "Наименование специализации";
-                        data.Columns["spec_desc"].ColumnName = "Описание специализации";
                         dataGridViewStopType.DataSource = data;
                         break;
                     }
@@ -376,6 +364,7 @@ namespace TransportCompany
                         data.Columns["license_plate"].ColumnName = "Гос. номер транспорта";
                         data.Columns["driver_name"].ColumnName = "ФИО водителя";
                         data.Columns["model_name"].ColumnName = "Наименование модели";
+                        data.Columns["occupation"].ColumnName = "Занятость транспорта";
                         dataGridViewStopType.DataSource = data;
                         break;
                     }
@@ -385,7 +374,6 @@ namespace TransportCompany
                         DataTable data = daoTransModel.searchByName(name);
                         data.Columns["model_name"].ColumnName = "Наименование модели";
                         data.Columns["mark_name"].ColumnName = "Наименование марки";
-                        data.Columns["model_desc"].ColumnName = "Характеристика модели";
                         data.Columns["model_count"].ColumnName = "Количество в автопарке";
                         dataGridViewStopType.DataSource = data;
                         break;
@@ -397,18 +385,16 @@ namespace TransportCompany
         {
             switch (directory)
             {
-                case "StopType":
+                case "Operation":
                     {
                         try
                         {
                             int rowNum = dataGridViewStopType.CurrentCell.RowIndex;
                             string n = dataGridViewStopType[0, rowNum].Value.ToString();
-                            string d = dataGridViewStopType[1, rowNum].Value.ToString();
-                            FormChangeStopType form = new FormChangeStopType(n, d);
+                            FormChangeStopType form = new FormChangeStopType(n);
                             form.ShowDialog();
                             string name = form.textBoxUpdateStopTypeName.Text.ToString();
-                            string desc = form.textBoxUpdateStopTypeDesc.Text.ToString();
-                            StopType stopType = new StopType(name, desc);
+                            Operation stopType = new Operation(name);
                             daoST.updateType(n, stopType);
                             updateTable();
                             break;
@@ -426,13 +412,11 @@ namespace TransportCompany
                             int rowNum = dataGridViewStopType.CurrentCell.RowIndex;
                             string n = dataGridViewStopType[0, rowNum].Value.ToString();
                             string cn = dataGridViewStopType[1, rowNum].Value.ToString();
-                            string d = dataGridViewStopType[2, rowNum].Value.ToString();
-                            FormChangeDepartment form = new FormChangeDepartment(n, cn, d);
+                            FormChangeDepartment form = new FormChangeDepartment(n, cn);
                             form.ShowDialog();
                             string name = form.textBoxDepName.Text.ToString();
                             string compName = form.textBoxCompName.Text.ToString();
-                            string desc = form.textBoxDepDesc.Text.ToString();
-                            Department department = new Department(name, desc, compName);
+                            Department department = new Department(name, compName);
                             daoDep.updateType(n, department);
                             updateTable();
                             break;
@@ -449,12 +433,10 @@ namespace TransportCompany
                         {
                             int rowNum = dataGridViewStopType.CurrentCell.RowIndex;
                             string n = dataGridViewStopType[0, rowNum].Value.ToString();
-                            string d = dataGridViewStopType[1, rowNum].Value.ToString();
-                            FormCargoType form = new FormCargoType(n, d);
+                            FormCargoType form = new FormCargoType(n);
                             form.ShowDialog();
                             string name = form.textBoxCargoTypeName.Text.ToString();
-                            string desc = form.textBoxCargoTypeDesc.Text.ToString();
-                            CargoType cargoType = new CargoType(name, desc);
+                            CargoType cargoType = new CargoType(name);
                             daoCT.updateType(n, cargoType);
                             updateTable();
                             break;
@@ -471,12 +453,10 @@ namespace TransportCompany
                         {
                             int rowNum = dataGridViewStopType.CurrentCell.RowIndex;
                             string n = dataGridViewStopType[0, rowNum].Value.ToString();
-                            string d = dataGridViewStopType[1, rowNum].Value.ToString();
-                            FormChangeSpec form = new FormChangeSpec(n, d);
+                            FormChangeSpec form = new FormChangeSpec(n);
                             form.ShowDialog();
                             string name = form.textBoxSpecName.Text.ToString();
-                            string desc = form.textBoxSpecDesc.Text.ToString();
-                            Specialization spec = new Specialization(name, desc);
+                            Specialization spec = new Specialization(name);
                             daoSpec.updateType(n, spec);
                             updateTable();
                             break;
@@ -495,12 +475,14 @@ namespace TransportCompany
                             string n = dataGridViewStopType[0, rowNum].Value.ToString();
                             string d = dataGridViewStopType[1, rowNum].Value.ToString();
                             string m = dataGridViewStopType[2, rowNum].Value.ToString();
-                            FormChangeTrans form = new FormChangeTrans(n, d, m);
+                            string o = dataGridViewStopType[2, rowNum].Value.ToString();
+                            FormChangeTrans form = new FormChangeTrans(n, d, m, o);
                             form.ShowDialog();
                             string num = form.textBoxLicensePlate.Text.ToString();
                             string driver = form.comboBoxDrivers.SelectedItem.ToString();
                             string model = form.comboBoxModels.SelectedItem.ToString();
-                            Transport trans = new Transport(num, driver, model);
+                            string occup = form.textBoxOccupation.Text.ToString();
+                            Transport trans = new Transport(num, driver, model, occup);
                             daoTrans.updateType(n, trans);
                             updateTable();
                             break;
@@ -518,18 +500,16 @@ namespace TransportCompany
                             int rowNum = dataGridViewStopType.CurrentCell.RowIndex;
                             string n = dataGridViewStopType[0, rowNum].Value.ToString();
                             string mn = dataGridViewStopType[1, rowNum].Value.ToString();
-                            string d = dataGridViewStopType[2, rowNum].Value.ToString();
-                            string mc = dataGridViewStopType[3, rowNum].Value.ToString();
-                            FormChangeTransModel form = new FormChangeTransModel(n, mn, d, mc);
+                            string mc = dataGridViewStopType[2, rowNum].Value.ToString();
+                            FormChangeTransModel form = new FormChangeTransModel(n, mn, mc);
                             form.ShowDialog();
                             string modelName = form.textBoxModelName.Text.ToString();
                             string markName = form.textBoxMarkName.Text.ToString();
-                            string desc = form.textBoxModelDesc.Text.ToString();
                             string count = form.textBoxModelCount.Text.ToString();
                             TransportModel model;
                             if (Int32.TryParse(count, out int c))
                             {
-                                model = new TransportModel(modelName, markName, desc, c);
+                                model = new TransportModel(modelName, markName, c);
                                 daoTransModel.updateType(n, model);
                                 updateTable();
                             }

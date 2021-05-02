@@ -35,6 +35,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxDrivers = new System.Windows.Forms.ComboBox();
             this.comboBoxModels = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxOccupation = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label3
@@ -67,9 +69,9 @@
             // 
             // buttonChange
             // 
-            this.buttonChange.Location = new System.Drawing.Point(212, 145);
+            this.buttonChange.Location = new System.Drawing.Point(222, 184);
             this.buttonChange.Name = "buttonChange";
-            this.buttonChange.Size = new System.Drawing.Size(101, 28);
+            this.buttonChange.Size = new System.Drawing.Size(109, 37);
             this.buttonChange.TabIndex = 26;
             this.buttonChange.Text = "Сохранить";
             this.buttonChange.UseVisualStyleBackColor = true;
@@ -105,11 +107,29 @@
             this.comboBoxModels.TabIndex = 34;
             this.comboBoxModels.SelectedIndexChanged += new System.EventHandler(this.comboBoxModels_SelectedIndexChanged);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(21, 149);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(158, 17);
+            this.label2.TabIndex = 36;
+            this.label2.Text = "Занятость транспорта";
+            // 
+            // textBoxOccupation
+            // 
+            this.textBoxOccupation.Location = new System.Drawing.Point(283, 144);
+            this.textBoxOccupation.Name = "textBoxOccupation";
+            this.textBoxOccupation.Size = new System.Drawing.Size(238, 22);
+            this.textBoxOccupation.TabIndex = 35;
+            // 
             // FormChangeTrans
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(548, 192);
+            this.ClientSize = new System.Drawing.Size(548, 232);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBoxOccupation);
             this.Controls.Add(this.comboBoxModels);
             this.Controls.Add(this.comboBoxDrivers);
             this.Controls.Add(this.label1);
@@ -133,5 +153,7 @@
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.ComboBox comboBoxDrivers;
         public System.Windows.Forms.ComboBox comboBoxModels;
+        private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.TextBox textBoxOccupation;
     }
 }

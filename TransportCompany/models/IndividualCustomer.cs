@@ -8,8 +8,8 @@ namespace TransportCompany.models
 {
     public class IndividualCustomer : Customer
     {
-        public IndividualCustomer(string customerName, string customerEmail, string customerTel, string customerAddress, string customerBussinessAddress) 
-            : base(customerName, customerEmail, customerTel, customerAddress, customerBussinessAddress)
+        public IndividualCustomer(string customerName, string customerEmail, string customerTel, string customerAddress) 
+            : base(customerName, customerEmail, customerTel, customerAddress)
         {
         }
     }

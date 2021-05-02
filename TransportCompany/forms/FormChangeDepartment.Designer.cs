@@ -33,8 +33,6 @@
             this.textBoxDepName = new System.Windows.Forms.TextBox();
             this.textBoxCompName = new System.Windows.Forms.TextBox();
             this.buttonChangeStopType = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBoxDepDesc = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label3
@@ -71,38 +69,19 @@
             // 
             // buttonChangeStopType
             // 
-            this.buttonChangeStopType.Location = new System.Drawing.Point(206, 148);
+            this.buttonChangeStopType.Location = new System.Drawing.Point(206, 111);
             this.buttonChangeStopType.Name = "buttonChangeStopType";
-            this.buttonChangeStopType.Size = new System.Drawing.Size(101, 28);
+            this.buttonChangeStopType.Size = new System.Drawing.Size(109, 33);
             this.buttonChangeStopType.TabIndex = 16;
             this.buttonChangeStopType.Text = "Сохранить";
             this.buttonChangeStopType.UseVisualStyleBackColor = true;
             this.buttonChangeStopType.Click += new System.EventHandler(this.buttonChangeStopType_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 97);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 17);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "Описание отдела";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // textBoxDepDesc
-            // 
-            this.textBoxDepDesc.Location = new System.Drawing.Point(284, 97);
-            this.textBoxDepDesc.Name = "textBoxDepDesc";
-            this.textBoxDepDesc.Size = new System.Drawing.Size(238, 22);
-            this.textBoxDepDesc.TabIndex = 21;
-            // 
             // FormChangeDepartment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(546, 194);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBoxDepDesc);
+            this.ClientSize = new System.Drawing.Size(546, 156);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBoxDepName);
@@ -123,7 +102,5 @@
         public System.Windows.Forms.TextBox textBoxDepName;
         public System.Windows.Forms.TextBox textBoxCompName;
         private System.Windows.Forms.Button buttonChangeStopType;
-        private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.TextBox textBoxDepDesc;
     }
 }

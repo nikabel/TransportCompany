@@ -144,7 +144,7 @@
             // 
             this.видыОстановокToolStripMenuItem.Name = "видыОстановокToolStripMenuItem";
             this.видыОстановокToolStripMenuItem.Size = new System.Drawing.Size(287, 26);
-            this.видыОстановокToolStripMenuItem.Text = "Виды остановок";
+            this.видыОстановокToolStripMenuItem.Text = "Операции";
             this.видыОстановокToolStripMenuItem.Click += new System.EventHandler(this.видыОстановокToolStripMenuItem_Click);
             // 
             // заказчикиToolStripMenuItem

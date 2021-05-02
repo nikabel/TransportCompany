@@ -70,7 +70,7 @@ namespace TransportCompany.DAO
         {
             try
             {
-                string query = String.Format("Insert TransportModel values ('{0}', '{1}', '{2}', '{3}')", model.ModelName, model.MarkName, model.ModelDesc, model.ModelCount);
+                string query = String.Format("Insert TransportModel values ('{0}', '{1}', '{2}')", model.ModelName, model.MarkName, model.ModelCount);
                 connect.executeNonQuery(query);
                 return true;
             }
@@ -84,7 +84,7 @@ namespace TransportCompany.DAO
         {
             try
             {
-                string query = String.Format("SELECT model_name, mark_name, model_desc, model_count FROM TransportModel WHERE model_name LIKE '{0}' + '%'", name);
+                string query = String.Format("SELECT model_name, mark_name, model_count FROM TransportModel WHERE model_name LIKE '{0}' + '%'", name);
                 DataTable dt = connect.executeQuery(query);
                 return dt;
             }
@@ -99,7 +99,7 @@ namespace TransportCompany.DAO
         {
             try
             {
-                string query = String.Format("UPDATE TransportModel SET model_name = '{0}', mark_name= '{1}', model_desc = '{2}', model_count = '{3}' WHERE cargo_type_name = '{4}' ", newTransportModel.ModelName, newTransportModel.MarkName, newTransportModel.ModelDesc, newTransportModel.ModelCount, oldName);
+                string query = String.Format("UPDATE TransportModel SET model_name = '{0}', mark_name= '{1}', model_count = '{3}' WHERE cargo_type_name = '{4}' ", newTransportModel.ModelName, newTransportModel.MarkName, newTransportModel.ModelCount, oldName);
                 connect.executeNonQuery(query);
                 return true;
             }

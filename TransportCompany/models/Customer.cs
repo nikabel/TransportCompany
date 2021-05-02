@@ -14,19 +14,17 @@ namespace TransportCompany.models
         private string _customerAddress;
         private string _customerBussinessAddress;
 
-        public Customer(string customerName, string customerEmail, string customerTel, string customerAddress, string customerBussinessAddress)
+        public Customer(string customerName, string customerEmail, string customerTel, string customerAddress)
         {
             CustomerName = customerName;
             CustomerEmail = customerEmail;
             CustomerTel = customerTel;
             CustomerAddress = customerAddress;
-            CustomerBussinessAddress = customerBussinessAddress;
         }
 
         public string CustomerName { get => _customerName; set => _customerName = value; }
         public string CustomerEmail { get => _customerEmail; set => _customerEmail = value; }
         public string CustomerTel { get => _customerTel; set => _customerTel = value; }
         public string CustomerAddress { get => _customerAddress; set => _customerAddress = value; }
-        public string CustomerBussinessAddress { get => _customerBussinessAddress; set => _customerBussinessAddress = value; }
     }
 }

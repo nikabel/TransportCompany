@@ -35,9 +35,9 @@ namespace TransportCompany.forms
             dataC.Columns["email"].ColumnName = "E-mail";
             dataC.Columns["customer_tel_num"].ColumnName = "Номер телефона";
             dataC.Columns["customer_address"].ColumnName = "Фактический адрес";
-            dataC.Columns["customer_business_address"].ColumnName = "Юридический адрес";
             dataEC.Columns["entity_director_name"].ColumnName = "ФИО директора";
             dataEC.Columns["entity_company_name"].ColumnName = "Название компании";
+            dataEC.Columns["customer_business_address"].ColumnName = "Юридический адрес";
             dataIC.Columns["customer_name"].ColumnName = "ФИО";
             dataGridViewCustomer.DataSource = dataC;
             dataGridViewEntityCustomer.DataSource = dataEC;
@@ -54,9 +54,9 @@ namespace TransportCompany.forms
             dataC.Columns["email"].ColumnName = "E-mail";
             dataC.Columns["customer_tel_num"].ColumnName = "Номер телефона";
             dataC.Columns["customer_address"].ColumnName = "Фактический адрес";
-            dataC.Columns["customer_business_address"].ColumnName = "Юридический адрес";
             dataEC.Columns["entity_director_name"].ColumnName = "ФИО директора";
             dataEC.Columns["entity_company_name"].ColumnName = "Название компании";
+            dataEC.Columns["customer_business_address"].ColumnName = "Юридический адрес";
             dataIC.Columns["customer_name"].ColumnName = "ФИО";
             dataGridViewCustomer.DataSource = dataC;
             dataGridViewEntityCustomer.DataSource = dataEC;
@@ -84,7 +84,7 @@ namespace TransportCompany.forms
                 string adr = form.textBoxAdr.Text.ToString();
                 string badr = form.textBoxBiAdr.Text.ToString();
                 string comp = form.textBoxCompName.Text.ToString();
-                Customer customer = new Customer(name, email, tel, adr, badr);
+                Customer customer = new Customer(name, email, tel, adr);
                 EntityCustomer entityCustomer = new EntityCustomer(name, email, tel, adr, badr, comp);
                 daoC.addCustomer(customer);
                 daoEC.addCustomer(entityCustomer);
@@ -100,15 +100,14 @@ namespace TransportCompany.forms
         {
             try
             {
-                FormChangeIndividual form = new FormChangeIndividual("", "", "", "", "");
+                FormChangeIndividual form = new FormChangeIndividual("", "", "", "");
                 form.ShowDialog();
                 string name = form.textBoxName.Text.ToString();
                 string email = form.textBoxEmail.Text.ToString();
                 string tel = form.textBoxTel.Text.ToString();
                 string adr = form.textBoxAdr.Text.ToString();
-                string badr = form.textBoxBiAdr.Text.ToString();
-                Customer customer = new Customer(name, email, tel, adr, badr);
-                IndividualCustomer individualCustomer = new IndividualCustomer(name, email, tel, adr, badr);
+                Customer customer = new Customer(name, email, tel, adr);
+                IndividualCustomer individualCustomer = new IndividualCustomer(name, email, tel, adr);
                 daoC.addCustomer(customer);
                 daoIC.addCustomer(individualCustomer);
                 updateTable();
@@ -126,8 +125,9 @@ namespace TransportCompany.forms
                 int rowNum = dataGridViewEntityCustomer.CurrentCell.RowIndex;
                 string n = dataGridViewEntityCustomer[0, rowNum].Value.ToString();
                 string c = dataGridViewEntityCustomer[1, rowNum].Value.ToString();
+                string b = dataGridViewEntityCustomer[2, rowNum].Value.ToString();
                 Customer cust = daoC.getCustomerByName(n);
-                FormChangeEntity form = new FormChangeEntity(n, cust.CustomerEmail, cust.CustomerTel, cust.CustomerAddress, cust.CustomerBussinessAddress, c);                
+                FormChangeEntity form = new FormChangeEntity(n, cust.CustomerEmail, cust.CustomerTel, cust.CustomerAddress, b, c);                
                 form.ShowDialog();
                 string name = form.textBoxName.Text.ToString();
                 string email = form.textBoxEmail.Text.ToString();
@@ -135,7 +135,7 @@ namespace TransportCompany.forms
                 string adr = form.textBoxAdr.Text.ToString();
                 string badr = form.textBoxBiAdr.Text.ToString();
                 string comp = form.textBoxCompName.Text.ToString();
-                Customer customer = new Customer(name, email, tel, adr, badr);
+                Customer customer = new Customer(name, email, tel, adr);
                 EntityCustomer entityCustomer = new EntityCustomer(name, email, tel, adr, badr, comp);
                 daoC.updateCustomer(n, customer);
                 daoEC.updateCustomer(n, entityCustomer);
@@ -154,15 +154,14 @@ namespace TransportCompany.forms
                 int rowNum = dataGridViewIndividualCustomer.CurrentCell.RowIndex;
                 string n = dataGridViewIndividualCustomer[0, rowNum].Value.ToString();
                 Customer cust = daoC.getCustomerByName(n);
-                FormChangeIndividual form = new FormChangeIndividual(n, cust.CustomerEmail, cust.CustomerTel, cust.CustomerAddress, cust.CustomerBussinessAddress); 
+                FormChangeIndividual form = new FormChangeIndividual(n, cust.CustomerEmail, cust.CustomerTel, cust.CustomerAddress); 
                 form.ShowDialog();
                 string name = form.textBoxName.Text.ToString();
                 string email = form.textBoxEmail.Text.ToString();
                 string tel = form.textBoxTel.Text.ToString();
                 string adr = form.textBoxAdr.Text.ToString();
-                string badr = form.textBoxBiAdr.Text.ToString();
-                Customer customer = new Customer(name, email, tel, adr, badr);
-                IndividualCustomer indCustomer = new IndividualCustomer(name, email, tel, adr, badr);
+                Customer customer = new Customer(name, email, tel, adr);
+                IndividualCustomer indCustomer = new IndividualCustomer(name, email, tel, adr);
                 daoC.updateCustomer(n, customer);
                 daoIC.updateCustomer(n, indCustomer);
                 updateTable();

@@ -7,20 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TransportCompany.DAO;
-using TransportCompany.models;
 
 namespace TransportCompany
 {
     public partial class FormChangeStopType : Form
     {
-        DBUtil connect = new DBUtil();
-        StopTypeDAO dao = new StopTypeDAO();
-        public FormChangeStopType(string n, string d)
+        public FormChangeStopType(string n)
         {
             InitializeComponent();
             textBoxUpdateStopTypeName.Text = n;
-            textBoxUpdateStopTypeDesc.Text = d;
         }
 
         private void FormChangeStopType_Load(object sender, EventArgs e)

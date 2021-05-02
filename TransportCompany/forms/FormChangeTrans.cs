@@ -17,7 +17,7 @@ namespace TransportCompany.forms
         DriverDAO daoDriver = new DriverDAO();
         TransportModelDAO daoModel = new TransportModelDAO();
 
-        public FormChangeTrans(string num, string dn, string mn)
+        public FormChangeTrans(string num, string dn, string mn, string occ)
         {
             InitializeComponent();
             textBoxLicensePlate.Text = num;
@@ -25,6 +25,7 @@ namespace TransportCompany.forms
             comboBoxDrivers.SelectedItem = dn;
             comboBoxModels.Items.AddRange(daoModel.getAllTransModels());
             comboBoxModels.SelectedItem = mn;
+            textBoxOccupation.Text = occ;
         }
 
         private void buttonChange_Click(object sender, EventArgs e)

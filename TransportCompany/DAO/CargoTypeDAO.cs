@@ -40,7 +40,7 @@ namespace TransportCompany.DAO
         {
             try
             {
-                string query = String.Format("Insert CargoType values ('{0}', '{1}')", cargoType.CargoTypeName, cargoType.CargoTypeDesc);
+                string query = String.Format("Insert CargoType values ('{0}')", cargoType.CargoTypeName);
                 connect.executeNonQuery(query);
                 return true;
             }
@@ -54,7 +54,7 @@ namespace TransportCompany.DAO
         {
             try
             {
-                string query = String.Format("SELECT cargo_type_name, cargo_type_desc FROM CargoType WHERE cargo_type_name LIKE '{0}' + '%'", name);
+                string query = String.Format("SELECT cargo_type_name FROM CargoType WHERE cargo_type_name LIKE '{0}' + '%'", name);
                 DataTable dt = connect.executeQuery(query);
                 return dt;
             }
@@ -69,7 +69,7 @@ namespace TransportCompany.DAO
         {
             try
             {
-                string query = String.Format("UPDATE CargoType SET cargo_type_name = '{0}', cargo_type_desc = '{1}' WHERE cargo_type_name = '{2}' ", newCargoType.CargoTypeName, newCargoType.CargoTypeDesc, oldName);
+                string query = String.Format("UPDATE CargoType SET cargo_type_name = '{0}' WHERE cargo_type_name = '{2}' ", newCargoType.CargoTypeName, oldName);
                 connect.executeNonQuery(query);
                 return true;
             }

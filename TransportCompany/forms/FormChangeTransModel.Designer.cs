@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBoxModelDesc = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxModelName = new System.Windows.Forms.TextBox();
@@ -38,22 +36,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxModelCount = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 96);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(169, 17);
-            this.label1.TabIndex = 29;
-            this.label1.Text = "Характеристика модели";
-            // 
-            // textBoxModelDesc
-            // 
-            this.textBoxModelDesc.Location = new System.Drawing.Point(274, 96);
-            this.textBoxModelDesc.Name = "textBoxModelDesc";
-            this.textBoxModelDesc.Size = new System.Drawing.Size(238, 22);
-            this.textBoxModelDesc.TabIndex = 28;
             // 
             // label3
             // 
@@ -89,9 +71,9 @@
             // 
             // buttonChangeStopType
             // 
-            this.buttonChangeStopType.Location = new System.Drawing.Point(204, 185);
+            this.buttonChangeStopType.Location = new System.Drawing.Point(206, 145);
             this.buttonChangeStopType.Name = "buttonChangeStopType";
-            this.buttonChangeStopType.Size = new System.Drawing.Size(101, 28);
+            this.buttonChangeStopType.Size = new System.Drawing.Size(111, 38);
             this.buttonChangeStopType.TabIndex = 23;
             this.buttonChangeStopType.Text = "Сохранить";
             this.buttonChangeStopType.UseVisualStyleBackColor = true;
@@ -100,7 +82,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 136);
+            this.label2.Location = new System.Drawing.Point(12, 101);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(170, 17);
             this.label2.TabIndex = 31;
@@ -108,7 +90,7 @@
             // 
             // textBoxModelCount
             // 
-            this.textBoxModelCount.Location = new System.Drawing.Point(274, 136);
+            this.textBoxModelCount.Location = new System.Drawing.Point(274, 101);
             this.textBoxModelCount.Name = "textBoxModelCount";
             this.textBoxModelCount.Size = new System.Drawing.Size(238, 22);
             this.textBoxModelCount.TabIndex = 30;
@@ -117,11 +99,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(530, 235);
+            this.ClientSize = new System.Drawing.Size(530, 195);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxModelCount);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBoxModelDesc);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBoxModelName);
@@ -136,9 +116,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.TextBox textBoxModelDesc;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.TextBox textBoxModelName;

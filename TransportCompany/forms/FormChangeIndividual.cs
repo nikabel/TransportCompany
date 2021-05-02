@@ -12,14 +12,13 @@ namespace TransportCompany.forms
 {
     public partial class FormChangeIndividual : Form
     {
-        public FormChangeIndividual(string name, string email, string tel, string adr, string badr)
+        public FormChangeIndividual(string name, string email, string tel, string adr)
         {
             InitializeComponent();
             textBoxName.Text = name;
             textBoxEmail.Text = email;
             textBoxTel.Text = tel;
             textBoxAdr.Text = adr;
-            textBoxBiAdr.Text = badr;
         }
 
         private void buttonChange_Click(object sender, EventArgs e)

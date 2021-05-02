@@ -67,8 +67,7 @@ namespace TransportCompany.DAO
                     string email = dr.GetString(1);
                     string tel = dr.GetString(2);
                     string adr = dr.GetString(3);
-                    string badr = dr.GetString(4);
-                    customers.Add(new Customer(fio, email, tel, adr, badr));
+                    customers.Add(new Customer(fio, email, tel, adr));
                 }
 
                 Customer[] customerNames = customers.ToArray();
@@ -100,8 +99,8 @@ namespace TransportCompany.DAO
         {
             try
             {
-                string query = String.Format("Insert Customer values ('{0}', '{1}', '{2}', '{3}', '{4}')", 
-                    customer.CustomerName, customer.CustomerEmail, customer.CustomerTel, customer.CustomerAddress, customer.CustomerBussinessAddress);
+                string query = String.Format("Insert Customer values ('{0}', '{1}', '{2}', '{3}')", 
+                    customer.CustomerName, customer.CustomerEmail, customer.CustomerTel, customer.CustomerAddress);
                 connect.executeNonQuery(query);
                 return true;
             }
@@ -115,7 +114,7 @@ namespace TransportCompany.DAO
         {
             try
             {
-                string query = String.Format("SELECT customer_name, email, customer_tel_num, customer_address, customer_business_address FROM Customer where customer_name LIKE '{0}' + '%'", str);
+                string query = String.Format("SELECT customer_name, email, customer_tel_num, customer_address FROM Customer where customer_name LIKE '{0}' + '%'", str);
                 DataTable dt = connect.executeQuery(query);
                 return dt;
             }
@@ -130,8 +129,8 @@ namespace TransportCompany.DAO
         {
             try
             {
-                string query = String.Format("UPDATE Customer SET customer_name = '{0}',email = '{1}', customer_tel_num = '{2}', customer_address = '{3}',  customer_business_address = '{4}' WHERE customer_name = '{5}' ",
-                    newCustomer.CustomerName, newCustomer.CustomerEmail, newCustomer.CustomerTel, newCustomer.CustomerAddress, newCustomer.CustomerBussinessAddress, oldName);
+                string query = String.Format("UPDATE Customer SET customer_name = '{0}',email = '{1}', customer_tel_num = '{2}', customer_address = '{3}' WHERE customer_name = '{4}' ",
+                    newCustomer.CustomerName, newCustomer.CustomerEmail, newCustomer.CustomerTel, newCustomer.CustomerAddress, oldName);
                 connect.executeNonQuery(query);
                 return true;
             }

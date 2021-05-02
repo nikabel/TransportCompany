@@ -12,12 +12,11 @@ namespace TransportCompany.forms
 {
     public partial class FormChangeDepartment : Form
     {
-        public FormChangeDepartment(string n, string cn, string d)
+        public FormChangeDepartment(string n, string cn)
         {
             InitializeComponent();
             textBoxDepName.Text = n;
             textBoxCompName.Text = cn;
-            textBoxDepDesc.Text = d;
         }
 
         private void buttonChangeStopType_Click(object sender, EventArgs e)

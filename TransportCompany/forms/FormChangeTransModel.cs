@@ -14,12 +14,11 @@ namespace TransportCompany.forms
     public partial class FormChangeTransModel : Form
     {
 
-        public FormChangeTransModel(string n, string mn, string d, string mc)
+        public FormChangeTransModel(string n, string mn, string mc)
         {
             InitializeComponent();
             textBoxModelName.Text = n;
             textBoxMarkName.Text = mn;
-            textBoxModelDesc.Text = d;
             textBoxModelCount.Text = mc;
         }
 
