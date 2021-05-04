@@ -16,10 +16,11 @@ namespace TransportCompany.models
         private string _ogrn;
         private string _corrAcc;
 
-        public BankDetails(string acc, string companyName, string inn, string rcbic, string ogrn, string corrAcc)
+        public BankDetails(string acc, string companyName, string customerName, string inn, string rcbic, string ogrn, string corrAcc)
         {
             Acc = acc;
             CompanyName = companyName;
+            CustomerName = customerName;
             Inn = inn;
             Rcbic = rcbic;
             Ogrn = ogrn;

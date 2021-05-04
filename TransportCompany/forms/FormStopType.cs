@@ -254,7 +254,7 @@ namespace TransportCompany
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Модел не должна повторяться!" + ex);
+                            MessageBox.Show("Модель не должна повторяться!" + ex);
                             break;
                         }
                     }

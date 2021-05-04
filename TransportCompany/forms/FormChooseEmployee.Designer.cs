@@ -32,15 +32,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.buttonChoose = new System.Windows.Forms.Button();
-            this.dateTimePickerService = new System.Windows.Forms.DateTimePicker();
+            this.dateService = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxService = new System.Windows.Forms.TextBox();
+            this.textBoxCost = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewServices = new System.Windows.Forms.DataGridView();
             this.labelContractNum = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewServices)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBoxName
@@ -78,13 +78,15 @@
             this.buttonChoose.TabIndex = 60;
             this.buttonChoose.Text = "Назначить";
             this.buttonChoose.UseVisualStyleBackColor = true;
+            this.buttonChoose.Click += new System.EventHandler(this.buttonChoose_Click);
             // 
-            // dateTimePickerService
+            // dateService
             // 
-            this.dateTimePickerService.Location = new System.Drawing.Point(235, 203);
-            this.dateTimePickerService.Name = "dateTimePickerService";
-            this.dateTimePickerService.Size = new System.Drawing.Size(238, 22);
-            this.dateTimePickerService.TabIndex = 62;
+            this.dateService.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateService.Location = new System.Drawing.Point(235, 203);
+            this.dateService.Name = "dateService";
+            this.dateService.Size = new System.Drawing.Size(238, 22);
+            this.dateService.TabIndex = 62;
             // 
             // label4
             // 
@@ -95,20 +97,20 @@
             this.label4.TabIndex = 61;
             this.label4.Text = "Дата оказания";
             // 
-            // textBox1
+            // textBoxService
             // 
-            this.textBox1.Location = new System.Drawing.Point(235, 105);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(238, 22);
-            this.textBox1.TabIndex = 63;
+            this.textBoxService.Location = new System.Drawing.Point(235, 105);
+            this.textBoxService.Name = "textBoxService";
+            this.textBoxService.Size = new System.Drawing.Size(238, 22);
+            this.textBoxService.TabIndex = 63;
             // 
-            // textBox2
+            // textBoxCost
             // 
-            this.textBox2.Location = new System.Drawing.Point(235, 153);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(238, 22);
-            this.textBox2.TabIndex = 65;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textBoxCost.Location = new System.Drawing.Point(235, 153);
+            this.textBoxCost.Name = "textBoxCost";
+            this.textBoxCost.Size = new System.Drawing.Size(238, 22);
+            this.textBoxCost.TabIndex = 65;
+            this.textBoxCost.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label5
             // 
@@ -120,24 +122,25 @@
             this.label5.Text = "Стоимость услуги";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
-            // dataGridView1
+            // dataGridViewServices
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(526, 53);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(696, 254);
-            this.dataGridView1.TabIndex = 66;
+            this.dataGridViewServices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewServices.Location = new System.Drawing.Point(526, 53);
+            this.dataGridViewServices.Name = "dataGridViewServices";
+            this.dataGridViewServices.RowHeadersWidth = 51;
+            this.dataGridViewServices.RowTemplate.Height = 24;
+            this.dataGridViewServices.Size = new System.Drawing.Size(696, 254);
+            this.dataGridViewServices.TabIndex = 66;
             // 
             // labelContractNum
             // 
             this.labelContractNum.AutoSize = true;
             this.labelContractNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelContractNum.Location = new System.Drawing.Point(1050, 25);
+            this.labelContractNum.Location = new System.Drawing.Point(1128, 25);
             this.labelContractNum.Name = "labelContractNum";
             this.labelContractNum.Size = new System.Drawing.Size(0, 25);
             this.labelContractNum.TabIndex = 98;
+            this.labelContractNum.Click += new System.EventHandler(this.labelContractNum_Click);
             // 
             // label2
             // 
@@ -148,6 +151,7 @@
             this.label2.Size = new System.Drawing.Size(529, 25);
             this.label2.TabIndex = 97;
             this.label2.Text = "Список сотрудников для работы над договором №";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // FormChooseEmployee
             // 
@@ -156,11 +160,11 @@
             this.ClientSize = new System.Drawing.Size(1234, 335);
             this.Controls.Add(this.labelContractNum);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.dataGridViewServices);
+            this.Controls.Add(this.textBoxCost);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dateTimePickerService);
+            this.Controls.Add(this.textBoxService);
+            this.Controls.Add(this.dateService);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.buttonChoose);
             this.Controls.Add(this.label3);
@@ -169,7 +173,7 @@
             this.Name = "FormChooseEmployee";
             this.Text = "Назначение сотрудников для работы над заказом";
             this.Load += new System.EventHandler(this.FormChooseEmployee_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewServices)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,12 +184,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button buttonChoose;
-        private System.Windows.Forms.DateTimePicker dateTimePickerService;
+        private System.Windows.Forms.DateTimePicker dateService;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxService;
+        private System.Windows.Forms.TextBox textBoxCost;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewServices;
         private System.Windows.Forms.Label labelContractNum;
         private System.Windows.Forms.Label label2;
     }

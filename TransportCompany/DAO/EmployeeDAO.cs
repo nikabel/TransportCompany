@@ -58,6 +58,31 @@ namespace TransportCompany.DAO
             }
         }
 
+        public string[] getAllEmployees()
+        {
+            SqlConnection conn = connect.createConnection();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("select employee_name from Employee", conn);
+                conn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                var employees = new List<string>();
+                while (dr.Read())
+                {
+                    employees.Add(dr.GetString(0));
+                }
+
+                string[] employeeNames = employees.ToArray();
+                dr.Close();
+                conn.Close();
+                return employeeNames;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
         public bool deleteByName(string name)
         {
             try

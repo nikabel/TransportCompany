@@ -41,6 +41,16 @@
             this.buttonChange = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxAdr = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBoxCorrACC = new System.Windows.Forms.TextBox();
+            this.textBoxOGRN = new System.Windows.Forms.TextBox();
+            this.textBoxRCBIC = new System.Windows.Forms.TextBox();
+            this.textBoxINN = new System.Windows.Forms.TextBox();
+            this.textBoxACC = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label7
@@ -126,7 +136,7 @@
             // 
             // buttonChange
             // 
-            this.buttonChange.Location = new System.Drawing.Point(196, 348);
+            this.buttonChange.Location = new System.Drawing.Point(195, 564);
             this.buttonChange.Name = "buttonChange";
             this.buttonChange.Size = new System.Drawing.Size(111, 39);
             this.buttonChange.TabIndex = 66;
@@ -151,11 +161,101 @@
             this.textBoxAdr.Size = new System.Drawing.Size(238, 54);
             this.textBoxAdr.TabIndex = 79;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(12, 504);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(175, 17);
+            this.label9.TabIndex = 113;
+            this.label9.Text = "Корреспондентский счет";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(12, 463);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(66, 17);
+            this.label8.TabIndex = 112;
+            this.label8.Text = "ОГРНИП";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 420);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(36, 17);
+            this.label2.TabIndex = 111;
+            this.label2.Text = "БИК";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(12, 378);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(38, 17);
+            this.label10.TabIndex = 110;
+            this.label10.Text = "ИНН";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(12, 337);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(115, 17);
+            this.label11.TabIndex = 109;
+            this.label11.Text = "Расчетный счет";
+            // 
+            // textBoxCorrACC
+            // 
+            this.textBoxCorrACC.Location = new System.Drawing.Point(274, 504);
+            this.textBoxCorrACC.Name = "textBoxCorrACC";
+            this.textBoxCorrACC.Size = new System.Drawing.Size(238, 22);
+            this.textBoxCorrACC.TabIndex = 108;
+            // 
+            // textBoxOGRN
+            // 
+            this.textBoxOGRN.Location = new System.Drawing.Point(274, 463);
+            this.textBoxOGRN.Name = "textBoxOGRN";
+            this.textBoxOGRN.Size = new System.Drawing.Size(238, 22);
+            this.textBoxOGRN.TabIndex = 107;
+            // 
+            // textBoxRCBIC
+            // 
+            this.textBoxRCBIC.Location = new System.Drawing.Point(274, 420);
+            this.textBoxRCBIC.Name = "textBoxRCBIC";
+            this.textBoxRCBIC.Size = new System.Drawing.Size(238, 22);
+            this.textBoxRCBIC.TabIndex = 106;
+            // 
+            // textBoxINN
+            // 
+            this.textBoxINN.Location = new System.Drawing.Point(274, 378);
+            this.textBoxINN.Name = "textBoxINN";
+            this.textBoxINN.Size = new System.Drawing.Size(238, 22);
+            this.textBoxINN.TabIndex = 105;
+            // 
+            // textBoxACC
+            // 
+            this.textBoxACC.Location = new System.Drawing.Point(274, 337);
+            this.textBoxACC.Name = "textBoxACC";
+            this.textBoxACC.Size = new System.Drawing.Size(238, 22);
+            this.textBoxACC.TabIndex = 104;
+            // 
             // FormChangeEntity
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(537, 405);
+            this.ClientSize = new System.Drawing.Size(537, 614);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.textBoxCorrACC);
+            this.Controls.Add(this.textBoxOGRN);
+            this.Controls.Add(this.textBoxRCBIC);
+            this.Controls.Add(this.textBoxINN);
+            this.Controls.Add(this.textBoxACC);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxAdr);
             this.Controls.Add(this.label7);
@@ -190,5 +290,15 @@
         private System.Windows.Forms.Button buttonChange;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox textBoxAdr;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        public System.Windows.Forms.TextBox textBoxCorrACC;
+        public System.Windows.Forms.TextBox textBoxOGRN;
+        public System.Windows.Forms.TextBox textBoxRCBIC;
+        public System.Windows.Forms.TextBox textBoxINN;
+        public System.Windows.Forms.TextBox textBoxACC;
     }
 }

@@ -18,6 +18,7 @@ namespace TransportCompany.forms
         CustomerDAO daoC = new CustomerDAO();
         EntityCustomerDAO daoEC = new EntityCustomerDAO();
         IndividualCustomerDAO daoIC = new IndividualCustomerDAO();
+        BankDetailsDAO daoBD = new BankDetailsDAO();
 
         public FormCustomer()
         {
@@ -69,6 +70,11 @@ namespace TransportCompany.forms
             int rowNum = dataGridViewCustomer.CurrentCell.RowIndex;
             string name = dataGridViewCustomer[0, rowNum].Value.ToString();
             daoC.deleteByName(name);
+            BankDetails details = daoBD.getBankByName(name);
+            if (details != null)
+            {
+                daoBD.deleteByName(name);
+            }
             updateTable();
         }
 
@@ -88,6 +94,14 @@ namespace TransportCompany.forms
                 EntityCustomer entityCustomer = new EntityCustomer(name, email, tel, adr, badr, comp);
                 daoC.addCustomer(customer);
                 daoEC.addCustomer(entityCustomer);
+
+                string acc = form.textBoxACC.Text.ToString();
+                string inn = form.textBoxINN.Text.ToString();
+                string rcbic = form.textBoxRCBIC.Text.ToString();
+                string ogrn = form.textBoxOGRN.Text.ToString();
+                string cacc = form.textBoxCorrACC.Text.ToString();
+                BankDetails details = new BankDetails(acc, null, name, inn, rcbic, ogrn, cacc);
+                daoBD.addBankDetails(details);
                 updateTable();
             }
             catch (Exception ex)
@@ -110,6 +124,15 @@ namespace TransportCompany.forms
                 IndividualCustomer individualCustomer = new IndividualCustomer(name, email, tel, adr);
                 daoC.addCustomer(customer);
                 daoIC.addCustomer(individualCustomer);
+
+                string acc = form.textBoxACC.Text.ToString();
+                string inn = form.textBoxINN.Text.ToString();
+                string rcbic = form.textBoxRCBIC.Text.ToString();
+                string ogrn = form.textBoxOGRN.Text.ToString();
+                string cacc = form.textBoxCorrACC.Text.ToString();
+                BankDetails details = new BankDetails(acc, null, name, inn, rcbic, ogrn, cacc);
+                daoBD.addBankDetails(details);
+
                 updateTable();
             }
             catch (Exception ex)
@@ -127,6 +150,7 @@ namespace TransportCompany.forms
                 string c = dataGridViewEntityCustomer[1, rowNum].Value.ToString();
                 string b = dataGridViewEntityCustomer[2, rowNum].Value.ToString();
                 Customer cust = daoC.getCustomerByName(n);
+                BankDetails details = daoBD.getBankByName(n);
                 FormChangeEntity form = new FormChangeEntity(n, cust.CustomerEmail, cust.CustomerTel, cust.CustomerAddress, b, c);                
                 form.ShowDialog();
                 string name = form.textBoxName.Text.ToString();
@@ -139,6 +163,14 @@ namespace TransportCompany.forms
                 EntityCustomer entityCustomer = new EntityCustomer(name, email, tel, adr, badr, comp);
                 daoC.updateCustomer(n, customer);
                 daoEC.updateCustomer(n, entityCustomer);
+
+                string acc = form.textBoxACC.Text.ToString();
+                string inn = form.textBoxINN.Text.ToString();
+                string rcbic = form.textBoxRCBIC.Text.ToString();
+                string ogrn = form.textBoxOGRN.Text.ToString();
+                string cacc = form.textBoxCorrACC.Text.ToString();
+                BankDetails det= new BankDetails(acc, null, name, inn, rcbic, ogrn, cacc);
+                daoBD.updateBankDetails(details.Acc, det);
                 updateTable();
             }
             catch (Exception ex)
@@ -154,6 +186,7 @@ namespace TransportCompany.forms
                 int rowNum = dataGridViewIndividualCustomer.CurrentCell.RowIndex;
                 string n = dataGridViewIndividualCustomer[0, rowNum].Value.ToString();
                 Customer cust = daoC.getCustomerByName(n);
+                BankDetails details = daoBD.getBankByName(n);
                 FormChangeIndividual form = new FormChangeIndividual(n, cust.CustomerEmail, cust.CustomerTel, cust.CustomerAddress); 
                 form.ShowDialog();
                 string name = form.textBoxName.Text.ToString();
@@ -164,6 +197,15 @@ namespace TransportCompany.forms
                 IndividualCustomer indCustomer = new IndividualCustomer(name, email, tel, adr);
                 daoC.updateCustomer(n, customer);
                 daoIC.updateCustomer(n, indCustomer);
+
+                string acc = form.textBoxACC.Text.ToString();
+                string inn = form.textBoxINN.Text.ToString();
+                string rcbic = form.textBoxRCBIC.Text.ToString();
+                string ogrn = form.textBoxOGRN.Text.ToString();
+                string cacc = form.textBoxCorrACC.Text.ToString();
+                BankDetails det = new BankDetails(acc, null, name, inn, rcbic, ogrn, cacc);
+                daoBD.updateBankDetails(details.Acc, det);
+
                 updateTable();
             }
             catch (Exception ex)

@@ -35,7 +35,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.comboBoxCustomer = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateExpierience = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -48,10 +48,12 @@
             // 
             // dateSign
             // 
+            this.dateSign.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateSign.Location = new System.Drawing.Point(222, 111);
             this.dateSign.Name = "dateSign";
             this.dateSign.Size = new System.Drawing.Size(238, 22);
             this.dateSign.TabIndex = 84;
+            this.dateSign.ValueChanged += new System.EventHandler(this.dateSign_ValueChanged);
             // 
             // label4
             // 
@@ -99,12 +101,13 @@
             this.label2.TabIndex = 79;
             this.label2.Text = "Номер договора";
             // 
-            // dateTimePicker1
+            // dateExpierience
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(222, 154);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(238, 22);
-            this.dateTimePicker1.TabIndex = 89;
+            this.dateExpierience.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateExpierience.Location = new System.Drawing.Point(222, 154);
+            this.dateExpierience.Name = "dateExpierience";
+            this.dateExpierience.Size = new System.Drawing.Size(238, 22);
+            this.dateExpierience.TabIndex = 89;
             // 
             // label1
             // 
@@ -120,7 +123,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 271);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dateExpierience);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxContractNum);
             this.Controls.Add(this.dateSign);
@@ -144,7 +147,7 @@
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.ComboBox comboBoxCustomer;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateExpierience;
         private System.Windows.Forms.Label label1;
     }
 }

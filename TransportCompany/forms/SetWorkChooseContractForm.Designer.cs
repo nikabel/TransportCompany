@@ -31,7 +31,7 @@
             this.buttonChoose = new System.Windows.Forms.Button();
             this.comboBoxContractNum = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxContracts = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -63,14 +63,14 @@
             this.label2.TabIndex = 61;
             this.label2.Text = "Номер договора";
             // 
-            // comboBox1
+            // comboBoxContracts
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(247, 55);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(238, 24);
-            this.comboBox1.TabIndex = 65;
+            this.comboBoxContracts.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxContracts.FormattingEnabled = true;
+            this.comboBoxContracts.Location = new System.Drawing.Point(247, 55);
+            this.comboBoxContracts.Name = "comboBoxContracts";
+            this.comboBoxContracts.Size = new System.Drawing.Size(238, 24);
+            this.comboBoxContracts.TabIndex = 65;
             // 
             // label1
             // 
@@ -86,7 +86,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(512, 191);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBoxContracts);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonChoose);
             this.Controls.Add(this.comboBoxContractNum);
@@ -103,7 +103,7 @@
         private System.Windows.Forms.Button buttonChoose;
         public System.Windows.Forms.ComboBox comboBoxContractNum;
         private System.Windows.Forms.Label label2;
-        public System.Windows.Forms.ComboBox comboBox1;
+        public System.Windows.Forms.ComboBox comboBoxContracts;
         private System.Windows.Forms.Label label1;
     }
 }
