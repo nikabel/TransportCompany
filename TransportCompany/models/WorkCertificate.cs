@@ -9,10 +9,10 @@ namespace TransportCompany.models
     public class WorkCertificate
     {
         private string _certificateNum;
-        private DateTime _signDate;
+        private string _signDate;
         private string _contractNum;
 
-        public WorkCertificate(string certificateNum, DateTime signDate, string contractNum)
+        public WorkCertificate(string certificateNum, string signDate, string contractNum)
         {
             CertificateNum = certificateNum;
             SignDate = signDate;
@@ -20,7 +20,7 @@ namespace TransportCompany.models
         }
 
         public string CertificateNum { get => _certificateNum; set => _certificateNum = value; }
-        public DateTime SignDate { get => _signDate; set => _signDate = value; }
+        public string SignDate { get => _signDate; set => _signDate = value; }
         public string ContractNum { get => _contractNum; set => _contractNum = value; }
     }
 }

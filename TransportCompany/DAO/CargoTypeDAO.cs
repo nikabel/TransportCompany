@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Data;
 using TransportCompany.models;
+using System.Data.SqlClient;
+using System.Collections.Generic;
 
 namespace TransportCompany.DAO
 {
@@ -21,7 +23,31 @@ namespace TransportCompany.DAO
                 return null;
             }
         }
+        public string[] getTypeNames()
+        {
+            SqlConnection conn = connect.createConnection();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("select cargo_type_name from CargoType", conn);
+                conn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                var types = new List<string>();
+                while (dr.Read())
+                {
+                    types.Add(dr.GetString(0));
+                }
 
+                string[] typeNames = types.ToArray();
+                dr.Close();
+                conn.Close();
+                return typeNames;
+
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
         public bool deleteByName(string name)
         {
             try

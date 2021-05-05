@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TransportCompany.models;
+using System.Windows.Forms;
 
 namespace TransportCompany.DAO
 {
@@ -48,6 +49,33 @@ namespace TransportCompany.DAO
                 dr.Close();
                 conn.Close();
                 return contractNums;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public string getContractByNum(string num)
+        {
+            SqlConnection conn = connect.createConnection();
+            try
+            {
+                string query = String.Format("select customer_name from Contract where contract_num = '{0}'", num);
+                SqlCommand cmd = new SqlCommand(query, conn);
+                conn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                var contracts = new List<string>();
+                while (dr.Read())
+                {
+                    contracts.Add(dr.GetString(0));
+                }
+
+                string[] contractNames = contracts.ToArray();
+                dr.Close();
+                conn.Close();
+                return contractNames[0];
+                
             }
             catch (Exception ex)
             {

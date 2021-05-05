@@ -170,7 +170,8 @@ namespace TransportCompany.forms
                 string ogrn = form.textBoxOGRN.Text.ToString();
                 string cacc = form.textBoxCorrACC.Text.ToString();
                 BankDetails det= new BankDetails(acc, null, name, inn, rcbic, ogrn, cacc);
-                daoBD.updateBankDetails(details.Acc, det);
+                if (details != null) daoBD.updateBankDetails(details.Acc, det);
+                else daoBD.addBankDetails(det);
                 updateTable();
             }
             catch (Exception ex)
@@ -204,7 +205,9 @@ namespace TransportCompany.forms
                 string ogrn = form.textBoxOGRN.Text.ToString();
                 string cacc = form.textBoxCorrACC.Text.ToString();
                 BankDetails det = new BankDetails(acc, null, name, inn, rcbic, ogrn, cacc);
-                daoBD.updateBankDetails(details.Acc, det);
+                if (details != null)
+                    daoBD.updateBankDetails(details.Acc, det);
+                else daoBD.addBankDetails(det);
 
                 updateTable();
             }

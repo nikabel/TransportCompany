@@ -43,10 +43,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.comboBoxTransport = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewCargo = new System.Windows.Forms.DataGridView();
             this.labelCargo = new System.Windows.Forms.Label();
             this.labelApplicationNum = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCargo)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBoxCargoType
@@ -98,6 +98,7 @@
             this.buttonAddCargo.TabIndex = 101;
             this.buttonAddCargo.Text = "Добавить груз";
             this.buttonAddCargo.UseVisualStyleBackColor = true;
+            this.buttonAddCargo.Click += new System.EventHandler(this.buttonAddCargo_Click);
             // 
             // label3
             // 
@@ -174,15 +175,15 @@
             this.label8.TabIndex = 118;
             this.label8.Text = "Транспорт";
             // 
-            // dataGridView1
+            // dataGridViewCargo
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(511, 65);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(498, 312);
-            this.dataGridView1.TabIndex = 120;
+            this.dataGridViewCargo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCargo.Location = new System.Drawing.Point(511, 65);
+            this.dataGridViewCargo.Name = "dataGridViewCargo";
+            this.dataGridViewCargo.RowHeadersWidth = 51;
+            this.dataGridViewCargo.RowTemplate.Height = 24;
+            this.dataGridViewCargo.Size = new System.Drawing.Size(498, 312);
+            this.dataGridViewCargo.TabIndex = 120;
             // 
             // labelCargo
             // 
@@ -210,7 +211,7 @@
             this.ClientSize = new System.Drawing.Size(1021, 395);
             this.Controls.Add(this.labelApplicationNum);
             this.Controls.Add(this.labelCargo);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewCargo);
             this.Controls.Add(this.comboBoxTransport);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textBoxCargoCost);
@@ -228,7 +229,8 @@
             this.Controls.Add(this.label3);
             this.Name = "FormAddCargo";
             this.Text = "Добавление груза";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FormAddCargo_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCargo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -250,7 +252,7 @@
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.ComboBox comboBoxTransport;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewCargo;
         private System.Windows.Forms.Label labelCargo;
         private System.Windows.Forms.Label labelApplicationNum;
     }

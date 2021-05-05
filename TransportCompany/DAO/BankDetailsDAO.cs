@@ -58,7 +58,7 @@ namespace TransportCompany.DAO
         {
             try
             {
-                string query = String.Format("Insert BankDetails values ('{0}', null, '{1}', '{2}', '{3}', '{4}')",
+                string query = String.Format("Insert BankDetails values ('{0}', null, '{1}', '{2}', '{3}', '{4}', '{5}')",
                     details.Acc, details.CustomerName, details.Inn, details.Rcbic, details.Ogrn, details.CorrAcc);
                 connect.executeNonQuery(query);
                 return true;

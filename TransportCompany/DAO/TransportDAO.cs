@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Data.SqlClient;
 using TransportCompany.models;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,32 @@ namespace TransportCompany.DAO
                 string query = "select * from Transport";
                 DataTable dt = connect.executeQuery(query);
                 return dt;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public string[] getTransportPlates()
+        {
+            SqlConnection conn = connect.createConnection();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("select license_plate from Transport", conn);
+                conn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                var plates = new List<string>();
+                while (dr.Read())
+                {
+                    plates.Add(dr.GetString(0));
+                }
+
+                string[] platesNums = plates.ToArray();
+                dr.Close();
+                conn.Close();
+                return platesNums;
+
             }
             catch (Exception ex)
             {

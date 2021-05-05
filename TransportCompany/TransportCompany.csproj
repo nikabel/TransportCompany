@@ -52,7 +52,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\ApplicationDAO.cs" />
     <Compile Include="DAO\BankDetailsDAO.cs" />
+    <Compile Include="DAO\CargoDAO.cs" />
     <Compile Include="DAO\CargoTypeDAO.cs" />
     <Compile Include="DAO\CompanyDAO.cs" />
     <Compile Include="DAO\ContractDAO.cs" />
@@ -69,6 +71,7 @@
     <Compile Include="DAO\OperationDAO.cs" />
     <Compile Include="DAO\TransportDAO.cs" />
     <Compile Include="DAO\TransportModelDAO.cs" />
+    <Compile Include="DAO\WorkCertificateDAO.cs" />
     <Compile Include="forms\FormAddApplication.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +252,7 @@
     <Compile Include="models\Stop.cs" />
     <Compile Include="models\Operation.cs" />
     <Compile Include="models\Transport.cs" />
+    <Compile Include="models\TransportApplication.cs" />
     <Compile Include="models\TransportCompany.cs" />
     <Compile Include="models\TransportModel.cs" />
     <Compile Include="models\WorkCertificate.cs" />

@@ -175,9 +175,9 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(12, 463);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(66, 17);
+            this.label8.Size = new System.Drawing.Size(46, 17);
             this.label8.TabIndex = 112;
-            this.label8.Text = "ОГРНИП";
+            this.label8.Text = "ОГРН";
             // 
             // label2
             // 

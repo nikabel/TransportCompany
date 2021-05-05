@@ -136,7 +136,7 @@
             // 
             this.labelContractNum.AutoSize = true;
             this.labelContractNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelContractNum.Location = new System.Drawing.Point(1128, 25);
+            this.labelContractNum.Location = new System.Drawing.Point(1117, 25);
             this.labelContractNum.Name = "labelContractNum";
             this.labelContractNum.Size = new System.Drawing.Size(0, 25);
             this.labelContractNum.TabIndex = 98;

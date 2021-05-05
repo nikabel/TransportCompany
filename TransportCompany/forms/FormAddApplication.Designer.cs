@@ -32,10 +32,10 @@
             this.dateSign = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBoxContractNum = new System.Windows.Forms.ComboBox();
+            this.comboBoxContracts = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateExperience = new System.Windows.Forms.DateTimePicker();
+            this.dateDelivery = new System.Windows.Forms.DateTimePicker();
             this.textBoxFreight = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBoxInsurance = new System.Windows.Forms.ComboBox();
@@ -52,6 +52,7 @@
             // 
             // dateSign
             // 
+            this.dateSign.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateSign.Location = new System.Drawing.Point(223, 112);
             this.dateSign.Name = "dateSign";
             this.dateSign.Size = new System.Drawing.Size(238, 22);
@@ -75,14 +76,14 @@
             this.label3.TabIndex = 81;
             this.label3.Text = "Номер заявки";
             // 
-            // comboBoxContractNum
+            // comboBoxContracts
             // 
-            this.comboBoxContractNum.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxContractNum.FormattingEnabled = true;
-            this.comboBoxContractNum.Location = new System.Drawing.Point(223, 22);
-            this.comboBoxContractNum.Name = "comboBoxContractNum";
-            this.comboBoxContractNum.Size = new System.Drawing.Size(238, 24);
-            this.comboBoxContractNum.TabIndex = 80;
+            this.comboBoxContracts.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxContracts.FormattingEnabled = true;
+            this.comboBoxContracts.Location = new System.Drawing.Point(223, 22);
+            this.comboBoxContracts.Name = "comboBoxContracts";
+            this.comboBoxContracts.Size = new System.Drawing.Size(238, 24);
+            this.comboBoxContracts.TabIndex = 80;
             // 
             // label2
             // 
@@ -102,12 +103,13 @@
             this.label1.TabIndex = 88;
             this.label1.Text = "Срок доставки";
             // 
-            // dateExperience
+            // dateDelivery
             // 
-            this.dateExperience.Location = new System.Drawing.Point(223, 153);
-            this.dateExperience.Name = "dateExperience";
-            this.dateExperience.Size = new System.Drawing.Size(238, 22);
-            this.dateExperience.TabIndex = 89;
+            this.dateDelivery.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateDelivery.Location = new System.Drawing.Point(223, 153);
+            this.dateDelivery.Name = "dateDelivery";
+            this.dateDelivery.Size = new System.Drawing.Size(238, 22);
+            this.dateDelivery.TabIndex = 89;
             // 
             // textBoxFreight
             // 
@@ -157,19 +159,19 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(482, 349);
+            this.ClientSize = new System.Drawing.Size(482, 345);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBoxInsurance);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBoxFreight);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.dateExperience);
+            this.Controls.Add(this.dateDelivery);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxApplicationNum);
             this.Controls.Add(this.dateSign);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBoxContractNum);
+            this.Controls.Add(this.comboBoxContracts);
             this.Controls.Add(this.label2);
             this.Name = "FormAddApplication";
             this.Text = "Составление заявки на перевозку груза";
@@ -183,10 +185,10 @@
         private System.Windows.Forms.DateTimePicker dateSign;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        public System.Windows.Forms.ComboBox comboBoxContractNum;
+        public System.Windows.Forms.ComboBox comboBoxContracts;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateExperience;
+        private System.Windows.Forms.DateTimePicker dateDelivery;
         private System.Windows.Forms.TextBox textBoxFreight;
         private System.Windows.Forms.Label label6;
         public System.Windows.Forms.ComboBox comboBoxInsurance;

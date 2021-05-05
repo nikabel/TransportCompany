@@ -33,7 +33,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBoxContractNum = new System.Windows.Forms.ComboBox();
+            this.comboBoxContracts = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -46,6 +46,7 @@
             // 
             // dateSign
             // 
+            this.dateSign.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateSign.Location = new System.Drawing.Point(222, 111);
             this.dateSign.Name = "dateSign";
             this.dateSign.Size = new System.Drawing.Size(238, 22);
@@ -68,6 +69,7 @@
             this.buttonAdd.TabIndex = 73;
             this.buttonAdd.Text = "Оформить";
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // label3
             // 
@@ -78,14 +80,14 @@
             this.label3.TabIndex = 72;
             this.label3.Text = "Номер акта";
             // 
-            // comboBoxContractNum
+            // comboBoxContracts
             // 
-            this.comboBoxContractNum.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxContractNum.FormattingEnabled = true;
-            this.comboBoxContractNum.Location = new System.Drawing.Point(222, 21);
-            this.comboBoxContractNum.Name = "comboBoxContractNum";
-            this.comboBoxContractNum.Size = new System.Drawing.Size(238, 24);
-            this.comboBoxContractNum.TabIndex = 69;
+            this.comboBoxContracts.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxContracts.FormattingEnabled = true;
+            this.comboBoxContracts.Location = new System.Drawing.Point(222, 21);
+            this.comboBoxContracts.Name = "comboBoxContracts";
+            this.comboBoxContracts.Size = new System.Drawing.Size(238, 24);
+            this.comboBoxContracts.TabIndex = 69;
             // 
             // label2
             // 
@@ -106,7 +108,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBoxContractNum);
+            this.Controls.Add(this.comboBoxContracts);
             this.Controls.Add(this.label2);
             this.Name = "FormAddCertificate";
             this.Text = "Оформление акта выполненных работ";
@@ -121,7 +123,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Label label3;
-        public System.Windows.Forms.ComboBox comboBoxContractNum;
+        public System.Windows.Forms.ComboBox comboBoxContracts;
         private System.Windows.Forms.Label label2;
     }
 }
