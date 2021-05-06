@@ -7,21 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TransportCompany.DAO;
+using TransportCompany.models;
 
 namespace TransportCompany.forms
 {
     public partial class FormControlOrderChooseRoute : Form
     {
+        RouteDAO routeDAO = new RouteDAO();
         public FormControlOrderChooseRoute()
         {
             InitializeComponent();
+            comboBoxRoute.Items.AddRange(routeDAO.getAllRoutes());
         }
 
         private void buttonChoose_Click(object sender, EventArgs e)
         {
             try
             {
-                FormControlOrder form = new FormControlOrder();
+                FormControlOrder form = new FormControlOrder(comboBoxRoute.SelectedItem.ToString());
                 form.ShowDialog();
             }
             catch (Exception ex)

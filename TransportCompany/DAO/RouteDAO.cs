@@ -30,5 +30,30 @@ namespace TransportCompany.DAO
                 return false;
             }
         }
+
+        public string[] getAllRoutes()
+        {
+            SqlConnection conn = connect.createConnection();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("select route_id from Route", conn);
+                conn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                var routes = new List<string>();
+                while (dr.Read())
+                {
+                    routes.Add(dr.GetString(0));
+                }
+
+                string[] routeIds = routes.ToArray();
+                dr.Close();
+                conn.Close();
+                return routeIds;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
     }
 }

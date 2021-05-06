@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxRoute = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonChoose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // comboBoxRoute
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(235, 42);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(238, 24);
-            this.comboBox1.TabIndex = 68;
+            this.comboBoxRoute.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxRoute.FormattingEnabled = true;
+            this.comboBoxRoute.Location = new System.Drawing.Point(235, 42);
+            this.comboBoxRoute.Name = "comboBoxRoute";
+            this.comboBoxRoute.Size = new System.Drawing.Size(238, 24);
+            this.comboBoxRoute.TabIndex = 68;
             // 
             // label1
             // 
@@ -66,7 +66,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(493, 172);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBoxRoute);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonChoose);
             this.Name = "FormControlOrderChooseRoute";
@@ -78,7 +78,7 @@
 
         #endregion
 
-        public System.Windows.Forms.ComboBox comboBox1;
+        public System.Windows.Forms.ComboBox comboBoxRoute;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonChoose;
     }

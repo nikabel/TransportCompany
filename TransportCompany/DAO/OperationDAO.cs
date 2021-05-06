@@ -27,6 +27,30 @@ namespace TransportCompany.DAO
             }
         }
 
+        public string[] getAllOperations()
+        {
+            SqlConnection conn = connect.createConnection();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("select operation_name from Operation", conn);
+                conn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                var ops = new List<string>();
+                while (dr.Read())
+                {
+                    ops.Add(dr.GetString(0));
+                }
+
+                string[] opNames = ops.ToArray();
+                dr.Close();
+                conn.Close();
+                return opNames;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
         public bool deleteByName(string name)
         {
             try
