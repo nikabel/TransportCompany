@@ -17,6 +17,7 @@ namespace TransportCompany.forms
         TransportDAO transportDAO = new TransportDAO();
         CargoTypeDAO typeDAO = new CargoTypeDAO();
         CargoDAO cargoDAO = new CargoDAO();
+        TransportApplicationDAO taDAO = new TransportApplicationDAO();
         public FormAddCargo(string num)
         {
             InitializeComponent();
@@ -57,8 +58,9 @@ namespace TransportCompany.forms
                 string transport = comboBoxTransport.SelectedItem.ToString();
                 string type = comboBoxCargoType.SelectedItem.ToString();
                 Cargo cargo = new Cargo(cargoNum, num, name, type, weight, volume, cost);
-                TransportApplication ts = new TransportApplication(transport, num);
-                daoS.addService(service);
+                TransportApplication ta = new TransportApplication(transport, num);
+                cargoDAO.addCargo(cargo);
+                if (taDAO.checkTransportApplication(ta)) taDAO.addTransportApplication(ta);
                 textBoxCargoName.Clear();
                 textBoxCargoNum.Clear();
                 textBoxCargoCost.Clear();

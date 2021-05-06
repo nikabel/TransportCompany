@@ -69,6 +69,7 @@
     <Compile Include="DAO\ServiceDAO.cs" />
     <Compile Include="DAO\SpecializationDAO.cs" />
     <Compile Include="DAO\OperationDAO.cs" />
+    <Compile Include="DAO\TransportApplicationDAO.cs" />
     <Compile Include="DAO\TransportDAO.cs" />
     <Compile Include="DAO\TransportModelDAO.cs" />
     <Compile Include="DAO\WorkCertificateDAO.cs" />

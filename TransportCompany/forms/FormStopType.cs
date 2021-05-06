@@ -219,7 +219,8 @@ namespace TransportCompany
                             string driver = form.comboBoxDrivers.SelectedItem.ToString();
                             string model = form.comboBoxModels.SelectedItem.ToString();
                             string occup = form.textBoxOccupation.Text.ToString();
-                            Transport trans = new Transport(num, driver, model, occup);
+                            Transport trans = new Transport(model, driver, num, occup);
+                            MessageBox.Show(num + " " + driver + " " + model + " " + occup);
                             daoTrans.addType(trans);
                             updateTable();
                             break;

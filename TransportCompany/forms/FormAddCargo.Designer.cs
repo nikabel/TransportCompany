@@ -177,12 +177,15 @@
             // 
             // dataGridViewCargo
             // 
+            this.dataGridViewCargo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridViewCargo.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewCargo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewCargo.Location = new System.Drawing.Point(511, 65);
             this.dataGridViewCargo.Name = "dataGridViewCargo";
+            this.dataGridViewCargo.RowHeadersVisible = false;
             this.dataGridViewCargo.RowHeadersWidth = 51;
             this.dataGridViewCargo.RowTemplate.Height = 24;
-            this.dataGridViewCargo.Size = new System.Drawing.Size(498, 312);
+            this.dataGridViewCargo.Size = new System.Drawing.Size(688, 312);
             this.dataGridViewCargo.TabIndex = 120;
             // 
             // labelCargo
@@ -199,16 +202,17 @@
             // labelApplicationNum
             // 
             this.labelApplicationNum.AutoSize = true;
-            this.labelApplicationNum.Location = new System.Drawing.Point(791, 28);
+            this.labelApplicationNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelApplicationNum.Location = new System.Drawing.Point(821, 28);
             this.labelApplicationNum.Name = "labelApplicationNum";
-            this.labelApplicationNum.Size = new System.Drawing.Size(0, 17);
+            this.labelApplicationNum.Size = new System.Drawing.Size(0, 25);
             this.labelApplicationNum.TabIndex = 122;
             // 
             // FormAddCargo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1021, 395);
+            this.ClientSize = new System.Drawing.Size(1211, 395);
             this.Controls.Add(this.labelApplicationNum);
             this.Controls.Add(this.labelCargo);
             this.Controls.Add(this.dataGridViewCargo);

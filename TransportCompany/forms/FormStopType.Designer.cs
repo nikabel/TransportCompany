@@ -77,7 +77,7 @@
             this.groupBox3.Controls.Add(this.buttonSearchTransportType);
             this.groupBox3.Location = new System.Drawing.Point(12, 21);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(567, 90);
+            this.groupBox3.Size = new System.Drawing.Size(584, 90);
             this.groupBox3.TabIndex = 15;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Поиск информации о видах остановок";
@@ -93,14 +93,14 @@
             // 
             // textBoxSearchStopType
             // 
-            this.textBoxSearchStopType.Location = new System.Drawing.Point(161, 37);
+            this.textBoxSearchStopType.Location = new System.Drawing.Point(170, 37);
             this.textBoxSearchStopType.Name = "textBoxSearchStopType";
             this.textBoxSearchStopType.Size = new System.Drawing.Size(274, 22);
             this.textBoxSearchStopType.TabIndex = 1;
             // 
             // buttonSearchTransportType
             // 
-            this.buttonSearchTransportType.Location = new System.Drawing.Point(455, 32);
+            this.buttonSearchTransportType.Location = new System.Drawing.Point(463, 32);
             this.buttonSearchTransportType.Name = "buttonSearchTransportType";
             this.buttonSearchTransportType.Size = new System.Drawing.Size(106, 33);
             this.buttonSearchTransportType.TabIndex = 0;

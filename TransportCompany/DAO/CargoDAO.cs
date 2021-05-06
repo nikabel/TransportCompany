@@ -31,9 +31,8 @@ namespace TransportCompany.DAO
         {
             try
             {
-                string[] date = service.ServiceDate.ToString().Split('.');
-                string serviceDate = date[2] + "-" + date[1] + "-" + date[0];
-                string query = String.Format("Insert Service values ('{0}', '{1}', '{2}', '{3}', '{4}', null)", service.ServiceName, service.ContractNum, service.EmployeeName, service.ServiceCost, serviceDate);
+                string query = String.Format("Insert Cargo values ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}')", cargo.CargoNum,
+                    cargo.ApplicationNum, cargo.CargoName, cargo.CargoTypeName, cargo.CargoWeight, cargo.CargoVolume, cargo.CargoCost);
                 connect.executeNonQuery(query);
                 return true;
             }
