@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.SqlClient;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,6 +27,31 @@ namespace TransportCompany.DAO
             catch (Exception ex)
             {
                 return false;
+            }
+        }
+
+        public string[] getAllNums()
+        {
+            SqlConnection conn = connect.createConnection();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("select application_num from ApplicationForm", conn);
+                conn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                var apps = new List<string>();
+                while (dr.Read())
+                {
+                    apps.Add(dr.GetString(0));
+                }
+
+                string[] appNums = apps.ToArray();
+                dr.Close();
+                conn.Close();
+                return appNums;
+            }
+            catch (Exception ex)
+            {
+                return null;
             }
         }
     }

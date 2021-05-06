@@ -12,9 +12,15 @@ namespace TransportCompany.forms
 {
     public partial class FormAddStop : Form
     {
-        public FormAddStop()
+        public FormAddStop(string num)
         {
             InitializeComponent();
+            labelRouteNum.Text = num;
+        }
+
+        private void buttonAddStop_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

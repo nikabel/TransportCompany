@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateArrival = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.textBoxDistance = new System.Windows.Forms.TextBox();
+            this.dateDeparture = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBoxEmployee = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBoxApplicationNum = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBoxApplicationNum = new System.Windows.Forms.TextBox();
+            this.textBoxRouteNum = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.buttonAddStop = new System.Windows.Forms.Button();
+            this.buttonAddRoute = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label6
@@ -52,12 +52,13 @@
             this.label6.TabIndex = 91;
             this.label6.Text = "Дата прибытия";
             // 
-            // dateTimePicker2
+            // dateArrival
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(235, 248);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(238, 22);
-            this.dateTimePicker2.TabIndex = 92;
+            this.dateArrival.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateArrival.Location = new System.Drawing.Point(235, 248);
+            this.dateArrival.Name = "dateArrival";
+            this.dateArrival.Size = new System.Drawing.Size(238, 22);
+            this.dateArrival.TabIndex = 92;
             // 
             // label5
             // 
@@ -68,19 +69,20 @@
             this.label5.TabIndex = 83;
             this.label5.Text = "Дата отправления";
             // 
-            // textBox1
+            // textBoxDistance
             // 
-            this.textBox1.Location = new System.Drawing.Point(235, 162);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(238, 22);
-            this.textBox1.TabIndex = 90;
+            this.textBoxDistance.Location = new System.Drawing.Point(235, 162);
+            this.textBoxDistance.Name = "textBoxDistance";
+            this.textBoxDistance.Size = new System.Drawing.Size(238, 22);
+            this.textBoxDistance.TabIndex = 90;
             // 
-            // dateTimePicker1
+            // dateDeparture
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(235, 206);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(238, 22);
-            this.dateTimePicker1.TabIndex = 84;
+            this.dateDeparture.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateDeparture.Location = new System.Drawing.Point(235, 206);
+            this.dateDeparture.Name = "dateDeparture";
+            this.dateDeparture.Size = new System.Drawing.Size(238, 22);
+            this.dateDeparture.TabIndex = 84;
             // 
             // label4
             // 
@@ -91,14 +93,14 @@
             this.label4.TabIndex = 89;
             this.label4.Text = "Общее расстояние";
             // 
-            // comboBox3
+            // comboBoxEmployee
             // 
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(235, 117);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(238, 24);
-            this.comboBox3.TabIndex = 88;
+            this.comboBoxEmployee.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxEmployee.FormattingEnabled = true;
+            this.comboBoxEmployee.Location = new System.Drawing.Point(235, 117);
+            this.comboBoxEmployee.Name = "comboBoxEmployee";
+            this.comboBoxEmployee.Size = new System.Drawing.Size(238, 24);
+            this.comboBoxEmployee.TabIndex = 88;
             // 
             // label3
             // 
@@ -109,14 +111,14 @@
             this.label3.TabIndex = 87;
             this.label3.Text = "ФИО сотрудника";
             // 
-            // comboBox2
+            // comboBoxApplicationNum
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(235, 71);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(238, 24);
-            this.comboBox2.TabIndex = 84;
+            this.comboBoxApplicationNum.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxApplicationNum.FormattingEnabled = true;
+            this.comboBoxApplicationNum.Location = new System.Drawing.Point(235, 71);
+            this.comboBoxApplicationNum.Name = "comboBoxApplicationNum";
+            this.comboBoxApplicationNum.Size = new System.Drawing.Size(238, 24);
+            this.comboBoxApplicationNum.TabIndex = 84;
             // 
             // label2
             // 
@@ -127,12 +129,12 @@
             this.label2.TabIndex = 83;
             this.label2.Text = "Номер заявки";
             // 
-            // textBoxApplicationNum
+            // textBoxRouteNum
             // 
-            this.textBoxApplicationNum.Location = new System.Drawing.Point(235, 28);
-            this.textBoxApplicationNum.Name = "textBoxApplicationNum";
-            this.textBoxApplicationNum.Size = new System.Drawing.Size(238, 22);
-            this.textBoxApplicationNum.TabIndex = 86;
+            this.textBoxRouteNum.Location = new System.Drawing.Point(235, 28);
+            this.textBoxRouteNum.Name = "textBoxRouteNum";
+            this.textBoxRouteNum.Size = new System.Drawing.Size(238, 22);
+            this.textBoxRouteNum.TabIndex = 86;
             // 
             // label8
             // 
@@ -143,15 +145,15 @@
             this.label8.TabIndex = 63;
             this.label8.Text = "Номер маршрута";
             // 
-            // buttonAddStop
+            // buttonAddRoute
             // 
-            this.buttonAddStop.Location = new System.Drawing.Point(167, 294);
-            this.buttonAddStop.Name = "buttonAddStop";
-            this.buttonAddStop.Size = new System.Drawing.Size(164, 38);
-            this.buttonAddStop.TabIndex = 60;
-            this.buttonAddStop.Text = "Создать маршрут";
-            this.buttonAddStop.UseVisualStyleBackColor = true;
-            this.buttonAddStop.Click += new System.EventHandler(this.buttonAddStop_Click);
+            this.buttonAddRoute.Location = new System.Drawing.Point(167, 294);
+            this.buttonAddRoute.Name = "buttonAddRoute";
+            this.buttonAddRoute.Size = new System.Drawing.Size(164, 38);
+            this.buttonAddRoute.TabIndex = 60;
+            this.buttonAddRoute.Text = "Создать маршрут";
+            this.buttonAddRoute.UseVisualStyleBackColor = true;
+            this.buttonAddRoute.Click += new System.EventHandler(this.buttonAddStop_Click);
             // 
             // FormRoute
             // 
@@ -159,17 +161,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(500, 354);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.dateArrival);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.buttonAddStop);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textBoxApplicationNum);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.buttonAddRoute);
+            this.Controls.Add(this.textBoxDistance);
+            this.Controls.Add(this.textBoxRouteNum);
+            this.Controls.Add(this.dateDeparture);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.comboBoxApplicationNum);
+            this.Controls.Add(this.comboBoxEmployee);
             this.Controls.Add(this.label3);
             this.Name = "FormRoute";
             this.Text = "Формирование маршрута";
@@ -179,18 +181,18 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button buttonAddStop;
+        private System.Windows.Forms.Button buttonAddRoute;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBoxApplicationNum;
+        private System.Windows.Forms.TextBox textBoxRouteNum;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateArrival;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox textBoxDistance;
+        private System.Windows.Forms.DateTimePicker dateDeparture;
         private System.Windows.Forms.Label label4;
-        public System.Windows.Forms.ComboBox comboBox3;
+        public System.Windows.Forms.ComboBox comboBoxEmployee;
         private System.Windows.Forms.Label label3;
-        public System.Windows.Forms.ComboBox comboBox2;
+        public System.Windows.Forms.ComboBox comboBoxApplicationNum;
         private System.Windows.Forms.Label label2;
     }
 }

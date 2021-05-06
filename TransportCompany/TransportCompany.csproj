@@ -66,6 +66,7 @@
     <Compile Include="DAO\EntityCustomerDAO.cs" />
     <Compile Include="DAO\IndividualCustomerDAO.cs" />
     <Compile Include="DAO\OfficeEmployeeDAO.cs" />
+    <Compile Include="DAO\RouteDAO.cs" />
     <Compile Include="DAO\ServiceDAO.cs" />
     <Compile Include="DAO\SpecializationDAO.cs" />
     <Compile Include="DAO\OperationDAO.cs" />
