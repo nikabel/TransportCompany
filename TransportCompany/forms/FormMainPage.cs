@@ -243,5 +243,44 @@ namespace TransportCompany
                 MessageBox.Show("Что-то пошло не так!" + ex);
             }
         }
+
+        private void buttonRequest_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FormAddApplication form = new FormAddApplication();
+                form.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Что-то пошло не так!" + ex);
+            }
+        }
+
+        private void buttonContract_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FormAddContract form = new FormAddContract();
+                form.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Что-то пошло не так!" + ex);
+            }
+        }
+
+        private void buttonCompletedWorks_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FormAddCertificate form = new FormAddCertificate();
+                form.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Что-то пошло не так!" + ex);
+            }
+        }
     }
 }

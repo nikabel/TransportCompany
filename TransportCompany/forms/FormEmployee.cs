@@ -46,10 +46,16 @@ namespace TransportCompany.forms
 
         private void buttonDeleteStopType_Click(object sender, EventArgs e)
         {
-            int rowNum = dataGridViewEmployee.CurrentCell.RowIndex;
-            string name = dataGridViewEmployee[0, rowNum].Value.ToString();
-            daoEmp.deleteByName(name);
-            updateTable();
+            DialogResult result = MessageBox.Show("Вы уверены, что хотите удалить данные?", "Сообщение",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                int rowNum = dataGridViewEmployee.CurrentCell.RowIndex;
+                string name = dataGridViewEmployee[0, rowNum].Value.ToString();
+                daoEmp.deleteByName(name);
+                updateTable();
+            }
         }
 
         private void buttonChangeStopType_Click(object sender, EventArgs e)

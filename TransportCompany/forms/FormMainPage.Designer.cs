@@ -317,6 +317,7 @@
             this.buttonContract.TabIndex = 1;
             this.buttonContract.Text = "Оформление договора об оказании услуг";
             this.buttonContract.UseVisualStyleBackColor = false;
+            this.buttonContract.Click += new System.EventHandler(this.buttonContract_Click);
             // 
             // buttonRequest
             // 
@@ -328,6 +329,7 @@
             this.buttonRequest.TabIndex = 2;
             this.buttonRequest.Text = "Формирование заявки на перевозку груза";
             this.buttonRequest.UseVisualStyleBackColor = false;
+            this.buttonRequest.Click += new System.EventHandler(this.buttonRequest_Click);
             // 
             // buttonCompletedWorks
             // 
@@ -339,6 +341,7 @@
             this.buttonCompletedWorks.TabIndex = 3;
             this.buttonCompletedWorks.Text = "Составление акта выполненных работ";
             this.buttonCompletedWorks.UseVisualStyleBackColor = false;
+            this.buttonCompletedWorks.Click += new System.EventHandler(this.buttonCompletedWorks_Click);
             // 
             // FormMainPage
             // 

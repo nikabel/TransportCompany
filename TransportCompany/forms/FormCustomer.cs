@@ -67,15 +67,21 @@ namespace TransportCompany.forms
 
         private void buttonDeleteCustomer_Click(object sender, EventArgs e)
         {
-            int rowNum = dataGridViewCustomer.CurrentCell.RowIndex;
-            string name = dataGridViewCustomer[0, rowNum].Value.ToString();
-            daoC.deleteByName(name);
-            BankDetails details = daoBD.getBankByName(name);
-            if (details != null)
+            DialogResult result = MessageBox.Show("Вы уверены, что хотите удалить данные?", "Сообщение",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
             {
-                daoBD.deleteByName(name);
+                int rowNum = dataGridViewCustomer.CurrentCell.RowIndex;
+                string name = dataGridViewCustomer[0, rowNum].Value.ToString();
+                daoC.deleteByName(name);
+                BankDetails details = daoBD.getBankByName(name);
+                if (details != null)
+                {
+                    daoBD.deleteByName(name);
+                }
+                updateTable();
             }
-            updateTable();
         }
 
         private void buttonAddEntity_Click(object sender, EventArgs e)

@@ -265,57 +265,63 @@ namespace TransportCompany
 
         private void buttonDeleteStopType_Click(object sender, EventArgs e)
         {
-            switch (directory)
+           DialogResult result = MessageBox.Show("Вы уверены, что хотите удалить данные?", "Сообщение", 
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
             {
-                case "Operation":
-                    {
-                        int rowNum = dataGridViewStopType.CurrentCell.RowIndex;
-                        string name = dataGridViewStopType[0, rowNum].Value.ToString();
-                        daoST.deleteByName(name);
-                        updateTable();
-                        break;
-                    }
-                case "Department":
-                    {
-                        int rowNum = dataGridViewStopType.CurrentCell.RowIndex;
-                        string name = dataGridViewStopType[0, rowNum].Value.ToString();
-                        daoDep.deleteByName(name);
-                        updateTable();
-                        break;
-                    }
-                case "CargoType":
-                    {
-                        DataTable data = daoCT.getAll();
-                        int rowNum = dataGridViewStopType.CurrentCell.RowIndex;
-                        string name = dataGridViewStopType[0, rowNum].Value.ToString();
-                        daoCT.deleteByName(name);
-                        updateTable();
-                        break;
-                    }
-                case "Specialization":
-                    {
-                        int rowNum = dataGridViewStopType.CurrentCell.RowIndex;
-                        string name = dataGridViewStopType[0, rowNum].Value.ToString();
-                        daoSpec.deleteByName(name);
-                        updateTable();
-                        break;
-                    }
-                case "Transport":
-                    {
-                        int rowNum = dataGridViewStopType.CurrentCell.RowIndex;
-                        string name = dataGridViewStopType[0, rowNum].Value.ToString();
-                        daoTrans.deleteByName(name);
-                        updateTable();
-                        break;
-                    }
-                case "TransportModel":
-                    {
-                        int rowNum = dataGridViewStopType.CurrentCell.RowIndex;
-                        string name = dataGridViewStopType[0, rowNum].Value.ToString();
-                        daoTransModel.deleteByName(name);
-                        updateTable();
-                        break;
-                    }
+                switch (directory)
+                {
+                    case "Operation":
+                        {
+                            int rowNum = dataGridViewStopType.CurrentCell.RowIndex;
+                            string name = dataGridViewStopType[0, rowNum].Value.ToString();
+                            daoST.deleteByName(name);
+                            updateTable();
+                            break;
+                        }
+                    case "Department":
+                        {
+                            int rowNum = dataGridViewStopType.CurrentCell.RowIndex;
+                            string name = dataGridViewStopType[0, rowNum].Value.ToString();
+                            daoDep.deleteByName(name);
+                            updateTable();
+                            break;
+                        }
+                    case "CargoType":
+                        {
+                            DataTable data = daoCT.getAll();
+                            int rowNum = dataGridViewStopType.CurrentCell.RowIndex;
+                            string name = dataGridViewStopType[0, rowNum].Value.ToString();
+                            daoCT.deleteByName(name);
+                            updateTable();
+                            break;
+                        }
+                    case "Specialization":
+                        {
+                            int rowNum = dataGridViewStopType.CurrentCell.RowIndex;
+                            string name = dataGridViewStopType[0, rowNum].Value.ToString();
+                            daoSpec.deleteByName(name);
+                            updateTable();
+                            break;
+                        }
+                    case "Transport":
+                        {
+                            int rowNum = dataGridViewStopType.CurrentCell.RowIndex;
+                            string name = dataGridViewStopType[0, rowNum].Value.ToString();
+                            daoTrans.deleteByName(name);
+                            updateTable();
+                            break;
+                        }
+                    case "TransportModel":
+                        {
+                            int rowNum = dataGridViewStopType.CurrentCell.RowIndex;
+                            string name = dataGridViewStopType[0, rowNum].Value.ToString();
+                            daoTransModel.deleteByName(name);
+                            updateTable();
+                            break;
+                        }
+                }
             }
         }
 
