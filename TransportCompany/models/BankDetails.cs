@@ -15,8 +15,9 @@ namespace TransportCompany.models
         private string _rcbic;
         private string _ogrn;
         private string _corrAcc;
+        private string _bankName;
 
-        public BankDetails(string acc, string companyName, string customerName, string inn, string rcbic, string ogrn, string corrAcc)
+        public BankDetails(string acc, string companyName, string customerName, string inn, string rcbic, string ogrn, string corrAcc, string bankName)
         {
             Acc = acc;
             CompanyName = companyName;
@@ -25,6 +26,7 @@ namespace TransportCompany.models
             Rcbic = rcbic;
             Ogrn = ogrn;
             CorrAcc = corrAcc;
+            BankName = bankName;
         }
 
         public string Acc { get => _acc; set => _acc = value; }
@@ -34,5 +36,6 @@ namespace TransportCompany.models
         public string Rcbic { get => _rcbic; set => _rcbic = value; }
         public string Ogrn { get => _ogrn; set => _ogrn = value; }
         public string CorrAcc { get => _corrAcc; set => _corrAcc = value; }
+        public string BankName { get => _bankName; set => _bankName = value; }
     }
 }

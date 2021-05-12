@@ -71,6 +71,7 @@
             this.comboBoxContracts.Name = "comboBoxContracts";
             this.comboBoxContracts.Size = new System.Drawing.Size(238, 24);
             this.comboBoxContracts.TabIndex = 65;
+            this.comboBoxContracts.SelectedIndexChanged += new System.EventHandler(this.comboBoxContracts_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -80,6 +81,7 @@
             this.label1.Size = new System.Drawing.Size(183, 17);
             this.label1.TabIndex = 64;
             this.label1.Text = "Выберите номер договора";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // SetWorkChooseContractForm
             // 

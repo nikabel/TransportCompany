@@ -106,7 +106,8 @@ namespace TransportCompany.forms
                 string rcbic = form.textBoxRCBIC.Text.ToString();
                 string ogrn = form.textBoxOGRN.Text.ToString();
                 string cacc = form.textBoxCorrACC.Text.ToString();
-                BankDetails details = new BankDetails(acc, null, name, inn, rcbic, ogrn, cacc);
+                string bank = form.textBoxBankName.Text.ToString();
+                BankDetails details = new BankDetails(acc, null, name, inn, rcbic, ogrn, cacc, bank);
                 daoBD.addBankDetails(details);
                 updateTable();
             }
@@ -136,7 +137,8 @@ namespace TransportCompany.forms
                 string rcbic = form.textBoxRCBIC.Text.ToString();
                 string ogrn = form.textBoxOGRN.Text.ToString();
                 string cacc = form.textBoxCorrACC.Text.ToString();
-                BankDetails details = new BankDetails(acc, null, name, inn, rcbic, ogrn, cacc);
+                string bank = form.textBoxBankName.Text.ToString();
+                BankDetails details = new BankDetails(acc, null, name, inn, rcbic, ogrn, cacc, bank);
                 daoBD.addBankDetails(details);
 
                 updateTable();
@@ -175,7 +177,8 @@ namespace TransportCompany.forms
                 string rcbic = form.textBoxRCBIC.Text.ToString();
                 string ogrn = form.textBoxOGRN.Text.ToString();
                 string cacc = form.textBoxCorrACC.Text.ToString();
-                BankDetails det= new BankDetails(acc, null, name, inn, rcbic, ogrn, cacc);
+                string bank = form.textBoxBankName.Text.ToString();
+                BankDetails det = new BankDetails(acc, null, name, inn, rcbic, ogrn, cacc, bank);
                 if (details != null) daoBD.updateBankDetails(details.Acc, det);
                 else daoBD.addBankDetails(det);
                 updateTable();
@@ -210,7 +213,8 @@ namespace TransportCompany.forms
                 string rcbic = form.textBoxRCBIC.Text.ToString();
                 string ogrn = form.textBoxOGRN.Text.ToString();
                 string cacc = form.textBoxCorrACC.Text.ToString();
-                BankDetails det = new BankDetails(acc, null, name, inn, rcbic, ogrn, cacc);
+                string bank = form.textBoxBankName.Text.ToString();
+                BankDetails det = new BankDetails(acc, null, name, inn, rcbic, ogrn, cacc, bank);
                 if (details != null)
                     daoBD.updateBankDetails(details.Acc, det);
                 else daoBD.addBankDetails(det);

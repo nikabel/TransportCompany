@@ -282,5 +282,31 @@ namespace TransportCompany
                 MessageBox.Show("Что-то пошло не так!" + ex);
             }
         }
+
+        private void договорОбОказанииУслугToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FormChooseContract form = new FormChooseContract();
+                form.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Что-то пошло не так!" + ex);
+            }
+        }
+
+        private void актВыполненныхРаботToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FormChooseCertificate form = new FormChooseCertificate();
+                form.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Что-то пошло не так!" + ex);
+            }
+        }
     }
 }

@@ -16,14 +16,14 @@ namespace TransportCompany.reports {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class ContractReport : ReportClass {
+    public class CrystalRep : ReportClass {
         
-        public ContractReport() {
+        public CrystalRep() {
         }
         
         public override string ResourceName {
             get {
-                return "ContractReport.rpt";
+                return "CrystalRep.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace TransportCompany.reports {
         
         public override string FullResourceName {
             get {
-                return "TransportCompany.reports.ContractReport.rpt";
+                return "TransportCompany.reports.CrystalRep.rpt";
             }
             set {
                 // Do nothing
@@ -98,9 +98,9 @@ namespace TransportCompany.reports {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedContractReport : Component, ICachedReport {
+    public class CachedCrystalRep : Component, ICachedReport {
         
-        public CachedContractReport() {
+        public CachedCrystalRep() {
         }
         
         [Browsable(false)]
@@ -137,7 +137,7 @@ namespace TransportCompany.reports {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            ContractReport rpt = new ContractReport();
+            CrystalRep rpt = new CrystalRep();
             rpt.Site = this.Site;
             return rpt;
         }

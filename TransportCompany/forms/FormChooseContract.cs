@@ -13,10 +13,10 @@ using Contract = TransportCompany.models.Contract;
 
 namespace TransportCompany.forms
 {
-    public partial class SetWorkChooseContractForm : Form
+    public partial class FormChooseContract : Form
     {
         ContractDAO contractDAO = new ContractDAO();
-        public SetWorkChooseContractForm()
+        public FormChooseContract()
         {
             InitializeComponent();
             comboBoxContracts.Items.AddRange(contractDAO.getAllContracts());
@@ -26,23 +26,14 @@ namespace TransportCompany.forms
         {
             try
             {
-                FormChooseEmployee form = new FormChooseEmployee(comboBoxContracts.SelectedItem.ToString());
+                FormContract form = new FormContract(comboBoxContracts.SelectedItem.ToString());
+                this.Close();
                 form.ShowDialog();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Что-то пошло не так!" + ex);
             }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBoxContracts_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

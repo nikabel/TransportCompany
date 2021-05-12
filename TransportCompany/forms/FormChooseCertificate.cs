@@ -9,40 +9,30 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TransportCompany.DAO;
 using TransportCompany.models;
-using Contract = TransportCompany.models.Contract;
 
 namespace TransportCompany.forms
 {
-    public partial class SetWorkChooseContractForm : Form
+    public partial class FormChooseCertificate : Form
     {
-        ContractDAO contractDAO = new ContractDAO();
-        public SetWorkChooseContractForm()
+        WorkCertificateDAO dao = new WorkCertificateDAO();
+        public FormChooseCertificate()
         {
             InitializeComponent();
-            comboBoxContracts.Items.AddRange(contractDAO.getAllContracts());
+            comboBoxCertificates.Items.AddRange(dao.getAllCertificates());
         }
 
         private void buttonChoose_Click(object sender, EventArgs e)
         {
             try
             {
-                FormChooseEmployee form = new FormChooseEmployee(comboBoxContracts.SelectedItem.ToString());
+                FormWorkCertificate form = new FormWorkCertificate(comboBoxCertificates.SelectedItem.ToString());
+                this.Close();
                 form.ShowDialog();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Что-то пошло не так!" + ex);
             }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBoxContracts_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

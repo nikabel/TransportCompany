@@ -33,6 +33,7 @@ namespace TransportCompany.forms
                 textBoxRCBIC.Text = details.Rcbic;
                 textBoxOGRN.Text = details.Ogrn;
                 textBoxCorrACC.Text = details.CorrAcc;
+                textBoxBankName.Text = details.BankName;
             }
             else
             {
@@ -41,6 +42,7 @@ namespace TransportCompany.forms
                 textBoxRCBIC.Text = "";
                 textBoxOGRN.Text = "";
                 textBoxCorrACC.Text = "";
+                textBoxBankName.Text = "";
             }
         }
 

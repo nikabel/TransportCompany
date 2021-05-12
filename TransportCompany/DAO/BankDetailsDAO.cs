@@ -28,7 +28,8 @@ namespace TransportCompany.DAO
                     string rcbic = dr.GetString(4);
                     string ogrn = dr.GetString(5);
                     string corr = dr.GetString(6);
-                    details.Add(new BankDetails(acc, null, name, inn, rcbic, ogrn, corr));
+                    string bank = dr.GetString(7);
+                    details.Add(new BankDetails(acc, null, name, inn, rcbic, ogrn, corr, bank));
                 }
 
                 BankDetails[] detailsArr = details.ToArray();
@@ -58,8 +59,8 @@ namespace TransportCompany.DAO
         {
             try
             {
-                string query = String.Format("Insert BankDetails values ('{0}', null, '{1}', '{2}', '{3}', '{4}', '{5}')",
-                    details.Acc, details.CustomerName, details.Inn, details.Rcbic, details.Ogrn, details.CorrAcc);
+                string query = String.Format("Insert BankDetails values ('{0}', null, '{1}', '{2}', '{3}', '{4}', '{5}', '{6}')",
+                    details.Acc, details.CustomerName, details.Inn, details.Rcbic, details.Ogrn, details.CorrAcc, details.BankName);
                 connect.executeNonQuery(query);
                 return true;
             }
@@ -72,8 +73,8 @@ namespace TransportCompany.DAO
         {
             try
             {
-                string query = String.Format("UPDATE BankDetails SET acc = '{0}', company_name = null, customer_name = '{1}', inn = '{2}', rcbic = '{3}', ogrn = '{4}', corr_acc = '{5}' WHERE acc = '{6}' ",
-                    details.Acc, details.CustomerName, details.Inn, details.Rcbic, details.Ogrn, details.CorrAcc, oldAcc);
+                string query = String.Format("UPDATE BankDetails SET acc = '{0}', company_name = null, customer_name = '{1}', inn = '{2}', rcbic = '{3}', ogrn = '{4}', corr_acc = '{5}', bank_name='{6}' WHERE acc = '{7}' ",
+                    details.Acc, details.CustomerName, details.Inn, details.Rcbic, details.Ogrn, details.CorrAcc, details.BankName, oldAcc);
                 connect.executeNonQuery(query);
                 return true;
             }

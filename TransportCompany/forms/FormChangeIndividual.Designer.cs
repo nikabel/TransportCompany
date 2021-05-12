@@ -47,6 +47,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBoxBankName = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -116,7 +118,7 @@
             // 
             // buttonChange
             // 
-            this.buttonChange.Location = new System.Drawing.Point(171, 431);
+            this.buttonChange.Location = new System.Drawing.Point(173, 481);
             this.buttonChange.Name = "buttonChange";
             this.buttonChange.Size = new System.Drawing.Size(111, 39);
             this.buttonChange.TabIndex = 81;
@@ -205,11 +207,29 @@
             this.label9.TabIndex = 103;
             this.label9.Text = "Корреспондентский счет";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(12, 428);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(115, 17);
+            this.label10.TabIndex = 105;
+            this.label10.Text = "Название банка";
+            // 
+            // textBoxBankName
+            // 
+            this.textBoxBankName.Location = new System.Drawing.Point(202, 428);
+            this.textBoxBankName.Name = "textBoxBankName";
+            this.textBoxBankName.Size = new System.Drawing.Size(238, 22);
+            this.textBoxBankName.TabIndex = 104;
+            // 
             // FormChangeIndividual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(462, 482);
+            this.ClientSize = new System.Drawing.Size(462, 532);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.textBoxBankName);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
@@ -257,5 +277,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        public System.Windows.Forms.TextBox textBoxBankName;
     }
 }
