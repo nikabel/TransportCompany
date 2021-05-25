@@ -58,6 +58,7 @@
             // textBoxModelName
             // 
             this.textBoxModelName.Location = new System.Drawing.Point(274, 21);
+            this.textBoxModelName.MaxLength = 50;
             this.textBoxModelName.Name = "textBoxModelName";
             this.textBoxModelName.Size = new System.Drawing.Size(238, 22);
             this.textBoxModelName.TabIndex = 24;
@@ -65,6 +66,7 @@
             // textBoxMarkName
             // 
             this.textBoxMarkName.Location = new System.Drawing.Point(274, 60);
+            this.textBoxMarkName.MaxLength = 50;
             this.textBoxMarkName.Name = "textBoxMarkName";
             this.textBoxMarkName.Size = new System.Drawing.Size(238, 22);
             this.textBoxMarkName.TabIndex = 25;
@@ -91,6 +93,7 @@
             // textBoxModelCount
             // 
             this.textBoxModelCount.Location = new System.Drawing.Point(274, 101);
+            this.textBoxModelCount.MaxLength = 3;
             this.textBoxModelCount.Name = "textBoxModelCount";
             this.textBoxModelCount.Size = new System.Drawing.Size(238, 22);
             this.textBoxModelCount.TabIndex = 30;

@@ -30,7 +30,37 @@ namespace TransportCompany.forms
 
         private void buttonChange_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if ((textBoxName.Text.Equals("")) || (textBoxPos.Text.Equals("")) || (textBoxTel.Text.Equals("")) || (textBoxAddress.Text.Equals(""))
+                || (comboBoxSpec.Text.Equals("")) || (comboBoxDep.Text.Equals("")))
+                MessageBox.Show("Вы не ввели все необходимые данные!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+            else this.Close();
+        }
+
+        private void textBoxTel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            if (!Char.IsDigit(number) && number != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char symb = e.KeyChar;
+            if ((symb < 'А' || symb > 'я') && symb != '\b' && symb != ' ')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxPos_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char symb = e.KeyChar;
+            if ((symb < 'А' || symb > 'я') && symb != '\b' && symb != ' ')
+            {
+                e.Handled = true;
+            }
         }
     }
 }

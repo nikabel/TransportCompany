@@ -93,14 +93,14 @@
             // 
             // textBoxSearchStopType
             // 
-            this.textBoxSearchStopType.Location = new System.Drawing.Point(170, 37);
+            this.textBoxSearchStopType.Location = new System.Drawing.Point(192, 37);
             this.textBoxSearchStopType.Name = "textBoxSearchStopType";
             this.textBoxSearchStopType.Size = new System.Drawing.Size(274, 22);
             this.textBoxSearchStopType.TabIndex = 1;
             // 
             // buttonSearchTransportType
             // 
-            this.buttonSearchTransportType.Location = new System.Drawing.Point(463, 32);
+            this.buttonSearchTransportType.Location = new System.Drawing.Point(472, 32);
             this.buttonSearchTransportType.Name = "buttonSearchTransportType";
             this.buttonSearchTransportType.Size = new System.Drawing.Size(106, 33);
             this.buttonSearchTransportType.TabIndex = 0;

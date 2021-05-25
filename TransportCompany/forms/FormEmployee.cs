@@ -51,10 +51,21 @@ namespace TransportCompany.forms
 
             if (result == DialogResult.Yes)
             {
-                int rowNum = dataGridViewEmployee.CurrentCell.RowIndex;
-                string name = dataGridViewEmployee[0, rowNum].Value.ToString();
-                daoEmp.deleteByName(name);
-                updateTable();
+                try
+                {
+                    int rowNum = dataGridViewEmployee.CurrentCell.RowIndex;
+                    string name = dataGridViewEmployee[0, rowNum].Value.ToString();
+                    daoEmp.deleteByName(name);
+                    updateTable();
+                }
+                catch (SqlException odbcEx)
+                {
+                    MessageBox.Show("Невозможно удалить данные, так как они используются!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка при удалении!" + ex);
+                }
             }
         }
 
@@ -80,9 +91,13 @@ namespace TransportCompany.forms
                 daoOf.updateEmployee(n, officeEmployee);
                 updateTable();
             }
+            catch (SqlException odbcEx)
+            {
+                MessageBox.Show("Имя сотрудника не должно повторяться!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
             catch (Exception ex)
             {
-                MessageBox.Show("Имя сотрудника не должно повторяться!" + ex);
+                MessageBox.Show("Ошибка при изменении!" + ex);
             }
         }
 
@@ -104,9 +119,13 @@ namespace TransportCompany.forms
                 daoOf.addEmployee(officeEmployee);
                 updateTable();
             }
+            catch (SqlException odbcEx)
+            {
+                MessageBox.Show("Имя сотрудника не должно повторяться!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
             catch (Exception ex)
             {
-                MessageBox.Show("Имя сотрудника не должно повторяться!" + ex);
+                MessageBox.Show("Ошибка при добавлении!" + ex);
             }
         }
 
@@ -126,19 +145,22 @@ namespace TransportCompany.forms
             DataTable dataEmp = daoEmp.searchByName(name);
             DataTable dataDr = daoDr.searchByName(name);
             DataTable dataOf = daoOf.searchByName(name);
-            dataEmp.Columns["employee_name"].ColumnName = "ФИО";
-            dataEmp.Columns["position"].ColumnName = "Должность";
-            dataEmp.Columns["employee_tel_num"].ColumnName = "Номер телефона";
-            dataEmp.Columns["employee_address"].ColumnName = "Адрес";
-            dataEmp.Columns["department_name"].ColumnName = "Наименование отдела";
-            dataDr.Columns["driver_name"].ColumnName = "ФИО";
-            dataDr.Columns["driving_experience"].ColumnName = "Водительский стаж";
-            dataDr.Columns["license_category"].ColumnName = "Категория прав";
-            dataOf.Columns["employee_name"].ColumnName = "ФИО";
-            dataOf.Columns["spec_name"].ColumnName = "Специализация";
-            dataGridViewEmployee.DataSource = dataEmp;
-            dataGridViewDriver.DataSource = dataDr;
-            dataGridViewOfficeEmployee.DataSource = dataOf;
+            if (dataEmp.Rows.Count > 1)
+            {
+                dataEmp.Columns["employee_name"].ColumnName = "ФИО";
+                dataEmp.Columns["position"].ColumnName = "Должность";
+                dataEmp.Columns["employee_tel_num"].ColumnName = "Номер телефона";
+                dataEmp.Columns["employee_address"].ColumnName = "Адрес";
+                dataEmp.Columns["department_name"].ColumnName = "Наименование отдела";
+                dataDr.Columns["driver_name"].ColumnName = "ФИО";
+                dataDr.Columns["driving_experience"].ColumnName = "Водительский стаж";
+                dataDr.Columns["license_category"].ColumnName = "Категория прав";
+                dataOf.Columns["employee_name"].ColumnName = "ФИО";
+                dataOf.Columns["spec_name"].ColumnName = "Специализация";
+                dataGridViewEmployee.DataSource = dataEmp;
+                dataGridViewDriver.DataSource = dataDr;
+                dataGridViewOfficeEmployee.DataSource = dataOf;
+            }
             textBoxSearchEmployee.Clear();
         }
 
@@ -172,9 +194,13 @@ namespace TransportCompany.forms
                 daoDr.addDriver(driver);
                 updateTable();
             }
+            catch (SqlException odbcEx)
+            {
+                MessageBox.Show("Имя водителя не должно повторяться!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
             catch (Exception ex)
             {
-                MessageBox.Show("Имя водителя не должно повторяться!" + ex);
+                MessageBox.Show("Ошибка при добавлении!" + ex);
             }
         }
 
@@ -203,9 +229,13 @@ namespace TransportCompany.forms
                 daoDr.updateEmployee(n, driver);
                 updateTable();
             }
+            catch (SqlException odbcEx)
+            {
+                MessageBox.Show("Имя водителя не должно повторяться!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
             catch (Exception ex)
             {
-                MessageBox.Show("Имя водителя не должно повторяться!" + ex);
+                MessageBox.Show("Ошибка при изменении!" + ex);
             }
         }
     }

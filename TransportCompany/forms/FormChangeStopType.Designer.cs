@@ -45,6 +45,7 @@
             // textBoxUpdateStopTypeName
             // 
             this.textBoxUpdateStopTypeName.Location = new System.Drawing.Point(274, 19);
+            this.textBoxUpdateStopTypeName.MaxLength = 50;
             this.textBoxUpdateStopTypeName.Name = "textBoxUpdateStopTypeName";
             this.textBoxUpdateStopTypeName.Size = new System.Drawing.Size(238, 22);
             this.textBoxUpdateStopTypeName.TabIndex = 12;

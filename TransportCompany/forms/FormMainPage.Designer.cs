@@ -50,12 +50,9 @@
             this.договорОбОказанииУслугToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.заявкаНаПеревозкуГрузаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.актВыполненныхРаботToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.сведенияОбОбьемеВыполненныхРаботToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сведенияОЗавершенныхЗаказахToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.запросыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчетОЗанятостиТранспортаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.отчетОЗанятостиВодителейToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.сведенияОВыполненныхРаботахЗаУказанныйПериодToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сведенияОСоответствииГрафикуОказанияУслугToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выходИзСистемыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -216,7 +213,6 @@
             this.договорОбОказанииУслугToolStripMenuItem,
             this.заявкаНаПеревозкуГрузаToolStripMenuItem,
             this.актВыполненныхРаботToolStripMenuItem,
-            this.сведенияОбОбьемеВыполненныхРаботToolStripMenuItem,
             this.сведенияОЗавершенныхЗаказахToolStripMenuItem});
             this.отчетыToolStripMenuItem.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.отчетыToolStripMenuItem.Name = "отчетыToolStripMenuItem";
@@ -226,42 +222,33 @@
             // договорОбОказанииУслугToolStripMenuItem
             // 
             this.договорОбОказанииУслугToolStripMenuItem.Name = "договорОбОказанииУслугToolStripMenuItem";
-            this.договорОбОказанииУслугToolStripMenuItem.Size = new System.Drawing.Size(444, 26);
+            this.договорОбОказанииУслугToolStripMenuItem.Size = new System.Drawing.Size(324, 26);
             this.договорОбОказанииУслугToolStripMenuItem.Text = "Договор об оказании услуг";
             this.договорОбОказанииУслугToolStripMenuItem.Click += new System.EventHandler(this.договорОбОказанииУслугToolStripMenuItem_Click);
             // 
             // заявкаНаПеревозкуГрузаToolStripMenuItem
             // 
             this.заявкаНаПеревозкуГрузаToolStripMenuItem.Name = "заявкаНаПеревозкуГрузаToolStripMenuItem";
-            this.заявкаНаПеревозкуГрузаToolStripMenuItem.Size = new System.Drawing.Size(444, 26);
+            this.заявкаНаПеревозкуГрузаToolStripMenuItem.Size = new System.Drawing.Size(324, 26);
             this.заявкаНаПеревозкуГрузаToolStripMenuItem.Text = "Заявка на перевозку груза";
             // 
             // актВыполненныхРаботToolStripMenuItem
             // 
             this.актВыполненныхРаботToolStripMenuItem.Name = "актВыполненныхРаботToolStripMenuItem";
-            this.актВыполненныхРаботToolStripMenuItem.Size = new System.Drawing.Size(444, 26);
+            this.актВыполненныхРаботToolStripMenuItem.Size = new System.Drawing.Size(324, 26);
             this.актВыполненныхРаботToolStripMenuItem.Text = "Акт выполненных работ";
             this.актВыполненныхРаботToolStripMenuItem.Click += new System.EventHandler(this.актВыполненныхРаботToolStripMenuItem_Click);
-            // 
-            // сведенияОбОбьемеВыполненныхРаботToolStripMenuItem
-            // 
-            this.сведенияОбОбьемеВыполненныхРаботToolStripMenuItem.Name = "сведенияОбОбьемеВыполненныхРаботToolStripMenuItem";
-            this.сведенияОбОбьемеВыполненныхРаботToolStripMenuItem.Size = new System.Drawing.Size(444, 26);
-            this.сведенияОбОбьемеВыполненныхРаботToolStripMenuItem.Text = "Сведения об обьеме выполненных работ по заказу";
-            this.сведенияОбОбьемеВыполненныхРаботToolStripMenuItem.Click += new System.EventHandler(this.сведенияОбОбьемеВыполненныхРаботToolStripMenuItem_Click);
             // 
             // сведенияОЗавершенныхЗаказахToolStripMenuItem
             // 
             this.сведенияОЗавершенныхЗаказахToolStripMenuItem.Name = "сведенияОЗавершенныхЗаказахToolStripMenuItem";
-            this.сведенияОЗавершенныхЗаказахToolStripMenuItem.Size = new System.Drawing.Size(444, 26);
+            this.сведенияОЗавершенныхЗаказахToolStripMenuItem.Size = new System.Drawing.Size(324, 26);
             this.сведенияОЗавершенныхЗаказахToolStripMenuItem.Text = "Сведения о завершенных заказах";
             // 
             // запросыToolStripMenuItem
             // 
             this.запросыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.отчетОЗанятостиТранспортаToolStripMenuItem,
-            this.отчетОЗанятостиВодителейToolStripMenuItem,
-            this.сведенияОВыполненныхРаботахЗаУказанныйПериодToolStripMenuItem,
             this.сведенияОСоответствииГрафикуОказанияУслугToolStripMenuItem});
             this.запросыToolStripMenuItem.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.запросыToolStripMenuItem.Name = "запросыToolStripMenuItem";
@@ -274,19 +261,6 @@
             this.отчетОЗанятостиТранспортаToolStripMenuItem.Size = new System.Drawing.Size(445, 26);
             this.отчетОЗанятостиТранспортаToolStripMenuItem.Text = "Сведения о занятости транспорта";
             this.отчетОЗанятостиТранспортаToolStripMenuItem.Click += new System.EventHandler(this.отчетОЗанятостиТранспортаToolStripMenuItem_Click);
-            // 
-            // отчетОЗанятостиВодителейToolStripMenuItem
-            // 
-            this.отчетОЗанятостиВодителейToolStripMenuItem.Name = "отчетОЗанятостиВодителейToolStripMenuItem";
-            this.отчетОЗанятостиВодителейToolStripMenuItem.Size = new System.Drawing.Size(445, 26);
-            this.отчетОЗанятостиВодителейToolStripMenuItem.Text = "Сведения о занятости водителей";
-            // 
-            // сведенияОВыполненныхРаботахЗаУказанныйПериодToolStripMenuItem
-            // 
-            this.сведенияОВыполненныхРаботахЗаУказанныйПериодToolStripMenuItem.Name = "сведенияОВыполненныхРаботахЗаУказанныйПериодToolStripMenuItem";
-            this.сведенияОВыполненныхРаботахЗаУказанныйПериодToolStripMenuItem.Size = new System.Drawing.Size(445, 26);
-            this.сведенияОВыполненныхРаботахЗаУказанныйПериодToolStripMenuItem.Text = "Сведения о завершенных заказах";
-            this.сведенияОВыполненныхРаботахЗаУказанныйПериодToolStripMenuItem.Click += new System.EventHandler(this.сведенияОВыполненныхРаботахЗаУказанныйПериодToolStripMenuItem_Click);
             // 
             // сведенияОСоответствииГрафикуОказанияУслугToolStripMenuItem
             // 
@@ -387,16 +361,13 @@
         private System.Windows.Forms.ToolStripMenuItem заказчикиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem формированиеДоговораToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem составлениеЗаявкиToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem сведенияОбОбьемеВыполненныхРаботToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сведенияОЗавершенныхЗаказахToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem отчетОЗанятостиТранспортаToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem отчетОЗанятостиВодителейToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem выходИзСистемыToolStripMenuItem;
         private System.Windows.Forms.Button buttonContract;
         private System.Windows.Forms.Button buttonRequest;
         private System.Windows.Forms.Button buttonCompletedWorks;
         private System.Windows.Forms.ToolStripMenuItem определениеСтатусаЗаказаToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem сведенияОВыполненныхРаботахЗаУказанныйПериодToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сведенияОСоответствииГрафикуОказанияУслугToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оформлениеАктаВыполненныхРаботПоЗаказуToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem определениеСотрудниковДляРаботыНадЗаказомToolStripMenuItem;

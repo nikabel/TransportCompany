@@ -12,7 +12,6 @@ namespace TransportCompany.models
         private string _customerEmail;
         private string _customerTel;
         private string _customerAddress;
-        private string _customerBussinessAddress;
 
         public Customer(string customerName, string customerEmail, string customerTel, string customerAddress)
         {

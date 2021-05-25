@@ -45,6 +45,7 @@
             // textBoxCargoTypeName
             // 
             this.textBoxCargoTypeName.Location = new System.Drawing.Point(165, 38);
+            this.textBoxCargoTypeName.MaxLength = 50;
             this.textBoxCargoTypeName.Name = "textBoxCargoTypeName";
             this.textBoxCargoTypeName.Size = new System.Drawing.Size(238, 22);
             this.textBoxCargoTypeName.TabIndex = 17;

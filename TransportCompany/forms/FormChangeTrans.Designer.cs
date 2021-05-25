@@ -62,6 +62,7 @@
             // textBoxLicensePlate
             // 
             this.textBoxLicensePlate.Location = new System.Drawing.Point(283, 20);
+            this.textBoxLicensePlate.MaxLength = 9;
             this.textBoxLicensePlate.Name = "textBoxLicensePlate";
             this.textBoxLicensePlate.Size = new System.Drawing.Size(238, 22);
             this.textBoxLicensePlate.TabIndex = 27;
@@ -119,6 +120,7 @@
             // textBoxOccupation
             // 
             this.textBoxOccupation.Location = new System.Drawing.Point(283, 144);
+            this.textBoxOccupation.MaxLength = 10;
             this.textBoxOccupation.Name = "textBoxOccupation";
             this.textBoxOccupation.Size = new System.Drawing.Size(238, 22);
             this.textBoxOccupation.TabIndex = 35;

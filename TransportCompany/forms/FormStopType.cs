@@ -27,9 +27,9 @@ namespace TransportCompany
             {
                 case "Operation":
                     {
-                        this.Text = "Информация о видах остановок";
-                        labelSearch.Text = "Вид остановки";
-                        groupBox3.Text= "Поиск информации о видах остановок";
+                        this.Text = "Информация об операциях";
+                        labelSearch.Text = "Наименование операции";
+                        groupBox3.Text= "Поиск информации об операциях";
                         break;
                     }
                 case "Department":
@@ -148,9 +148,14 @@ namespace TransportCompany
                             updateTable();
                             break;
                         }
+                        catch (SqlException odbcEx)
+                        {
+                            MessageBox.Show("Наименование операции не должно повторяться!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            break;
+                        }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Вид остановки не должен повторяться!" + ex);
+                            MessageBox.Show("Ошибка при добавлении!" + ex);
                             break;
                         }
                     }
@@ -167,9 +172,14 @@ namespace TransportCompany
                             updateTable();
                             break;
                         }
+                        catch (SqlException odbcEx)
+                        {
+                            MessageBox.Show("Наименование отдела не должно повторяться!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            break;
+                        }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Отдел не должен повторяться!" + ex);
+                            MessageBox.Show("Ошибка при добавлении!" + ex);
                             break;
                         }
                     }
@@ -185,9 +195,14 @@ namespace TransportCompany
                             updateTable();
                             break;
                         }
+                        catch (SqlException odbcEx)
+                        {
+                            MessageBox.Show("Наименование вида груза не должно повторяться!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            break;
+                        }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Вид груза не должен повторяться!" + ex);
+                            MessageBox.Show("Ошибка при добавлении!" + ex);
                             break;
                         }
                     }
@@ -203,9 +218,14 @@ namespace TransportCompany
                             updateTable();
                             break;
                         }
+                        catch (SqlException odbcEx)
+                        {
+                            MessageBox.Show("Наименование специализация не должно повторяться!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            break;
+                        }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Специализация не должна повторяться!" + ex);
+                            MessageBox.Show("Ошибка при добавлении!" + ex);
                             break;
                         }
                     }
@@ -225,9 +245,14 @@ namespace TransportCompany
                             updateTable();
                             break;
                         }
+                        catch (SqlException odbcEx)
+                        {
+                            MessageBox.Show("Транспортный номер не должен повторяться!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            break;
+                        }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Транспортный номер не должен повторяться!" + ex);
+                            MessageBox.Show("Ошибка при добавлении!" + ex);
                             break;
                         }
                     }
@@ -253,9 +278,14 @@ namespace TransportCompany
                             }
                             break;
                         }
+                        catch (SqlException odbcEx)
+                        {
+                            MessageBox.Show("Модель не должна повторяться!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            break;
+                        }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Модель не должна повторяться!" + ex);
+                            MessageBox.Show("Ошибка при добавлении!" + ex);
                             break;
                         }
                     }
@@ -274,52 +304,129 @@ namespace TransportCompany
                 {
                     case "Operation":
                         {
-                            int rowNum = dataGridViewStopType.CurrentCell.RowIndex;
-                            string name = dataGridViewStopType[0, rowNum].Value.ToString();
-                            daoST.deleteByName(name);
-                            updateTable();
-                            break;
+                            try
+                            {
+                                int rowNum = dataGridViewStopType.CurrentCell.RowIndex;
+                                string name = dataGridViewStopType[0, rowNum].Value.ToString();
+                                daoST.deleteByName(name);
+                                updateTable();
+                                break;
+                            }
+                            catch (SqlException odbcEx)
+                            {
+                                MessageBox.Show("Невозможно удалить данные, так как они используются!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                                break;
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Ошибка при удалении!" + ex);
+                                break;
+                            }
                         }
                     case "Department":
                         {
-                            int rowNum = dataGridViewStopType.CurrentCell.RowIndex;
-                            string name = dataGridViewStopType[0, rowNum].Value.ToString();
-                            daoDep.deleteByName(name);
-                            updateTable();
-                            break;
+                            try
+                            {
+                                int rowNum = dataGridViewStopType.CurrentCell.RowIndex;
+                                string name = dataGridViewStopType[0, rowNum].Value.ToString();
+                                daoDep.deleteByName(name);
+                                updateTable();
+                                break;
+                            }
+                            catch (SqlException odbcEx)
+                            {
+                                MessageBox.Show("Невозможно удалить данные, так как они используются!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                                break;
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Ошибка при удалении!" + ex);
+                                break;
+                            }
                         }
                     case "CargoType":
                         {
-                            DataTable data = daoCT.getAll();
-                            int rowNum = dataGridViewStopType.CurrentCell.RowIndex;
-                            string name = dataGridViewStopType[0, rowNum].Value.ToString();
-                            daoCT.deleteByName(name);
-                            updateTable();
-                            break;
+                            try
+                            {
+                                int rowNum = dataGridViewStopType.CurrentCell.RowIndex;
+                                string name = dataGridViewStopType[0, rowNum].Value.ToString();
+                                daoCT.deleteByName(name);
+                                updateTable();
+                                break;
+                            }
+                            catch (SqlException odbcEx)
+                            {
+                                MessageBox.Show("Невозможно удалить данные, так как они используются!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                                break;
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Ошибка при удалении!" + ex);
+                                break;
+                            }
                         }
                     case "Specialization":
                         {
-                            int rowNum = dataGridViewStopType.CurrentCell.RowIndex;
-                            string name = dataGridViewStopType[0, rowNum].Value.ToString();
-                            daoSpec.deleteByName(name);
-                            updateTable();
-                            break;
+                            try
+                            {
+                                int rowNum = dataGridViewStopType.CurrentCell.RowIndex;
+                                string name = dataGridViewStopType[0, rowNum].Value.ToString();
+                                daoSpec.deleteByName(name);
+                                updateTable();
+                                break;
+                            }
+                            catch (SqlException odbcEx)
+                            {
+                                MessageBox.Show("Невозможно удалить данные, так как они используются!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                                break;
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Ошибка при удалении!" + ex);
+                                break;
+                            }
                         }
                     case "Transport":
                         {
-                            int rowNum = dataGridViewStopType.CurrentCell.RowIndex;
-                            string name = dataGridViewStopType[0, rowNum].Value.ToString();
-                            daoTrans.deleteByName(name);
-                            updateTable();
-                            break;
+                            try
+                            {
+                                int rowNum = dataGridViewStopType.CurrentCell.RowIndex;
+                                string name = dataGridViewStopType[0, rowNum].Value.ToString();
+                                daoTrans.deleteByName(name);
+                                updateTable();
+                                break;
+                            }
+                            catch (SqlException odbcEx)
+                            {
+                                MessageBox.Show("Невозможно удалить данные, так как они используются!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                                break;
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Ошибка при удалении!" + ex);
+                                break;
+                            }
                         }
                     case "TransportModel":
                         {
-                            int rowNum = dataGridViewStopType.CurrentCell.RowIndex;
-                            string name = dataGridViewStopType[0, rowNum].Value.ToString();
-                            daoTransModel.deleteByName(name);
-                            updateTable();
-                            break;
+                            try
+                            {
+                                int rowNum = dataGridViewStopType.CurrentCell.RowIndex;
+                                string name = dataGridViewStopType[0, rowNum].Value.ToString();
+                                daoTransModel.deleteByName(name);
+                                updateTable();
+                                break;
+                            }
+                            catch (SqlException odbcEx)
+                            {
+                                MessageBox.Show("Невозможно удалить данные, так как они используются!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                                break;
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Ошибка при удалении!" + ex);
+                                break;
+                            }
                         }
                 }
             }
@@ -334,8 +441,12 @@ namespace TransportCompany
                     {
                         string name = textBoxSearchStopType.Text.ToString();
                         DataTable data = daoST.searchByName(name);
-                        data.Columns["operation_name"].ColumnName = "Наименование операции";
-                        dataGridViewStopType.DataSource = data;
+                        if (data.Rows.Count>1)
+                        {
+                            data.Columns["operation_name"].ColumnName = "Наименование операции";
+                            dataGridViewStopType.DataSource = data;
+                        }
+                        else MessageBox.Show("Ничего не найдено!", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                         textBoxSearchStopType.Clear();
                         break;
                     }
@@ -343,46 +454,71 @@ namespace TransportCompany
                     {
                         string name = textBoxSearchStopType.Text.ToString();
                         DataTable data = daoDep.searchByName(name);
-                        data.Columns["department_name"].ColumnName = "Наименование отдела";
-                        data.Columns["company_name"].ColumnName = "Наименование компании";
-                        dataGridViewStopType.DataSource = data;
+                        if (data.Rows.Count > 1)
+                        {
+                            data.Columns["department_name"].ColumnName = "Наименование отдела";
+                            data.Columns["company_name"].ColumnName = "Наименование компании";
+                            dataGridViewStopType.DataSource = data;
+                        }
+                        else MessageBox.Show("Ничего не найдено!", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                        textBoxSearchStopType.Clear();
                         break;
                     }
                 case "CargoType":
                     {
                         string name = textBoxSearchStopType.Text.ToString();
                         DataTable data = daoCT.searchByName(name);
-                        data.Columns["cargo_type_name"].ColumnName = "Наименование типа груза";
-                        dataGridViewStopType.DataSource = data;
+                        if (data.Rows.Count > 1)
+                        {
+                            data.Columns["cargo_type_name"].ColumnName = "Наименование типа груза";
+                            dataGridViewStopType.DataSource = data;
+                        }
+                        else MessageBox.Show("Ничего не найдено!", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                        textBoxSearchStopType.Clear();
                         break;
                     }
                 case "Specialization":
                     {
                         string name = textBoxSearchStopType.Text.ToString();
                         DataTable data = daoSpec.searchByName(name);
-                        data.Columns["spec_name"].ColumnName = "Наименование специализации";
-                        dataGridViewStopType.DataSource = data;
+                        if (data.Rows.Count > 1)
+                        {
+                            data.Columns["spec_name"].ColumnName = "Наименование специализации";
+                            dataGridViewStopType.DataSource = data;
+                        }
+                        else MessageBox.Show("Ничего не найдено!", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                        textBoxSearchStopType.Clear(); 
                         break;
                     }
                 case "Transport":
                     {
                         string name = textBoxSearchStopType.Text.ToString();
                         DataTable data = daoTrans.searchByName(name);
-                        data.Columns["license_plate"].ColumnName = "Гос. номер транспорта";
-                        data.Columns["driver_name"].ColumnName = "ФИО водителя";
-                        data.Columns["model_name"].ColumnName = "Наименование модели";
-                        data.Columns["occupation"].ColumnName = "Занятость транспорта";
-                        dataGridViewStopType.DataSource = data;
+                        if (data.Rows.Count > 1)
+                        {
+                            data.Columns["license_plate"].ColumnName = "Гос. номер транспорта";
+                            data.Columns["driver_name"].ColumnName = "ФИО водителя";
+                            data.Columns["model_name"].ColumnName = "Наименование модели";
+                            data.Columns["occupation"].ColumnName = "Занятость транспорта";
+                            dataGridViewStopType.DataSource = data;
+                        }
+                        else MessageBox.Show("Ничего не найдено!", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                        textBoxSearchStopType.Clear();
                         break;
                     }
                 case "TransportModel":
                     {
                         string name = textBoxSearchStopType.Text.ToString();
                         DataTable data = daoTransModel.searchByName(name);
-                        data.Columns["model_name"].ColumnName = "Наименование модели";
-                        data.Columns["mark_name"].ColumnName = "Наименование марки";
-                        data.Columns["model_count"].ColumnName = "Количество в автопарке";
-                        dataGridViewStopType.DataSource = data;
+                        if (data.Rows.Count > 1)
+                        {
+                            data.Columns["model_name"].ColumnName = "Наименование модели";
+                            data.Columns["mark_name"].ColumnName = "Наименование марки";
+                            data.Columns["model_count"].ColumnName = "Количество в автопарке";
+                            dataGridViewStopType.DataSource = data;
+                        }
+                        else MessageBox.Show("Ничего не найдено!", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                        textBoxSearchStopType.Clear();
                         break;
                     }
             }
@@ -406,9 +542,14 @@ namespace TransportCompany
                             updateTable();
                             break;
                         }
+                        catch (SqlException odbcEx)
+                        {
+                            MessageBox.Show("Наименование операции не должно повторяться!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            break;
+                        }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Вид остановки не должен повторяться!" + ex);
+                            MessageBox.Show("Ошибка при изменении!" + ex);
                             break;
                         }
                     }
@@ -428,9 +569,14 @@ namespace TransportCompany
                             updateTable();
                             break;
                         }
+                        catch (SqlException odbcEx)
+                        {
+                            MessageBox.Show("Наименование отдела не должно повторяться!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            break;
+                        }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Отдел не должен повторяться!" + ex);
+                            MessageBox.Show("Ошибка при изменении!" + ex);
                             break;
                         }
                     }
@@ -448,9 +594,14 @@ namespace TransportCompany
                             updateTable();
                             break;
                         }
+                        catch (SqlException odbcEx)
+                        {
+                            MessageBox.Show("Наименование вида груза не должно повторяться!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            break;
+                        }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Вид груза не должен повторяться!" + ex);
+                            MessageBox.Show("Ошибка при изменении!" + ex);
                             break;
                         }
                     }
@@ -468,9 +619,14 @@ namespace TransportCompany
                             updateTable();
                             break;
                         }
+                        catch (SqlException odbcEx)
+                        {
+                            MessageBox.Show("Наименование специализации не должно повторяться!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            break;
+                        }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Специализация не должна повторяться!" + ex);
+                            MessageBox.Show("Ошибка при изменении!" + ex);
                             break;
                         }
                     }
@@ -494,9 +650,14 @@ namespace TransportCompany
                             updateTable();
                             break;
                         }
+                        catch (SqlException odbcEx)
+                        {
+                            MessageBox.Show("Транспортный номер не должно повторяться!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            break;
+                        }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Транспортный номер не должен повторяться!" + ex);
+                            MessageBox.Show("Ошибка при изменении!" + ex);
                             break;
                         }
                     }
@@ -527,9 +688,14 @@ namespace TransportCompany
                             }
                             break;
                         }
+                        catch (SqlException odbcEx)
+                        {
+                            MessageBox.Show("Название модели не должно повторяться!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            break;
+                        }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Модель не должна повторяться!" + ex);
+                            MessageBox.Show("Ошибка при изменении!" + ex);
                             break;
                         }
                     }

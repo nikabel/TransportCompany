@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -62,6 +63,20 @@ namespace TransportCompany.forms
             dataGridViewCustomer.DataSource = dataC;
             dataGridViewEntityCustomer.DataSource = dataEC;
             dataGridViewIndividualCustomer.DataSource = dataIC;
+            if (dataC.Rows.Count > 1)
+            {
+                dataC.Columns["customer_name"].ColumnName = "ФИО";
+                dataC.Columns["email"].ColumnName = "E-mail";
+                dataC.Columns["customer_tel_num"].ColumnName = "Номер телефона";
+                dataC.Columns["customer_address"].ColumnName = "Фактический адрес";
+                dataEC.Columns["entity_director_name"].ColumnName = "ФИО директора";
+                dataEC.Columns["entity_company_name"].ColumnName = "Название компании";
+                dataEC.Columns["customer_business_address"].ColumnName = "Юридический адрес";
+                dataIC.Columns["customer_name"].ColumnName = "ФИО";
+                dataGridViewCustomer.DataSource = dataC;
+                dataGridViewEntityCustomer.DataSource = dataEC;
+                dataGridViewIndividualCustomer.DataSource = dataIC;
+            }
             textBoxSearchCustomer.Clear();
         }
 
@@ -72,15 +87,26 @@ namespace TransportCompany.forms
 
             if (result == DialogResult.Yes)
             {
-                int rowNum = dataGridViewCustomer.CurrentCell.RowIndex;
-                string name = dataGridViewCustomer[0, rowNum].Value.ToString();
-                daoC.deleteByName(name);
-                BankDetails details = daoBD.getBankByName(name);
-                if (details != null)
+                try
                 {
-                    daoBD.deleteByName(name);
+                    int rowNum = dataGridViewCustomer.CurrentCell.RowIndex;
+                    string name = dataGridViewCustomer[0, rowNum].Value.ToString();
+                    daoC.deleteByName(name);
+                    BankDetails details = daoBD.getBankByName(name);
+                    if (details != null)
+                    {
+                        daoBD.deleteByName(name);
+                    }
+                    updateTable();
                 }
-                updateTable();
+                catch (SqlException odbcEx)
+                {
+                    MessageBox.Show("Невозможно удалить данные, так как они используются!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка при удалении!" + ex);
+                }
             }
         }
 
@@ -111,9 +137,13 @@ namespace TransportCompany.forms
                 daoBD.addBankDetails(details);
                 updateTable();
             }
+            catch (SqlException odbcEx)
+            {
+                MessageBox.Show("Имя заказчика не должно повторяться!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
             catch (Exception ex)
             {
-                MessageBox.Show("Имя заказчика не должно повторяться!" + ex);
+                MessageBox.Show("Ошибка при добавлении!" + ex);
             }
         }
 
@@ -143,9 +173,13 @@ namespace TransportCompany.forms
 
                 updateTable();
             }
+            catch (SqlException odbcEx)
+            {
+                MessageBox.Show("Имя заказчика не должно повторяться!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
             catch (Exception ex)
             {
-                MessageBox.Show("Имя заказчика не должно повторяться!" + ex);
+                MessageBox.Show("Ошибка при добавлении!" + ex);
             }
         }
 
@@ -183,9 +217,13 @@ namespace TransportCompany.forms
                 else daoBD.addBankDetails(det);
                 updateTable();
             }
+            catch (SqlException odbcEx)
+            {
+                MessageBox.Show("Имя заказчика не должно повторяться!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
             catch (Exception ex)
             {
-                MessageBox.Show("Имя заказчика не должно повторяться!" + ex);
+                MessageBox.Show("Ошибка при изменении!" + ex);
             }
         }
 
@@ -221,9 +259,13 @@ namespace TransportCompany.forms
 
                 updateTable();
             }
+            catch (SqlException odbcEx)
+            {
+                MessageBox.Show("Имя заказчика не должно повторяться!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
             catch (Exception ex)
             {
-                MessageBox.Show("Имя заказчика не должно повторяться!" + ex);
+                MessageBox.Show("Ошибка при изменении!" + ex);
             }
         }
     }

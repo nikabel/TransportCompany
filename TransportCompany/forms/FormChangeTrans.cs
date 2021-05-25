@@ -30,7 +30,27 @@ namespace TransportCompany.forms
 
         private void buttonChange_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if ((textBoxLicensePlate.Text.Equals("")) || (comboBoxDrivers.Text.Equals("")) || (comboBoxModels.Text.Equals("")) || (textBoxOccupation.Text.Equals("")))
+                MessageBox.Show("Вы не ввели все необходимые данные!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+            else this.Close();
+        }
+
+        private void textBoxLicensePlate_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char symb = e.KeyChar;
+            if ((symb < 'А' || symb > 'я') && symb != '\b' && !Char.IsDigit(symb))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxOccupation_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char symb = e.KeyChar;
+            if ((symb < 'А' || symb > 'я') && symb != '\b' && symb != ' ')
+            {
+                e.Handled = true;
+            }
         }
 
         private void comboBoxDrivers_SelectedIndexChanged(object sender, EventArgs e)

@@ -45,6 +45,7 @@
             // textBoxSpecName
             // 
             this.textBoxSpecName.Location = new System.Drawing.Point(274, 22);
+            this.textBoxSpecName.MaxLength = 50;
             this.textBoxSpecName.Name = "textBoxSpecName";
             this.textBoxSpecName.Size = new System.Drawing.Size(238, 22);
             this.textBoxSpecName.TabIndex = 22;

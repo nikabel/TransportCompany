@@ -48,6 +48,7 @@
             // textBoxPos
             // 
             this.textBoxPos.Location = new System.Drawing.Point(274, 65);
+            this.textBoxPos.MaxLength = 50;
             this.textBoxPos.Name = "textBoxPos";
             this.textBoxPos.Size = new System.Drawing.Size(238, 22);
             this.textBoxPos.TabIndex = 61;
@@ -64,6 +65,7 @@
             // textBoxAddress
             // 
             this.textBoxAddress.Location = new System.Drawing.Point(274, 275);
+            this.textBoxAddress.MaxLength = 300;
             this.textBoxAddress.Multiline = true;
             this.textBoxAddress.Name = "textBoxAddress";
             this.textBoxAddress.Size = new System.Drawing.Size(238, 54);
@@ -81,6 +83,7 @@
             // textBoxTel
             // 
             this.textBoxTel.Location = new System.Drawing.Point(274, 231);
+            this.textBoxTel.MaxLength = 11;
             this.textBoxTel.Name = "textBoxTel";
             this.textBoxTel.Size = new System.Drawing.Size(238, 22);
             this.textBoxTel.TabIndex = 57;
@@ -124,6 +127,7 @@
             // textBoxName
             // 
             this.textBoxName.Location = new System.Drawing.Point(274, 23);
+            this.textBoxName.MaxLength = 50;
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(238, 22);
             this.textBoxName.TabIndex = 50;
@@ -141,6 +145,7 @@
             // textBoxLicense
             // 
             this.textBoxLicense.Location = new System.Drawing.Point(274, 189);
+            this.textBoxLicense.MaxLength = 3;
             this.textBoxLicense.Name = "textBoxLicense";
             this.textBoxLicense.Size = new System.Drawing.Size(238, 22);
             this.textBoxLicense.TabIndex = 65;
@@ -166,6 +171,7 @@
             // textBoxExp
             // 
             this.textBoxExp.Location = new System.Drawing.Point(274, 147);
+            this.textBoxExp.MaxLength = 2;
             this.textBoxExp.Name = "textBoxExp";
             this.textBoxExp.Size = new System.Drawing.Size(238, 22);
             this.textBoxExp.TabIndex = 62;

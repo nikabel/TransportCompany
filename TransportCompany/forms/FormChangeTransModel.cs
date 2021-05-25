@@ -29,7 +29,18 @@ namespace TransportCompany.forms
 
         private void buttonChangeStopType_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if ((textBoxModelName.Text.Equals("")) || (textBoxMarkName.Text.Equals("")) || (textBoxModelCount.Text.Equals("")))
+                MessageBox.Show("Вы не ввели все необходимые данные!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+            else this.Close();
+        }
+
+        private void textBoxModelCount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            if (!Char.IsDigit(number) && number != 8)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

@@ -48,7 +48,41 @@ namespace TransportCompany.forms
 
         private void buttonChange_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if ((textBoxName.Text.Equals("")) || (textBoxTel.Text.Equals("")) || (textBoxAdr.Text.Equals("")) || (textBoxBiAdr.Text.Equals(""))
+                || (textBoxEmail.Text.Equals("")) || (textBoxCompName.Text.Equals("")) || (textBoxACC.Text.Equals("")) || (textBoxINN.Text.Equals(""))
+                || (textBoxRCBIC.Equals("")) || (textBoxOGRN.Equals("")) || (textBoxCorrACC.Equals("")) || (textBoxBankName.Equals("")))
+                MessageBox.Show("Вы не ввели все необходимые данные!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+            else if ((textBoxACC.Text.Length < 20) || (textBoxINN.Text.Length < 12) || (textBoxRCBIC.Text.Length < 9) ||
+                ((textBoxOGRN.Text.Length !=13) || (textBoxOGRN.Text.Length != 15)) || (textBoxCorrACC.Text.Length < 20))
+                MessageBox.Show("Неверное введены банковские данные!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+            else this.Close();
+        }
+
+        private void textBoxTel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            if (!Char.IsDigit(number) && number != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char symb = e.KeyChar;
+            if ((symb < 'А' || symb > 'я') && symb != '\b' && symb != ' ')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxEmail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char symb = e.KeyChar;
+            if ((symb < 'a' || symb > 'z') && symb != '\b' && symb != '@' && symb != '.')
+            {
+                e.Handled = true;
+            }
         }
 
         private void textBoxACC_KeyPress(object sender, KeyPressEventArgs e)

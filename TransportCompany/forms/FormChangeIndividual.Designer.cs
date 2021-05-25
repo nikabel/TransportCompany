@@ -63,6 +63,7 @@
             // textBoxAdr
             // 
             this.textBoxAdr.Location = new System.Drawing.Point(202, 142);
+            this.textBoxAdr.MaxLength = 300;
             this.textBoxAdr.Multiline = true;
             this.textBoxAdr.Name = "textBoxAdr";
             this.textBoxAdr.Size = new System.Drawing.Size(238, 54);
@@ -80,6 +81,7 @@
             // textBoxEmail
             // 
             this.textBoxEmail.Location = new System.Drawing.Point(202, 59);
+            this.textBoxEmail.MaxLength = 50;
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(238, 22);
             this.textBoxEmail.TabIndex = 90;
@@ -96,6 +98,7 @@
             // textBoxTel
             // 
             this.textBoxTel.Location = new System.Drawing.Point(202, 100);
+            this.textBoxTel.MaxLength = 11;
             this.textBoxTel.Name = "textBoxTel";
             this.textBoxTel.Size = new System.Drawing.Size(238, 22);
             this.textBoxTel.TabIndex = 85;
@@ -112,6 +115,7 @@
             // textBoxName
             // 
             this.textBoxName.Location = new System.Drawing.Point(202, 20);
+            this.textBoxName.MaxLength = 50;
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(238, 22);
             this.textBoxName.TabIndex = 82;
@@ -129,6 +133,7 @@
             // textBoxACC
             // 
             this.textBoxACC.Location = new System.Drawing.Point(202, 218);
+            this.textBoxACC.MaxLength = 20;
             this.textBoxACC.Name = "textBoxACC";
             this.textBoxACC.Size = new System.Drawing.Size(238, 22);
             this.textBoxACC.TabIndex = 94;
@@ -136,6 +141,7 @@
             // textBoxINN
             // 
             this.textBoxINN.Location = new System.Drawing.Point(202, 259);
+            this.textBoxINN.MaxLength = 12;
             this.textBoxINN.Name = "textBoxINN";
             this.textBoxINN.Size = new System.Drawing.Size(238, 22);
             this.textBoxINN.TabIndex = 95;
@@ -143,6 +149,7 @@
             // textBoxRCBIC
             // 
             this.textBoxRCBIC.Location = new System.Drawing.Point(202, 301);
+            this.textBoxRCBIC.MaxLength = 9;
             this.textBoxRCBIC.Name = "textBoxRCBIC";
             this.textBoxRCBIC.Size = new System.Drawing.Size(238, 22);
             this.textBoxRCBIC.TabIndex = 96;
@@ -150,6 +157,7 @@
             // textBoxOGRN
             // 
             this.textBoxOGRN.Location = new System.Drawing.Point(202, 344);
+            this.textBoxOGRN.MaxLength = 15;
             this.textBoxOGRN.Name = "textBoxOGRN";
             this.textBoxOGRN.Size = new System.Drawing.Size(238, 22);
             this.textBoxOGRN.TabIndex = 97;
@@ -157,6 +165,7 @@
             // textBoxCorrACC
             // 
             this.textBoxCorrACC.Location = new System.Drawing.Point(202, 385);
+            this.textBoxCorrACC.MaxLength = 20;
             this.textBoxCorrACC.Name = "textBoxCorrACC";
             this.textBoxCorrACC.Size = new System.Drawing.Size(238, 22);
             this.textBoxCorrACC.TabIndex = 98;
@@ -219,6 +228,7 @@
             // textBoxBankName
             // 
             this.textBoxBankName.Location = new System.Drawing.Point(202, 428);
+            this.textBoxBankName.MaxLength = 50;
             this.textBoxBankName.Name = "textBoxBankName";
             this.textBoxBankName.Size = new System.Drawing.Size(238, 22);
             this.textBoxBankName.TabIndex = 104;

@@ -21,9 +21,18 @@ namespace TransportCompany.forms
 
         private void buttonChangeStopType_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if ((textBoxDepName.Text.Equals("")) || (textBoxCompName.Text.Equals("")))
+                MessageBox.Show("Вы не ввели все необходимые данные!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+            else this.Close();
         }
-
+        private void textBoxDepName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char symb = e.KeyChar;
+            if ((symb < 'А' || symb > 'я') && symb != '\b' && symb != ' ')
+            {
+                e.Handled = true;
+            }
+        }
         private void label1_Click(object sender, EventArgs e)
         {
 

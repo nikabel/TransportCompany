@@ -56,6 +56,7 @@
             // textBoxDepName
             // 
             this.textBoxDepName.Location = new System.Drawing.Point(284, 22);
+            this.textBoxDepName.MaxLength = 50;
             this.textBoxDepName.Name = "textBoxDepName";
             this.textBoxDepName.Size = new System.Drawing.Size(238, 22);
             this.textBoxDepName.TabIndex = 17;
@@ -63,9 +64,11 @@
             // textBoxCompName
             // 
             this.textBoxCompName.Location = new System.Drawing.Point(284, 61);
+            this.textBoxCompName.MaxLength = 50;
             this.textBoxCompName.Name = "textBoxCompName";
             this.textBoxCompName.Size = new System.Drawing.Size(238, 22);
             this.textBoxCompName.TabIndex = 18;
+            this.textBoxCompName.Text = "ООО \"СДК-Магистраль\"";
             // 
             // buttonChangeStopType
             // 
