@@ -67,6 +67,7 @@
             this.textBoxLicensePlate.Size = new System.Drawing.Size(238, 22);
             this.textBoxLicensePlate.TabIndex = 27;
             this.textBoxLicensePlate.TextChanged += new System.EventHandler(this.textBoxLicensePlate_TextChanged);
+            this.textBoxLicensePlate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxLicensePlate_KeyPress);
             // 
             // buttonChange
             // 
@@ -124,6 +125,7 @@
             this.textBoxOccupation.Name = "textBoxOccupation";
             this.textBoxOccupation.Size = new System.Drawing.Size(238, 22);
             this.textBoxOccupation.TabIndex = 35;
+            this.textBoxOccupation.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxOccupation_KeyPress);
             // 
             // FormChangeTrans
             // 

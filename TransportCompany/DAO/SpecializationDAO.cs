@@ -23,7 +23,7 @@ namespace TransportCompany.DAO
             }
             catch (Exception ex)
             {
-                return null;
+                throw ex;
             }
         }
 
@@ -48,35 +48,33 @@ namespace TransportCompany.DAO
             }
             catch (Exception ex)
             {
-                return null;
+                throw ex;
             }
         }
 
-        public bool deleteByName(string name)
+        public void deleteByName(string name)
         {
             try
             {
                 string query = String.Format("Delete from Specialization where spec_name = '{0}'", name);
                 connect.executeNonQuery(query);
-                return true;
             }
             catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
 
-        public bool addType(Specialization spec)
+        public void addType(Specialization spec)
         {
             try
             {
                 string query = String.Format("Insert Specialization values ('{0}')", spec.SpecName);
                 connect.executeNonQuery(query);
-                return true;
             }
             catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
 
@@ -90,22 +88,21 @@ namespace TransportCompany.DAO
             }
             catch (Exception ex)
             {
-                return null;
+                throw ex;
             }
 
         }
 
-        public bool updateType(string oldName, Specialization newSpec)
+        public void updateType(string oldName, Specialization newSpec)
         {
             try
             {
                 string query = String.Format("UPDATE Specialization SET spec_name = '{0}' WHERE spec_name = '{2}' ", newSpec.SpecName, oldName);
                 connect.executeNonQuery(query);
-                return true;
             }
             catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
     }

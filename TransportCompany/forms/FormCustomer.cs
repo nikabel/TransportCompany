@@ -77,6 +77,7 @@ namespace TransportCompany.forms
                 dataGridViewEntityCustomer.DataSource = dataEC;
                 dataGridViewIndividualCustomer.DataSource = dataIC;
             }
+            else MessageBox.Show("Ничего не найдено!", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
             textBoxSearchCustomer.Clear();
         }
 

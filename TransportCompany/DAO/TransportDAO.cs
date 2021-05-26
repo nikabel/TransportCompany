@@ -23,7 +23,7 @@ namespace TransportCompany.DAO
             }
             catch (Exception ex)
             {
-                return null;
+                throw ex;
             }
         }
 
@@ -49,35 +49,33 @@ namespace TransportCompany.DAO
             }
             catch (Exception ex)
             {
-                return null;
+                throw ex;
             }
         }
 
-        public bool deleteByName(string name)
+        public void deleteByName(string name)
         {
             try
             {
                 string query = String.Format("Delete from Transport where license_plate = '{0}'", name);
                 connect.executeNonQuery(query);
-                return true;
             }
             catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
 
-        public bool addType(Transport transport)
+        public void addType(Transport transport)
         {
             try
             {
                 string query = String.Format("Insert INTO Transport values ('{0}', '{1}', '{2}', '{3}')", transport.LicensePlate, transport.DriverName, transport.ModelName, transport.Occupation);
                 connect.executeNonQuery(query);
-                return true;
             }
             catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
 
@@ -91,22 +89,21 @@ namespace TransportCompany.DAO
             }
             catch (Exception ex)
             {
-                return null;
+                throw ex;
             }
 
         }
 
-        public bool updateType(string oldName, Transport newTransport)
+        public void updateType(string oldName, Transport newTransport)
         {
             try
             {
                 string query = String.Format("UPDATE Transport SET license_plate = '{0}', driver_name = '{1}', model_name = '{2}', occupation = '{3}' WHERE license_plate = '{4}' ", newTransport.LicensePlate, newTransport.DriverName, newTransport.ModelName, newTransport.Occupation, oldName);
                 connect.executeNonQuery(query);
-                return true;
             }
             catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
     }

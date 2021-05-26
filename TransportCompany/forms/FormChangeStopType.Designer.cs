@@ -49,6 +49,7 @@
             this.textBoxUpdateStopTypeName.Name = "textBoxUpdateStopTypeName";
             this.textBoxUpdateStopTypeName.Size = new System.Drawing.Size(238, 22);
             this.textBoxUpdateStopTypeName.TabIndex = 12;
+            this.textBoxUpdateStopTypeName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxUpdateStopTypeName_KeyPress);
             // 
             // buttonChangeStopType
             // 

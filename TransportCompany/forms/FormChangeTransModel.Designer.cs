@@ -97,6 +97,7 @@
             this.textBoxModelCount.Name = "textBoxModelCount";
             this.textBoxModelCount.Size = new System.Drawing.Size(238, 22);
             this.textBoxModelCount.TabIndex = 30;
+            this.textBoxModelCount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxModelCount_KeyPress);
             // 
             // FormChangeTransModel
             // 

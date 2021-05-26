@@ -85,6 +85,7 @@
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(238, 22);
             this.textBoxEmail.TabIndex = 90;
+            this.textBoxEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxEmail_KeyPress);
             // 
             // label4
             // 
@@ -102,6 +103,7 @@
             this.textBoxTel.Name = "textBoxTel";
             this.textBoxTel.Size = new System.Drawing.Size(238, 22);
             this.textBoxTel.TabIndex = 85;
+            this.textBoxTel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTel_KeyPress);
             // 
             // label5
             // 
@@ -119,6 +121,7 @@
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(238, 22);
             this.textBoxName.TabIndex = 82;
+            this.textBoxName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxName_KeyPress);
             // 
             // buttonChange
             // 
@@ -137,6 +140,7 @@
             this.textBoxACC.Name = "textBoxACC";
             this.textBoxACC.Size = new System.Drawing.Size(238, 22);
             this.textBoxACC.TabIndex = 94;
+            this.textBoxACC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxACC_KeyPress);
             // 
             // textBoxINN
             // 
@@ -145,6 +149,7 @@
             this.textBoxINN.Name = "textBoxINN";
             this.textBoxINN.Size = new System.Drawing.Size(238, 22);
             this.textBoxINN.TabIndex = 95;
+            this.textBoxINN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxINN_KeyPress);
             // 
             // textBoxRCBIC
             // 
@@ -153,6 +158,7 @@
             this.textBoxRCBIC.Name = "textBoxRCBIC";
             this.textBoxRCBIC.Size = new System.Drawing.Size(238, 22);
             this.textBoxRCBIC.TabIndex = 96;
+            this.textBoxRCBIC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxRCBIC_KeyPress);
             // 
             // textBoxOGRN
             // 
@@ -161,6 +167,7 @@
             this.textBoxOGRN.Name = "textBoxOGRN";
             this.textBoxOGRN.Size = new System.Drawing.Size(238, 22);
             this.textBoxOGRN.TabIndex = 97;
+            this.textBoxOGRN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxOGRN_KeyPress);
             // 
             // textBoxCorrACC
             // 
@@ -169,6 +176,7 @@
             this.textBoxCorrACC.Name = "textBoxCorrACC";
             this.textBoxCorrACC.Size = new System.Drawing.Size(238, 22);
             this.textBoxCorrACC.TabIndex = 98;
+            this.textBoxCorrACC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCorrACC_KeyPress);
             // 
             // label2
             // 

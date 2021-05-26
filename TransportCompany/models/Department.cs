@@ -11,23 +11,13 @@ namespace TransportCompany.models
         private string _departmentName;
         private string _companyName;
 
-        public Department() { }
         public Department(string departmentName, string companyName)
         {
-            CompanyName = companyName;
             DepartmentName = departmentName;
+            CompanyName = companyName;
         }
 
-        public string DepartmentName
-        {
-            get { return _departmentName; }
-            set { _departmentName = value; }
-        }
-
-        public string CompanyName
-        {
-            get { return _companyName; }
-            set { _companyName = value; }
-        }
+        public string DepartmentName { get => _departmentName; set => _departmentName = value; }
+        public string CompanyName { get => _companyName; set => _companyName = value; }
     }
 }

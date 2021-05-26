@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace TransportCompany.DAO
 {
@@ -23,7 +24,7 @@ namespace TransportCompany.DAO
             }
             catch (Exception ex)
             {
-                return null;
+                throw ex;
             }
         }
 
@@ -48,35 +49,33 @@ namespace TransportCompany.DAO
             }
             catch (Exception ex)
             {
-                return null;
+                throw ex;
             }
         }
 
-        public bool deleteByName(string name)
+        public void deleteByName(string name)
         {
             try
             {
                 string query = String.Format("Delete from Department where department_name = '{0}'", name);
                 connect.executeNonQuery(query);
-                return true;
             }
             catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
 
-        public bool addType(Department dep)
+        public void addType(Department dep)
         {
             try
             {
                 string query = String.Format("Insert Department values ('{0}', '{1}')", dep.DepartmentName, dep.CompanyName);
                 connect.executeNonQuery(query);
-                return true;
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
 
@@ -90,22 +89,21 @@ namespace TransportCompany.DAO
             }
             catch (Exception ex)
             {
-                return null;
+                throw ex;
             }
 
         }
 
-        public bool updateType(string oldName, Department newDep)
+        public void updateType(string oldName, Department newDep)
         {
             try
             {
                 string query = String.Format("UPDATE Department SET department_name = '{0}', company_name = '{1}' WHERE department_name = '{2}' ", newDep.DepartmentName, newDep.CompanyName, oldName);
                 connect.executeNonQuery(query);
-                return true;
             }
             catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
     }

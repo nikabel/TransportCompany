@@ -45,34 +45,32 @@ namespace TransportCompany.DAO
             }
             catch (Exception ex)
             {
-                return null;
+                throw ex;
             }
         }
-        public bool deleteByName(string name)
+        public void deleteByName(string name)
         {
             try
             {
                 string query = String.Format("Delete from CargoType where cargo_type_name = '{0}'", name);
                 connect.executeNonQuery(query);
-                return true;
             }
             catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
 
-        public bool addType(CargoType cargoType)
+        public void addType(CargoType cargoType)
         {
             try
             {
                 string query = String.Format("Insert CargoType values ('{0}')", cargoType.CargoTypeName);
                 connect.executeNonQuery(query);
-                return true;
             }
             catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
 
@@ -86,22 +84,21 @@ namespace TransportCompany.DAO
             }
             catch (Exception ex)
             {
-                return null;
+                throw ex;
             }
 
         }
 
-        public bool updateType(string oldName, CargoType newCargoType)
+        public void updateType(string oldName, CargoType newCargoType)
         {
             try
             {
                 string query = String.Format("UPDATE CargoType SET cargo_type_name = '{0}' WHERE cargo_type_name = '{2}' ", newCargoType.CargoTypeName, oldName);
                 connect.executeNonQuery(query);
-                return true;
             }
             catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
     }

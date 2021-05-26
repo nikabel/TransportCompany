@@ -161,6 +161,7 @@ namespace TransportCompany.forms
                 dataGridViewDriver.DataSource = dataDr;
                 dataGridViewOfficeEmployee.DataSource = dataOf;
             }
+            else MessageBox.Show("Ничего не найдено!", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
             textBoxSearchEmployee.Clear();
         }
 

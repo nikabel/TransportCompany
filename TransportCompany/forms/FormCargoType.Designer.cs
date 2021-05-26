@@ -49,6 +49,7 @@
             this.textBoxCargoTypeName.Name = "textBoxCargoTypeName";
             this.textBoxCargoTypeName.Size = new System.Drawing.Size(238, 22);
             this.textBoxCargoTypeName.TabIndex = 17;
+            this.textBoxCargoTypeName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCargoTypeName_KeyPress);
             // 
             // buttonChange
             // 

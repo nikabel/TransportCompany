@@ -23,7 +23,7 @@ namespace TransportCompany.DAO
             }
             catch (Exception ex)
             {
-                return null;
+                throw ex;
             }
         }
 
@@ -48,34 +48,32 @@ namespace TransportCompany.DAO
             }
             catch (Exception ex)
             {
-                return null;
+                throw ex;
             }
         }
-        public bool deleteByName(string name)
+        public void deleteByName(string name)
         {
             try
             {
                 string query = String.Format("Delete from OfficeEmployee where employee_name = '{0}'", name);
                 connect.executeNonQuery(query);
-                return true;
             }
             catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
 
-        public bool addEmployee(OfficeEmployee emp)
+        public void addEmployee(OfficeEmployee emp)
         {
             try
             {
                 string query = String.Format("Insert OfficeEmployee values ('{0}', '{1}')", emp.EmployeeName, emp.SpecName);
                 connect.executeNonQuery(query);
-                return true;
             }
             catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
 
@@ -89,22 +87,21 @@ namespace TransportCompany.DAO
             }
             catch (Exception ex)
             {
-                return null;
+                throw ex;
             }
 
         }
 
-        public bool updateEmployee(string oldName, OfficeEmployee newEmp)
+        public void updateEmployee(string oldName, OfficeEmployee newEmp)
         {
             try
             {
                 string query = String.Format("UPDATE OfficeEmployee SET employee_name = '{0}', spec_name = '{1}' WHERE employee_name = '{2}' ", newEmp.EmployeeName, newEmp.SpecName, oldName);
                 connect.executeNonQuery(query);
-                return true;
             }
             catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
     }

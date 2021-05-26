@@ -23,22 +23,21 @@ namespace TransportCompany.DAO
             }
             catch (Exception ex)
             {
-                return null;
+                throw ex;
             }
         }
 
-        public bool addCargo(Cargo cargo)
+        public void addCargo(Cargo cargo)
         {
             try
             {
                 string query = String.Format("Insert Cargo values ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}')", cargo.CargoNum,
                     cargo.ApplicationNum, cargo.CargoName, cargo.CargoTypeName, cargo.CargoWeight, cargo.CargoVolume, cargo.CargoCost);
                 connect.executeNonQuery(query);
-                return true;
             }
             catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
     }

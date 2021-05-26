@@ -23,36 +23,34 @@ namespace TransportCompany.DAO
             }
             catch (Exception ex)
             {
-                return null;
+                throw ex;
             }
         }
 
-        public bool deleteByName(string name)
+        public void deleteByName(string name)
         {
             try
             {
                 string query = String.Format("Delete from IndividualCustomer where customer_name = '{0}'", name);
                 connect.executeNonQuery(query);
-                return true;
             }
             catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
 
-        public bool addCustomer(IndividualCustomer customer)
+        public void addCustomer(IndividualCustomer customer)
         {
             try
             {
                 string query = String.Format("Insert IndividualCustomer values ('{0}')",
                     customer.CustomerName);
                 connect.executeNonQuery(query);
-                return true;
             }
             catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
 
@@ -66,23 +64,22 @@ namespace TransportCompany.DAO
             }
             catch (Exception ex)
             {
-                return null;
+                throw ex;
             }
 
         }
 
-        public bool updateCustomer(string oldName, IndividualCustomer newCustomer)
+        public void updateCustomer(string oldName, IndividualCustomer newCustomer)
         {
             try
             {
                 string query = String.Format("UPDATE IndividualCustomer SET customer_name = '{0}' WHERE customer_name = '{1}' ",
                     newCustomer.CustomerName, oldName);
                 connect.executeNonQuery(query);
-                return true;
             }
             catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
     }

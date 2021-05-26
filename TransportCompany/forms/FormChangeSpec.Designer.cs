@@ -49,6 +49,7 @@
             this.textBoxSpecName.Name = "textBoxSpecName";
             this.textBoxSpecName.Size = new System.Drawing.Size(238, 22);
             this.textBoxSpecName.TabIndex = 22;
+            this.textBoxSpecName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSpecName_KeyPress);
             // 
             // buttonChange
             // 

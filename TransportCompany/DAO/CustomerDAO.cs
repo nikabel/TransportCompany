@@ -23,7 +23,7 @@ namespace TransportCompany.DAO
             }
             catch (Exception ex)
             {
-                return null;
+                throw ex;
             }
         }
 
@@ -48,7 +48,7 @@ namespace TransportCompany.DAO
             }
             catch (Exception ex)
             {
-                return null;
+                throw ex;
             }
         }
         public Customer getCustomerByName(string name)
@@ -77,36 +77,34 @@ namespace TransportCompany.DAO
             }
             catch (Exception ex)
             {
-                return null;
+                throw ex;
             }
         }
 
-        public bool deleteByName(string name)
+        public void deleteByName(string name)
         {
             try
             {
                 string query = String.Format("Delete from Customer where customer_name = '{0}'", name);
                 connect.executeNonQuery(query);
-                return true;
             }
             catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
 
-        public bool addCustomer(Customer customer)
+        public void addCustomer(Customer customer)
         {
             try
             {
                 string query = String.Format("Insert Customer values ('{0}', '{1}', '{2}', '{3}')", 
                     customer.CustomerName, customer.CustomerEmail, customer.CustomerTel, customer.CustomerAddress);
                 connect.executeNonQuery(query);
-                return true;
             }
             catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
 
@@ -120,23 +118,22 @@ namespace TransportCompany.DAO
             }
             catch (Exception ex)
             {
-                return null;
+                throw ex;
             }
 
         }
 
-        public bool updateCustomer(string oldName, Customer newCustomer)
+        public void updateCustomer(string oldName, Customer newCustomer)
         {
             try
             {
                 string query = String.Format("UPDATE Customer SET customer_name = '{0}',email = '{1}', customer_tel_num = '{2}', customer_address = '{3}' WHERE customer_name = '{4}' ",
                     newCustomer.CustomerName, newCustomer.CustomerEmail, newCustomer.CustomerTel, newCustomer.CustomerAddress, oldName);
                 connect.executeNonQuery(query);
-                return true;
             }
             catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
     }

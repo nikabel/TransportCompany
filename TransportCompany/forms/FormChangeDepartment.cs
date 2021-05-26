@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TransportCompany.DAO;
+using TransportCompany.models;
 
 namespace TransportCompany.forms
 {
     public partial class FormChangeDepartment : Form
     {
+        DepartmentDAO daoDep = new DepartmentDAO();
         public FormChangeDepartment(string n, string cn)
         {
             InitializeComponent();
@@ -23,12 +26,14 @@ namespace TransportCompany.forms
         {
             if ((textBoxDepName.Text.Equals("")) || (textBoxCompName.Text.Equals("")))
                 MessageBox.Show("Вы не ввели все необходимые данные!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
-            else this.Close();
+            else {
+                this.Close(); 
+            }
         }
         private void textBoxDepName_KeyPress(object sender, KeyPressEventArgs e)
         {
-            char symb = e.KeyChar;
-            if ((symb < 'А' || symb > 'я') && symb != '\b' && symb != ' ')
+            char number = e.KeyChar;
+            if ((number < 'А' || number > 'я') && number != '\b' && number != ' ')
             {
                 e.Handled = true;
             }

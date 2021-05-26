@@ -46,6 +46,7 @@ namespace TransportCompany.DAO
             }
             catch (Exception ex)
             {
+                throw ex;
             }
         }
     }

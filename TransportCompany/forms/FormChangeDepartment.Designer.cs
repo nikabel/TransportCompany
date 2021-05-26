@@ -60,6 +60,7 @@
             this.textBoxDepName.Name = "textBoxDepName";
             this.textBoxDepName.Size = new System.Drawing.Size(238, 22);
             this.textBoxDepName.TabIndex = 17;
+            this.textBoxDepName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxDepName_KeyPress);
             // 
             // textBoxCompName
             // 

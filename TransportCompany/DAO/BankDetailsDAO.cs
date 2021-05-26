@@ -39,48 +39,45 @@ namespace TransportCompany.DAO
             }
             catch (Exception ex)
             {
-                return null;
+                throw ex;
             }
         }
-        public bool deleteByName(string name)
+        public void deleteByName(string name)
         {
             try
             {
                 string query = String.Format("Delete from BankDetails where customer_name = '{0}'", name);
                 connect.executeNonQuery(query);
-                return true;
             }
             catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
-        public bool addBankDetails(BankDetails details)
+        public void addBankDetails(BankDetails details)
         {
             try
             {
                 string query = String.Format("Insert BankDetails values ('{0}', null, '{1}', '{2}', '{3}', '{4}', '{5}', '{6}')",
                     details.Acc, details.CustomerName, details.Inn, details.Rcbic, details.Ogrn, details.CorrAcc, details.BankName);
                 connect.executeNonQuery(query);
-                return true;
             }
             catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
-        public bool updateBankDetails(string oldAcc, BankDetails details)
+        public void updateBankDetails(string oldAcc, BankDetails details)
         {
             try
             {
                 string query = String.Format("UPDATE BankDetails SET acc = '{0}', company_name = null, customer_name = '{1}', inn = '{2}', rcbic = '{3}', ogrn = '{4}', corr_acc = '{5}', bank_name='{6}' WHERE acc = '{7}' ",
                     details.Acc, details.CustomerName, details.Inn, details.Rcbic, details.Ogrn, details.CorrAcc, details.BankName, oldAcc);
                 connect.executeNonQuery(query);
-                return true;
             }
             catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
     }

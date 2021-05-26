@@ -52,6 +52,7 @@
             this.textBoxPos.Name = "textBoxPos";
             this.textBoxPos.Size = new System.Drawing.Size(238, 22);
             this.textBoxPos.TabIndex = 61;
+            this.textBoxPos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPos_KeyPress);
             // 
             // label6
             // 
@@ -87,6 +88,7 @@
             this.textBoxTel.Name = "textBoxTel";
             this.textBoxTel.Size = new System.Drawing.Size(238, 22);
             this.textBoxTel.TabIndex = 57;
+            this.textBoxTel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTel_KeyPress);
             // 
             // comboBoxDep
             // 
@@ -131,6 +133,7 @@
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(238, 22);
             this.textBoxName.TabIndex = 50;
+            this.textBoxName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxName_KeyPress);
             // 
             // buttonChange
             // 
