@@ -12,17 +12,16 @@ namespace TransportCompany.DAO
     public class TransportApplicationDAO
     {
         DBUtil connect = new DBUtil();
-        public bool addTransportApplication(TransportApplication ta)
+        public void addTransportApplication(TransportApplication ta)
         {
             try
             {
                 string query = String.Format("Insert TransportApplication values ('{0}', '{1}')", ta.LicensePlate, ta.ApplicationNum);
                 connect.executeNonQuery(query);
-                return true;
             }
             catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
 
@@ -37,7 +36,7 @@ namespace TransportCompany.DAO
             }
             catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
 

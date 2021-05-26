@@ -23,7 +23,7 @@ namespace TransportCompany.DAO
             }
             catch (Exception ex)
             {
-                throw ex;
+                return null;
             }
         }
 
@@ -38,7 +38,8 @@ namespace TransportCompany.DAO
                 var ops = new List<string>();
                 while (dr.Read())
                 {
-                    ops.Add(dr.GetString(0));
+                    if ((dr.GetString(0)!= "Отправление") && (dr.GetString(0) != "Прибытие"))
+                        ops.Add(dr.GetString(0));
                 }
 
                 string[] opNames = ops.ToArray();
@@ -48,7 +49,7 @@ namespace TransportCompany.DAO
             }
             catch (Exception ex)
             {
-                throw ex;
+                return null;
             }
         }
         public void deleteByName(string name)
@@ -87,7 +88,7 @@ namespace TransportCompany.DAO
             }
             catch (Exception ex)
             {
-                throw ex;
+                return null;
             }
 
         }
@@ -103,7 +104,7 @@ namespace TransportCompany.DAO
             }
             catch (Exception ex)
             {
-                throw ex;
+                return null;
             }
 
         }

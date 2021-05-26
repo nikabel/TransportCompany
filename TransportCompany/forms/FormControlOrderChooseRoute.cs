@@ -25,8 +25,14 @@ namespace TransportCompany.forms
         {
             try
             {
-                FormControlOrder form = new FormControlOrder(comboBoxRoute.SelectedItem.ToString());
-                form.ShowDialog();
+                if (comboBoxRoute.Text.Equals(""))
+                    MessageBox.Show("Выберите номер маршрута!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                else
+                {
+                    this.Close();
+                    FormControlOrder form = new FormControlOrder(comboBoxRoute.SelectedItem.ToString());
+                    form.ShowDialog();
+                }
             }
             catch (Exception ex)
             {

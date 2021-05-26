@@ -16,12 +16,8 @@ namespace TransportCompany.DAO
         {
             try
             {
-                string[] date = route.PlanDepartureDate.ToString().Split('.');
-                string depDate = date[2] + "-" + date[1] + "-" + date[0];
-                string[] d = route.PlanArrivalDate.ToString().Split('.');
-                string arDate = d[2] + "-" + d[1] + "-" + d[0];
-                string query = String.Format("Insert Route values ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', null, null)", route.RouteId,
-                    route.EmployeeName, route.ApplicationNum, route.TotalDistance, depDate, arDate);
+                string query = String.Format("Insert Route values ('{0}', '{1}', '{2}', '{3}')", route.RouteId,
+                    route.EmployeeName, route.ApplicationNum, route.TotalDistance);
                 connect.executeNonQuery(query);
                 return true;
             }

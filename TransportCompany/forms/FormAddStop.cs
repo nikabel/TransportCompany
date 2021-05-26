@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -45,15 +46,25 @@ namespace TransportCompany.forms
                 string address = textBoxStopAddress.Text.ToString();
                 string operation = comboBoxOperation.SelectedItem.ToString();
                 string planDate = dateStop.Text;
-                Stop stop = new Stop(id, address, num, operation, planDate, null);
-                stopDAO.addStop(stop);
-                textBoxStopNum.Clear();
-                textBoxStopAddress.Clear();
-                updateTable(num);
+                
+                if ((textBoxStopNum.Text.Equals("")) || (textBoxStopAddress.Text.Equals("")) || (comboBoxOperation.Text.Equals("")))
+                    MessageBox.Show("Вы не ввели все необходимые данные!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                else
+                {
+                    Stop stop = new Stop(id, address, num, operation, planDate, null);
+                    stopDAO.addStop(stop);
+                    textBoxStopNum.Clear();
+                    textBoxStopAddress.Clear();
+                    updateTable(num);
+                }
+            }
+            catch (SqlException odbcEx)
+            {
+                MessageBox.Show("Номер остановки не должен повторяться!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Неверно введены данные!");
+                MessageBox.Show("Ошибка при добавлении остановки!" + ex);
             }
         }
     }

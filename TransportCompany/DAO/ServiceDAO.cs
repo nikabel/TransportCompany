@@ -41,7 +41,7 @@ namespace TransportCompany.DAO
             }
         }
 
-        public bool addService(Service service)
+        public void addService(Service service)
         {
             try
             {
@@ -49,24 +49,22 @@ namespace TransportCompany.DAO
                 string serviceDate = date[2] + "-" + date[1] + "-" + date[0];
                 string query = String.Format("Insert Service values ('{0}', '{1}', '{2}', '{3}', '{4}', null)", service.ServiceName, service.ContractNum, service.EmployeeName, service.ServiceCost, serviceDate);
                 connect.executeNonQuery(query);
-                return true;
             }
             catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
-        public bool updateService(string num, string contractNum)
+        public void updateService(string num, string contractNum)
         {
             try
             {
                 string query = String.Format("UPDATE Service SET certificate_num = '{0}' WHERE contract_num = '{1}' ", num, contractNum);
                 connect.executeNonQuery(query);
-                return true;
             }
             catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
     }

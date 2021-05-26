@@ -26,8 +26,14 @@ namespace TransportCompany.forms
         {
             try
             {
-                FormChooseEmployee form = new FormChooseEmployee(comboBoxContracts.SelectedItem.ToString());
-                form.ShowDialog();
+                if (comboBoxContracts.Text.Equals(""))
+                    MessageBox.Show("Выберите номер договора!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                else
+                {
+                    this.Close();
+                    FormChooseEmployee form = new FormChooseEmployee(comboBoxContracts.SelectedItem.ToString());
+                    form.ShowDialog();
+                }
             }
             catch (Exception ex)
             {

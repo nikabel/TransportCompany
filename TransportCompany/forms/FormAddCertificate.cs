@@ -31,14 +31,19 @@ namespace TransportCompany.forms
                 string num =textBoxCertificateNum.Text.ToString();
                 string contractNum = comboBoxContracts.SelectedItem.ToString();
                 string date = dateSign.Text;
-                WorkCertificate certificate = new WorkCertificate(num, date, contractNum);
-                certificateDAO.addCertificate(certificate);
-                serviceDAO.updateService(num, contractNum);
-                this.Close();
+                if ((textBoxCertificateNum.Text.Equals("")) || (comboBoxContracts.Text.Equals("")))
+                    MessageBox.Show("Вы не ввели все необходимые данные!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                else
+                {
+                    WorkCertificate certificate = new WorkCertificate(num, date, contractNum);
+                    certificateDAO.addCertificate(certificate);
+                    serviceDAO.updateService(num, contractNum);
+                    this.Close();
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Неверно введены данные!");
+                MessageBox.Show("Ошибка при формировании акта выполненных работ!");
             }
         }
     }

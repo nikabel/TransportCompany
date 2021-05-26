@@ -38,8 +38,15 @@ namespace TransportCompany.forms
                 string customer = contractDAO.getContractByNum(contractNum);
                 Application application = new Application(num, contractNum, customer, date, freight, insurance, dateDel);
                 applicationDAO.addApplication(application);
-                FormAddCargo form = new FormAddCargo(num);
-                form.ShowDialog();
+                if ((textBoxApplicationNum.Text.Equals("")) || (comboBoxContracts.Text.Equals("")) || (textBoxFreight.Text.Equals(""))
+                    || (comboBoxInsurance.Text.Equals("")))
+                    MessageBox.Show("Вы не ввели все необходимые данные!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                else
+                {
+                    this.Close();
+                    FormAddCargo form = new FormAddCargo(num);
+                    form.ShowDialog();
+                }
             }
             catch (Exception ex)
             {

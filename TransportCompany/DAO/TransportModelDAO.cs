@@ -23,7 +23,7 @@ namespace TransportCompany.DAO
             }
             catch (Exception ex)
             {
-                throw ex;
+                return null;
             }
         }
 
@@ -48,7 +48,7 @@ namespace TransportCompany.DAO
             }
             catch (Exception ex)
             {
-                throw ex;
+                return null;
             }
         }
 
@@ -88,7 +88,7 @@ namespace TransportCompany.DAO
             }
             catch (Exception ex)
             {
-                throw ex;
+                return null;
             }
 
         }
@@ -97,7 +97,7 @@ namespace TransportCompany.DAO
         {
             try
             {
-                string query = String.Format("UPDATE TransportModel SET model_name = '{0}', mark_name= '{1}', model_count = '{3}' WHERE cargo_type_name = '{4}' ", newTransportModel.ModelName, newTransportModel.MarkName, newTransportModel.ModelCount, oldName);
+                string query = String.Format("UPDATE TransportModel SET model_name = '{0}', mark_name= '{1}', model_count = '{2}' WHERE cargo_type_name = '{3}' ", newTransportModel.ModelName, newTransportModel.MarkName, newTransportModel.ModelCount, oldName);
                 connect.executeNonQuery(query);
             }
             catch (Exception ex)

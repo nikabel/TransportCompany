@@ -70,9 +70,11 @@
             // textBoxCargoVolume
             // 
             this.textBoxCargoVolume.Location = new System.Drawing.Point(227, 151);
+            this.textBoxCargoVolume.MaxLength = 10;
             this.textBoxCargoVolume.Name = "textBoxCargoVolume";
             this.textBoxCargoVolume.Size = new System.Drawing.Size(238, 22);
             this.textBoxCargoVolume.TabIndex = 108;
+            this.textBoxCargoVolume.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCargoVolume_KeyPress);
             // 
             // label6
             // 
@@ -86,6 +88,7 @@
             // textBoxCargoNum
             // 
             this.textBoxCargoNum.Location = new System.Drawing.Point(227, 23);
+            this.textBoxCargoNum.MaxLength = 50;
             this.textBoxCargoNum.Name = "textBoxCargoNum";
             this.textBoxCargoNum.Size = new System.Drawing.Size(238, 22);
             this.textBoxCargoNum.TabIndex = 104;
@@ -112,9 +115,11 @@
             // textBoxCargoName
             // 
             this.textBoxCargoName.Location = new System.Drawing.Point(227, 65);
+            this.textBoxCargoName.MaxLength = 50;
             this.textBoxCargoName.Name = "textBoxCargoName";
             this.textBoxCargoName.Size = new System.Drawing.Size(238, 22);
             this.textBoxCargoName.TabIndex = 113;
+            this.textBoxCargoName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCargoName_KeyPress);
             // 
             // label1
             // 
@@ -128,9 +133,11 @@
             // textBoxCargoWeight
             // 
             this.textBoxCargoWeight.Location = new System.Drawing.Point(227, 110);
+            this.textBoxCargoWeight.MaxLength = 10;
             this.textBoxCargoWeight.Name = "textBoxCargoWeight";
             this.textBoxCargoWeight.Size = new System.Drawing.Size(238, 22);
             this.textBoxCargoWeight.TabIndex = 115;
+            this.textBoxCargoWeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCargoWeight_KeyPress);
             // 
             // label4
             // 
@@ -144,9 +151,11 @@
             // textBoxCargoCost
             // 
             this.textBoxCargoCost.Location = new System.Drawing.Point(227, 238);
+            this.textBoxCargoCost.MaxLength = 10;
             this.textBoxCargoCost.Name = "textBoxCargoCost";
             this.textBoxCargoCost.Size = new System.Drawing.Size(238, 22);
             this.textBoxCargoCost.TabIndex = 117;
+            this.textBoxCargoCost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCargoCost_KeyPress);
             // 
             // label5
             // 
@@ -203,7 +212,7 @@
             // 
             this.labelApplicationNum.AutoSize = true;
             this.labelApplicationNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelApplicationNum.Location = new System.Drawing.Point(821, 28);
+            this.labelApplicationNum.Location = new System.Drawing.Point(821, 24);
             this.labelApplicationNum.Name = "labelApplicationNum";
             this.labelApplicationNum.Size = new System.Drawing.Size(0, 25);
             this.labelApplicationNum.TabIndex = 122;

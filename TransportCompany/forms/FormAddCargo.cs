@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -57,20 +58,40 @@ namespace TransportCompany.forms
                 int volume = int.Parse(textBoxCargoVolume.Text.ToString());
                 string transport = comboBoxTransport.SelectedItem.ToString();
                 string type = comboBoxCargoType.SelectedItem.ToString();
-                Cargo cargo = new Cargo(cargoNum, num, name, type, weight, volume, cost);
-                TransportApplication ta = new TransportApplication(transport, num);
-                cargoDAO.addCargo(cargo);
-                if (taDAO.checkTransportApplication(ta)) taDAO.addTransportApplication(ta);
-                textBoxCargoName.Clear();
-                textBoxCargoNum.Clear();
-                textBoxCargoCost.Clear();
-                textBoxCargoWeight.Clear();
-                textBoxCargoVolume.Clear();
-                updateTable(num);
+
+                if ((textBoxCargoName.Text.Equals("")) || (textBoxCargoNum.Text.Equals("")) || (textBoxCargoCost.Text.Equals("")) || (textBoxCargoWeight.Text.Equals(""))
+                || (textBoxCargoVolume.Text.Equals("")) || (comboBoxTransport.Text.Equals("")) || (comboBoxCargoType.Text.Equals("")))
+                    MessageBox.Show("Вы не ввели все необходимые данные!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                else 
+                {
+                    Cargo cargo = new Cargo(cargoNum, num, name, type, weight, volume, cost);
+                    TransportApplication ta = new TransportApplication(transport, num);
+                    cargoDAO.addCargo(cargo);
+                    if (taDAO.checkTransportApplication(ta)) taDAO.addTransportApplication(ta);
+                    textBoxCargoName.Clear();
+                    textBoxCargoNum.Clear();
+                    textBoxCargoCost.Clear();
+                    textBoxCargoWeight.Clear();
+                    textBoxCargoVolume.Clear();
+                    updateTable(num); 
+                }
+            }
+            catch (SqlException odbcEx)
+            {
+                MessageBox.Show("Данный номер груза уже существует! Введите другой номер груза.", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Неверно введены данные!");
+                MessageBox.Show("Ошибка при добавлении груза!" + ex);
+            }
+        }
+
+        private void textBoxCargoName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char symb = e.KeyChar;
+            if ((symb < 'А' || symb > 'я') && symb != '\b' && symb != ' ')
+            {
+                e.Handled = true;
             }
         }
 

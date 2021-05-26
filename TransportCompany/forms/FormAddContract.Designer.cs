@@ -42,6 +42,7 @@
             // textBoxContractNum
             // 
             this.textBoxContractNum.Location = new System.Drawing.Point(222, 24);
+            this.textBoxContractNum.MaxLength = 50;
             this.textBoxContractNum.Name = "textBoxContractNum";
             this.textBoxContractNum.Size = new System.Drawing.Size(238, 22);
             this.textBoxContractNum.TabIndex = 85;

@@ -55,6 +55,7 @@
             // textBoxStopAddress
             // 
             this.textBoxStopAddress.Location = new System.Drawing.Point(234, 90);
+            this.textBoxStopAddress.MaxLength = 150;
             this.textBoxStopAddress.Multiline = true;
             this.textBoxStopAddress.Name = "textBoxStopAddress";
             this.textBoxStopAddress.Size = new System.Drawing.Size(238, 54);
@@ -108,6 +109,7 @@
             // textBoxStopNum
             // 
             this.textBoxStopNum.Location = new System.Drawing.Point(234, 51);
+            this.textBoxStopNum.MaxLength = 32;
             this.textBoxStopNum.Name = "textBoxStopNum";
             this.textBoxStopNum.Size = new System.Drawing.Size(238, 22);
             this.textBoxStopNum.TabIndex = 93;

@@ -12,7 +12,7 @@ namespace TransportCompany.DAO
     {
         DBUtil connect = new DBUtil();
 
-        public bool addApplication(Application application)
+        public void addApplication(Application application)
         {
             try
             {
@@ -22,11 +22,10 @@ namespace TransportCompany.DAO
                 string delDate = d[2] + "-" + d[1] + "-" + d[0];
                 string query = String.Format("Insert ApplicationForm values ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}')", application.ApplicationNum, application.CustomerName, application.FreightSum, signDate, delDate, application.IsInsured, application.ContractNum);
                 connect.executeNonQuery(query);
-                return true;
             }
             catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
 

@@ -13,7 +13,7 @@ namespace TransportCompany.DAO
     public class ContractDAO
     {
         DBUtil connect = new DBUtil();
-        public bool addContract(Contract contract)
+        public void addContract(Contract contract)
         {
             try
             {
@@ -23,11 +23,10 @@ namespace TransportCompany.DAO
                 string expDate = d[2] + "-" + d[1] + "-" + d[0];
                 string query = String.Format("Insert Contract values ('{0}', '{1}', '{2}', '{3}', '{4}')", contract.ContractNum, contract.CompanyName, contract.CustomerName, signDate, expDate);
                 connect.executeNonQuery(query);
-                return true;
             }
             catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
 

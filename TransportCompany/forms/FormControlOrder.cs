@@ -57,7 +57,7 @@ namespace TransportCompany.forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Неверно введены данные!");
+                MessageBox.Show("Ошибка при обновлении даты!");
             }
         }
     }

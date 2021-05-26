@@ -23,7 +23,7 @@ namespace TransportCompany.DAO
             }
             catch (Exception ex)
             {
-                throw ex;
+                return null;
             }
         }
 
@@ -48,7 +48,7 @@ namespace TransportCompany.DAO
             }
             catch (Exception ex)
             {
-                throw ex;
+                return null;
             }
         }
 
@@ -88,7 +88,7 @@ namespace TransportCompany.DAO
             }
             catch (Exception ex)
             {
-                throw ex;
+                return null;
             }
 
         }
@@ -97,7 +97,7 @@ namespace TransportCompany.DAO
         {
             try
             {
-                string query = String.Format("UPDATE Specialization SET spec_name = '{0}' WHERE spec_name = '{2}' ", newSpec.SpecName, oldName);
+                string query = String.Format("UPDATE Specialization SET spec_name = '{0}' WHERE spec_name = '{1}' ", newSpec.SpecName, oldName);
                 connect.executeNonQuery(query);
             }
             catch (Exception ex)

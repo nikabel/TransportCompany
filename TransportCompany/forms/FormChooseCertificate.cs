@@ -25,9 +25,14 @@ namespace TransportCompany.forms
         {
             try
             {
-                FormWorkCertificate form = new FormWorkCertificate(comboBoxCertificates.SelectedItem.ToString());
-                this.Close();
-                form.ShowDialog();
+                if (comboBoxCertificates.Text.Equals(""))
+                    MessageBox.Show("Выберите номер акта выполненных работ!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                else
+                {
+                    FormWorkCertificate form = new FormWorkCertificate(comboBoxCertificates.SelectedItem.ToString());
+                    this.Close();
+                    form.ShowDialog();
+                }
             }
             catch (Exception ex)
             {

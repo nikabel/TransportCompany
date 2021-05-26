@@ -46,6 +46,7 @@
             // textBoxApplicationNum
             // 
             this.textBoxApplicationNum.Location = new System.Drawing.Point(223, 67);
+            this.textBoxApplicationNum.MaxLength = 50;
             this.textBoxApplicationNum.Name = "textBoxApplicationNum";
             this.textBoxApplicationNum.Size = new System.Drawing.Size(238, 22);
             this.textBoxApplicationNum.TabIndex = 85;
@@ -114,9 +115,11 @@
             // textBoxFreight
             // 
             this.textBoxFreight.Location = new System.Drawing.Point(223, 195);
+            this.textBoxFreight.MaxLength = 10;
             this.textBoxFreight.Name = "textBoxFreight";
             this.textBoxFreight.Size = new System.Drawing.Size(238, 22);
             this.textBoxFreight.TabIndex = 91;
+            this.textBoxFreight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxFreight_KeyPress);
             // 
             // label6
             // 

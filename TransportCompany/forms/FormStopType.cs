@@ -147,9 +147,13 @@ namespace TransportCompany
                             daoST.addType(stopType);
 
                         }
-                        catch
+                        catch (SqlException odbcEx)
                         {
                             MessageBox.Show("Наименование операции не должно повторяться!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Ошибка при добавлении!" + ex);
                         }
                         break;
                     }
@@ -167,12 +171,10 @@ namespace TransportCompany
                         catch (SqlException odbcEx)
                         {
                             MessageBox.Show("Наименование отдела не должно повторяться!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                            break;
                         }
                         catch (Exception ex)
                         {
                             MessageBox.Show("Ошибка при добавлении!" + ex);
-                            break;
                         }
                         break;
                     }
@@ -189,12 +191,10 @@ namespace TransportCompany
                         catch (SqlException odbcEx)
                         {
                             MessageBox.Show("Наименование вида груза не должно повторяться!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                            break;
                         }
                         catch (Exception ex)
                         {
                             MessageBox.Show("Ошибка при добавлении!" + ex);
-                            break;
                         }
                         break;
                     }
@@ -211,12 +211,10 @@ namespace TransportCompany
                         catch (SqlException odbcEx)
                         {
                             MessageBox.Show("Наименование специализация не должно повторяться!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                            break;
                         }
                         catch (Exception ex)
                         {
                             MessageBox.Show("Ошибка при добавлении!" + ex);
-                            break;
                         }
                         break;
                     }
@@ -237,12 +235,10 @@ namespace TransportCompany
                         catch (SqlException odbcEx)
                         {
                             MessageBox.Show("Транспортный номер не должен повторяться!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                            break;
                         }
                         catch (Exception ex)
                         {
                             MessageBox.Show("Ошибка при добавлении!" + ex);
-                            break;
                         }
                         break;
                     }
@@ -269,12 +265,10 @@ namespace TransportCompany
                         catch (SqlException odbcEx)
                         {
                             MessageBox.Show("Модель не должна повторяться!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                            break;
                         }
                         catch (Exception ex)
                         {
                             MessageBox.Show("Ошибка при добавлении!" + ex);
-                            break;
                         }
                         break;
                     }

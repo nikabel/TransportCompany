@@ -100,17 +100,21 @@
             // textBoxService
             // 
             this.textBoxService.Location = new System.Drawing.Point(235, 105);
+            this.textBoxService.MaxLength = 50;
             this.textBoxService.Name = "textBoxService";
             this.textBoxService.Size = new System.Drawing.Size(238, 22);
             this.textBoxService.TabIndex = 63;
+            this.textBoxService.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxService_KeyPress);
             // 
             // textBoxCost
             // 
             this.textBoxCost.Location = new System.Drawing.Point(235, 153);
+            this.textBoxCost.MaxLength = 10;
             this.textBoxCost.Name = "textBoxCost";
             this.textBoxCost.Size = new System.Drawing.Size(238, 22);
             this.textBoxCost.TabIndex = 65;
             this.textBoxCost.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textBoxCost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCost_KeyPress);
             // 
             // label5
             // 

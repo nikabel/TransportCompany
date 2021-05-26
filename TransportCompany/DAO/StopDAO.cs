@@ -26,24 +26,23 @@ namespace TransportCompany.DAO
             }
         }
 
-        public bool addStop(Stop stop)
+        public void addStop(Stop stop)
         {
             try
             {
                 string[] date = stop.PlanStopDate.ToString().Split('.');
                 string planDate = date[2] + "-" + date[1] + "-" + date[0];
                 string query = String.Format("Insert Stop values ('{0}', '{1}', '{2}', '{3}', '{4}', null)", stop.StopId,
-                    stop.StopAddress, stop.OperationName, stop.RouteId, stop.PlanStopDate, planDate);
+                    stop.StopAddress, stop.OperationName, stop.RouteId, planDate);
                 connect.executeNonQuery(query);
-                return true;
             }
             catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
 
-        public bool updateStop(string newFactDate, string stop)
+        public void updateStop(string newFactDate, string stop)
         {
             try
             {
@@ -51,11 +50,10 @@ namespace TransportCompany.DAO
                 string factDate = date[2] + "-" + date[1] + "-" + date[0];
                 string query = String.Format("UPDATE Stop SET fact_stop_date = '{0}' WHERE stop_id = '{1}'", factDate, stop);
                 connect.executeNonQuery(query);
-                return true;
             }
             catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
 

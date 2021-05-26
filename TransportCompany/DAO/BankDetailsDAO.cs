@@ -39,7 +39,7 @@ namespace TransportCompany.DAO
             }
             catch (Exception ex)
             {
-                throw ex;
+                return null;
             }
         }
         public void deleteByName(string name)

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -43,6 +44,15 @@ namespace TransportCompany.forms
                 e.Handled = true;
             }
         }
+
+        private void textBoxService_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char symb = e.KeyChar;
+            if ((symb < 'А' || symb > 'я') && symb != '\b' && symb != ' ')
+            {
+                e.Handled = true;
+            }
+        }
         private void label5_Click(object sender, EventArgs e)
         {
 
@@ -67,15 +77,24 @@ namespace TransportCompany.forms
                 int cost = int.Parse(textBoxCost.Text.ToString());
                 string employee = comboBoxName.SelectedItem.ToString();
                 string date = dateService.Text;
-                Service service = new Service(name, employee, cost, date, null,num);
-                daoS.addService(service);
-                textBoxService.Clear();
-                textBoxCost.Clear();
-                updateTable(num);
+                if ((textBoxService.Text.Equals("")) || (textBoxCost.Text.Equals("")) || (comboBoxName.Text.Equals("")))
+                    MessageBox.Show("Вы не ввели все необходимые данные!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                else
+                {
+                    Service service = new Service(name, employee, cost, date, null, num);
+                    daoS.addService(service);
+                    textBoxService.Clear();
+                    textBoxCost.Clear();
+                    updateTable(num);
+                }
+            }
+            catch (SqlException odbcEx)
+            {
+                MessageBox.Show("Наименование услуги не должно повторяться!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Неверно введены данные!");
+                MessageBox.Show("Ошибка при назначении!" + ex);
             }
         }
 

@@ -92,12 +92,12 @@ namespace TransportCompany.forms
                 {
                     int rowNum = dataGridViewCustomer.CurrentCell.RowIndex;
                     string name = dataGridViewCustomer[0, rowNum].Value.ToString();
-                    daoC.deleteByName(name);
                     BankDetails details = daoBD.getBankByName(name);
                     if (details != null)
                     {
                         daoBD.deleteByName(name);
                     }
+                    daoC.deleteByName(name);
                     updateTable();
                 }
                 catch (SqlException odbcEx)

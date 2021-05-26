@@ -40,6 +40,7 @@
             // textBoxCertificateNum
             // 
             this.textBoxCertificateNum.Location = new System.Drawing.Point(222, 66);
+            this.textBoxCertificateNum.MaxLength = 50;
             this.textBoxCertificateNum.Name = "textBoxCertificateNum";
             this.textBoxCertificateNum.Size = new System.Drawing.Size(238, 22);
             this.textBoxCertificateNum.TabIndex = 76;

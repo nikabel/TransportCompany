@@ -37,6 +37,8 @@ namespace TransportCompany.forms
             if ((textBoxName.Text.Equals("")) || (textBoxPos.Text.Equals("")) || (textBoxTel.Text.Equals("")) || (textBoxAddress.Text.Equals(""))
                 || (textBoxExp.Text.Equals("")) || (textBoxLicense.Text.Equals("")) || (comboBoxDep.Text.Equals("")))
                 MessageBox.Show("Вы не ввели все необходимые данные!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+            else if (textBoxTel.Text.Length!=11)
+                MessageBox.Show("Неверно введен номер телефона!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
             else this.Close();
         }
 

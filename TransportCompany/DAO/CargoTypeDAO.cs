@@ -45,7 +45,7 @@ namespace TransportCompany.DAO
             }
             catch (Exception ex)
             {
-                throw ex;
+                return null;
             }
         }
         public void deleteByName(string name)
@@ -84,7 +84,7 @@ namespace TransportCompany.DAO
             }
             catch (Exception ex)
             {
-                throw ex;
+                return null;
             }
 
         }
@@ -93,7 +93,7 @@ namespace TransportCompany.DAO
         {
             try
             {
-                string query = String.Format("UPDATE CargoType SET cargo_type_name = '{0}' WHERE cargo_type_name = '{2}' ", newCargoType.CargoTypeName, oldName);
+                string query = String.Format("UPDATE CargoType SET cargo_type_name = '{0}' WHERE cargo_type_name = '{1}' ", newCargoType.CargoTypeName, oldName);
                 connect.executeNonQuery(query);
             }
             catch (Exception ex)
