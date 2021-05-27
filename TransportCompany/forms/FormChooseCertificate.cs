@@ -39,5 +39,15 @@ namespace TransportCompany.forms
                 MessageBox.Show("Что-то пошло не так!" + ex);
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxCertificates_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

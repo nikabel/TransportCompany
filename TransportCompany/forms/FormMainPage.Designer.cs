@@ -231,6 +231,7 @@
             this.заявкаНаПеревозкуГрузаToolStripMenuItem.Name = "заявкаНаПеревозкуГрузаToolStripMenuItem";
             this.заявкаНаПеревозкуГрузаToolStripMenuItem.Size = new System.Drawing.Size(324, 26);
             this.заявкаНаПеревозкуГрузаToolStripMenuItem.Text = "Заявка на перевозку груза";
+            this.заявкаНаПеревозкуГрузаToolStripMenuItem.Click += new System.EventHandler(this.заявкаНаПеревозкуГрузаToolStripMenuItem_Click);
             // 
             // актВыполненныхРаботToolStripMenuItem
             // 

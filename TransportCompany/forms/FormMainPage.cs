@@ -308,5 +308,18 @@ namespace TransportCompany
                 MessageBox.Show("Что-то пошло не так!" + ex);
             }
         }
+
+        private void заявкаНаПеревозкуГрузаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FormChooseApplication form = new FormChooseApplication();
+                form.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Что-то пошло не так!" + ex);
+            }
+        }
     }
 }
