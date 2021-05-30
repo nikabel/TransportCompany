@@ -1,6 +1,6 @@
 ﻿namespace TransportCompany.forms
 {
-    partial class FormContract
+    partial class FormReport
     {
         /// <summary>
         /// Required designer variable.
@@ -40,19 +40,18 @@
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
             this.crystalReportViewer1.Size = new System.Drawing.Size(800, 450);
-            this.crystalReportViewer1.TabIndex = 0;
+            this.crystalReportViewer1.TabIndex = 1;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             this.crystalReportViewer1.Load += new System.EventHandler(this.crystalReportViewer1_Load);
             // 
-            // FormContract
+            // FormReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.crystalReportViewer1);
-            this.Name = "FormContract";
-            this.Text = "Договор об оказании услуг";
-            this.Load += new System.EventHandler(this.FormContract_Load);
+            this.Name = "FormReport";
+            this.Text = "Сведения о завершенных заказах";
             this.ResumeLayout(false);
 
         }

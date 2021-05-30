@@ -245,6 +245,7 @@
             this.сведенияОЗавершенныхЗаказахToolStripMenuItem.Name = "сведенияОЗавершенныхЗаказахToolStripMenuItem";
             this.сведенияОЗавершенныхЗаказахToolStripMenuItem.Size = new System.Drawing.Size(324, 26);
             this.сведенияОЗавершенныхЗаказахToolStripMenuItem.Text = "Сведения о завершенных заказах";
+            this.сведенияОЗавершенныхЗаказахToolStripMenuItem.Click += new System.EventHandler(this.сведенияОЗавершенныхЗаказахToolStripMenuItem_Click);
             // 
             // запросыToolStripMenuItem
             // 

@@ -103,12 +103,6 @@
     <Compile Include="forms\FormAddContract.Designer.cs">
       <DependentUpon>FormAddContract.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\FormAddService.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\FormAddService.Designer.cs">
-      <DependentUpon>FormAddService.cs</DependentUpon>
-    </Compile>
     <Compile Include="forms\FormAddStop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +199,12 @@
     <Compile Include="forms\FormChooseContract.Designer.cs">
       <DependentUpon>FormChooseContract.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\FormChooseDates.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\FormChooseDates.Designer.cs">
+      <DependentUpon>FormChooseDates.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\FormChooseEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,6 +252,12 @@
     </Compile>
     <Compile Include="forms\FormMainPage.Designer.cs">
       <DependentUpon>FormMainPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\FormReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\FormReport.Designer.cs">
+      <DependentUpon>FormReport.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\FormRoute.cs">
       <SubType>Form</SubType>
@@ -307,6 +313,12 @@
       <DependentUpon>ApplicationForm.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="reports\CompletedReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CompletedReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="reports\CrystalRep.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -330,9 +342,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\FormAddContract.resx">
       <DependentUpon>FormAddContract.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\FormAddService.resx">
-      <DependentUpon>FormAddService.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\FormAddStop.resx">
       <DependentUpon>FormAddStop.cs</DependentUpon>
@@ -382,6 +391,9 @@
     <EmbeddedResource Include="forms\FormChooseContract.resx">
       <DependentUpon>FormChooseContract.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\FormChooseDates.resx">
+      <DependentUpon>FormChooseDates.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\FormChooseEmployee.resx">
       <DependentUpon>FormChooseEmployee.cs</DependentUpon>
     </EmbeddedResource>
@@ -405,6 +417,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\FormMainPage.resx">
       <DependentUpon>FormMainPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\FormReport.resx">
+      <DependentUpon>FormReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\FormRoute.resx">
       <DependentUpon>FormRoute.cs</DependentUpon>
@@ -430,6 +445,10 @@
     <EmbeddedResource Include="reports\ApplicationForm.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ApplicationForm.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\CompletedReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CompletedReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="reports\CrystalRep.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

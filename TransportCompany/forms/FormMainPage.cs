@@ -321,5 +321,18 @@ namespace TransportCompany
                 MessageBox.Show("Что-то пошло не так!" + ex);
             }
         }
+
+        private void сведенияОЗавершенныхЗаказахToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FormChooseDates form = new FormChooseDates();
+                form.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Что-то пошло не так!" + ex);
+            }
+        }
     }
 }
