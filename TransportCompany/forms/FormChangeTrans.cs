@@ -17,7 +17,7 @@ namespace TransportCompany.forms
         DriverDAO daoDriver = new DriverDAO();
         TransportModelDAO daoModel = new TransportModelDAO();
 
-        public FormChangeTrans(string num, string dn, string mn, string occ)
+        public FormChangeTrans(string num, string dn, string mn)
         {
             InitializeComponent();
             textBoxLicensePlate.Text = num;
@@ -25,12 +25,11 @@ namespace TransportCompany.forms
             comboBoxDrivers.SelectedItem = dn;
             comboBoxModels.Items.AddRange(daoModel.getAllTransModels());
             comboBoxModels.SelectedItem = mn;
-            textBoxOccupation.Text = occ;
         }
 
         private void buttonChange_Click(object sender, EventArgs e)
         {
-            if ((textBoxLicensePlate.Text.Equals("")) || (comboBoxDrivers.Text.Equals("")) || (comboBoxModels.Text.Equals("")) || (textBoxOccupation.Text.Equals("")))
+            if ((textBoxLicensePlate.Text.Equals("")) || (comboBoxDrivers.Text.Equals("")) || (comboBoxModels.Text.Equals("")))
                 MessageBox.Show("Вы не ввели все необходимые данные!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
             else this.Close();
         }
@@ -44,14 +43,6 @@ namespace TransportCompany.forms
             }
         }
 
-        private void textBoxOccupation_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            char symb = e.KeyChar;
-            if ((symb < 'А' || symb > 'я') && symb != '\b' && symb != ' ')
-            {
-                e.Handled = true;
-            }
-        }
 
         private void comboBoxDrivers_SelectedIndexChanged(object sender, EventArgs e)
         {

@@ -59,6 +59,7 @@
             this.buttonContract = new System.Windows.Forms.Button();
             this.buttonRequest = new System.Windows.Forms.Button();
             this.buttonCompletedWorks = new System.Windows.Forms.Button();
+            this.завершениеРаботыНадЗаказомToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMainPage.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -159,7 +160,8 @@
             this.определениеСотрудниковДляРаботыНадЗаказомToolStripMenuItem,
             this.формированиеМаршрутаToolStripMenuItem,
             this.определениеСтатусаЗаказаToolStripMenuItem,
-            this.оформлениеАктаВыполненныхРаботПоЗаказуToolStripMenuItem});
+            this.оформлениеАктаВыполненныхРаботПоЗаказуToolStripMenuItem,
+            this.завершениеРаботыНадЗаказомToolStripMenuItem});
             this.оперативныеДанныеToolStripMenuItem.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.оперативныеДанныеToolStripMenuItem.Name = "оперативныеДанныеToolStripMenuItem";
             this.оперативныеДанныеToolStripMenuItem.Size = new System.Drawing.Size(280, 24);
@@ -261,7 +263,7 @@
             // 
             this.отчетОЗанятостиТранспортаToolStripMenuItem.Name = "отчетОЗанятостиТранспортаToolStripMenuItem";
             this.отчетОЗанятостиТранспортаToolStripMenuItem.Size = new System.Drawing.Size(445, 26);
-            this.отчетОЗанятостиТранспортаToolStripMenuItem.Text = "Сведения о занятости транспорта";
+            this.отчетОЗанятостиТранспортаToolStripMenuItem.Text = "Сведения о занятости транспорта и водителей";
             this.отчетОЗанятостиТранспортаToolStripMenuItem.Click += new System.EventHandler(this.отчетОЗанятостиТранспортаToolStripMenuItem_Click);
             // 
             // сведенияОСоответствииГрафикуОказанияУслугToolStripMenuItem
@@ -291,7 +293,7 @@
             this.buttonContract.Font = new System.Drawing.Font("Tahoma", 12F);
             this.buttonContract.Location = new System.Drawing.Point(582, 226);
             this.buttonContract.Name = "buttonContract";
-            this.buttonContract.Size = new System.Drawing.Size(427, 48);
+            this.buttonContract.Size = new System.Drawing.Size(427, 52);
             this.buttonContract.TabIndex = 1;
             this.buttonContract.Text = "Оформление договора об оказании услуг";
             this.buttonContract.UseVisualStyleBackColor = false;
@@ -303,7 +305,7 @@
             this.buttonRequest.Font = new System.Drawing.Font("Tahoma", 12F);
             this.buttonRequest.Location = new System.Drawing.Point(582, 111);
             this.buttonRequest.Name = "buttonRequest";
-            this.buttonRequest.Size = new System.Drawing.Size(427, 48);
+            this.buttonRequest.Size = new System.Drawing.Size(427, 57);
             this.buttonRequest.TabIndex = 2;
             this.buttonRequest.Text = "Формирование заявки на перевозку груза";
             this.buttonRequest.UseVisualStyleBackColor = false;
@@ -313,13 +315,20 @@
             // 
             this.buttonCompletedWorks.BackColor = System.Drawing.SystemColors.HighlightText;
             this.buttonCompletedWorks.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.buttonCompletedWorks.Location = new System.Drawing.Point(582, 347);
+            this.buttonCompletedWorks.Location = new System.Drawing.Point(582, 343);
             this.buttonCompletedWorks.Name = "buttonCompletedWorks";
-            this.buttonCompletedWorks.Size = new System.Drawing.Size(427, 48);
+            this.buttonCompletedWorks.Size = new System.Drawing.Size(427, 52);
             this.buttonCompletedWorks.TabIndex = 3;
             this.buttonCompletedWorks.Text = "Составление акта выполненных работ";
             this.buttonCompletedWorks.UseVisualStyleBackColor = false;
             this.buttonCompletedWorks.Click += new System.EventHandler(this.buttonCompletedWorks_Click);
+            // 
+            // завершениеРаботыНадЗаказомToolStripMenuItem
+            // 
+            this.завершениеРаботыНадЗаказомToolStripMenuItem.Name = "завершениеРаботыНадЗаказомToolStripMenuItem";
+            this.завершениеРаботыНадЗаказомToolStripMenuItem.Size = new System.Drawing.Size(435, 26);
+            this.завершениеРаботыНадЗаказомToolStripMenuItem.Text = "Завершение работы над заказом";
+            this.завершениеРаботыНадЗаказомToolStripMenuItem.Click += new System.EventHandler(this.завершениеРаботыНадЗаказомToolStripMenuItem_Click);
             // 
             // FormMainPage
             // 
@@ -377,5 +386,6 @@
         private System.Windows.Forms.ToolStripMenuItem договорОбОказанииУслугToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem актВыполненныхРаботToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem заявкаНаПеревозкуГрузаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem завершениеРаботыНадЗаказомToolStripMenuItem;
     }
 }

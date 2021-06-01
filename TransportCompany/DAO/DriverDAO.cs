@@ -27,6 +27,34 @@ namespace TransportCompany.DAO
             }
         }
 
+        public DataTable getFreeDriver()
+        {
+            try
+            {
+                string query = "SELECT DISTINCT d.driver_name, e.employee_tel_num FROM Driver d join Employee e On d.driver_name=e.employee_name INNER Join Transport t on d.driver_name = t.driver_name INNER Join TransportApplication ta ON t.license_plate=ta.license_plate INNER Join ApplicationForm a ON ta.application_num=a.application_num INNER JOIN Contract c ON a.contract_num=c.contract_num where c.completion in ('Завершен')";
+                DataTable dt = connect.executeQuery(query);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public DataTable getOccupiedDriver()
+        {
+            try
+            {
+                string query = "SELECT d.driver_name, e.employee_tel_num, t.license_plate, c.contract_num FROM Driver d join Employee e On d.driver_name=e.employee_name INNER Join Transport t on d.driver_name = t.driver_name INNER Join TransportApplication ta ON t.license_plate=ta.license_plate INNER Join ApplicationForm a ON ta.application_num=a.application_num INNER JOIN Contract c ON a.contract_num=c.contract_num where c.completion in ('В работе')";
+                DataTable dt = connect.executeQuery(query);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
         public string[] getAllDriverNames()
         {
             SqlConnection conn = connect.createConnection();

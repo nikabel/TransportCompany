@@ -12,12 +12,41 @@ namespace TransportCompany.DAO
     public class TransportDAO
     {
         DBUtil connect = new DBUtil();
+        TransportApplicationDAO daoTransApp = new TransportApplicationDAO();
 
         public DataTable getAll()
         {
             try
             {
                 string query = "select * from Transport";
+                DataTable dt = connect.executeQuery(query);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public DataTable getFreeTrans()
+        {
+            try
+            {
+                string query = "SELECT DISTINCT t.license_plate, t.model_name, tm.mark_name FROM Transport t join TransportModel tm on t.model_name = tm.model_name Join TransportApplication ta ON t.license_plate = ta.license_plate Join ApplicationForm a ON ta.application_num = a.application_num JOIN Contract c ON a.contract_num = c.contract_num where c.completion != 'В работе'";
+                DataTable dt = connect.executeQuery(query);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public DataTable getOccupiedTrans()
+        {
+            try
+            {
+                string query = "SELECT t.license_plate, t.driver_name, t.model_name, tm.mark_name, c.contract_num FROM Transport t join TransportModel tm on t.model_name = tm.model_name Join TransportApplication ta ON t.license_plate = ta.license_plate Join ApplicationForm a ON ta.application_num = a.application_num JOIN Contract c ON a.contract_num = c.contract_num where c.completion = 'В работе'";
                 DataTable dt = connect.executeQuery(query);
                 return dt;
             }
@@ -70,7 +99,7 @@ namespace TransportCompany.DAO
         {
             try
             {
-                string query = String.Format("Insert INTO Transport values ('{0}', '{1}', '{2}', '{3}')", transport.LicensePlate, transport.DriverName, transport.ModelName, transport.Occupation);
+                string query = String.Format("Insert INTO Transport values ('{0}', '{1}', '{2}')", transport.LicensePlate, transport.DriverName, transport.ModelName);
                 connect.executeNonQuery(query);
             }
             catch (Exception ex)
@@ -83,7 +112,7 @@ namespace TransportCompany.DAO
         {
             try
             {
-                string query = String.Format("SELECT license_plate, driver_name, model_name, occupation FROM Transport WHERE license_plate LIKE '{0}' + '%'", str);
+                string query = String.Format("SELECT license_plate, driver_name, model_name FROM Transport WHERE license_plate LIKE '{0}' + '%'", str);
                 DataTable dt = connect.executeQuery(query);
                 return dt;
             }
@@ -98,7 +127,8 @@ namespace TransportCompany.DAO
         {
             try
             {
-                string query = String.Format("UPDATE Transport SET license_plate = '{0}', driver_name = '{1}', model_name = '{2}', occupation = '{3}' WHERE license_plate = '{4}' ", newTransport.LicensePlate, newTransport.DriverName, newTransport.ModelName, newTransport.Occupation, oldName);
+                string query = String.Format("UPDATE Transport SET license_plate = '{0}', driver_name = '{1}', model_name = '{2}' WHERE license_plate = '{3}' ", 
+                    newTransport.LicensePlate, newTransport.DriverName, newTransport.ModelName,  oldName);
                 connect.executeNonQuery(query);
             }
             catch (Exception ex)

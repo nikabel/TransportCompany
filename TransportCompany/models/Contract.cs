@@ -13,14 +13,18 @@ namespace TransportCompany.models
         private string _expirationDate;
         private string _customerName;
         private string _companyName;
+        private string _completion;
+        private string _completionDate;
 
-        public Contract(string contractNum, string signDate, string expirationDate, string customerName, string companyName)
+        public Contract(string contractNum, string signDate, string expirationDate, string customerName, string companyName, string completion, string completionDate)
         {
             ContractNum = contractNum;
             SignDate = signDate;
             ExpirationDate = expirationDate;
             CustomerName = customerName;
             CompanyName = companyName;
+            Completion = completion;
+            CompletionDate = completionDate;
         }
 
         public string ContractNum { get => _contractNum; set => _contractNum = value; }
@@ -28,5 +32,7 @@ namespace TransportCompany.models
         public string ExpirationDate { get => _expirationDate; set => _expirationDate = value; }
         public string CustomerName { get => _customerName; set => _customerName = value; }
         public string CompanyName { get => _companyName; set => _companyName = value; }
+        public string Completion { get => _completion; set => _completion = value; }
+        public string CompletionDate { get => _completionDate; set => _completionDate = value; }
     }
 }

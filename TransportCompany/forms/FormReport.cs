@@ -27,5 +27,10 @@ namespace TransportCompany.forms
         {
 
         }
+
+        private void FormReport_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

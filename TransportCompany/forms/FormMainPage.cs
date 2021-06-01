@@ -30,7 +30,15 @@ namespace TransportCompany
 
         private void отчетОЗанятостиТранспортаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                FormOccupation form = new FormOccupation();
+                form.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Что-то пошло не так!" + ex);
+            }
         }
 
         private void видыОстановокToolStripMenuItem_Click(object sender, EventArgs e)
@@ -153,7 +161,15 @@ namespace TransportCompany
 
         private void сведенияОСоответствииГрафикуОказанияУслугToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                FormDelayedOrders form = new FormDelayedOrders();
+                form.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Что-то пошло не так!" + ex);
+            }
         }
 
         private void сведенияОВыполненныхРаботахЗаУказанныйПериодToolStripMenuItem_Click(object sender, EventArgs e)
@@ -327,6 +343,19 @@ namespace TransportCompany
             try
             {
                 FormChooseDates form = new FormChooseDates();
+                form.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Что-то пошло не так!" + ex);
+            }
+        }
+
+        private void завершениеРаботыНадЗаказомToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FormCompleteOrder form = new FormCompleteOrder();
                 form.ShowDialog();
             }
             catch (Exception ex)

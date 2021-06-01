@@ -24,6 +24,18 @@ namespace TransportCompany.DAO
                 throw ex;
             }
         }
+        public void updateTransportApplication(string newLP, string oldLP)
+        {
+            try
+            {
+                string query = String.Format("UPDATE TransportApplication set license_plate = '{0}' WHERE license_plate = '{1}'", newLP, oldLP);
+                connect.executeNonQuery(query);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
         public bool checkTransportApplication(TransportApplication ta)
         {

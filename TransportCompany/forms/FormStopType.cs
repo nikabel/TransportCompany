@@ -16,6 +16,7 @@ namespace TransportCompany
         CargoTypeDAO daoCT = new CargoTypeDAO();
         TransportDAO daoTrans = new TransportDAO();
         TransportModelDAO daoTransModel = new TransportModelDAO();
+        
         String directory;
 
         public StopTypeForm(string type)
@@ -110,7 +111,6 @@ namespace TransportCompany
                         data.Columns["license_plate"].ColumnName = "Гос. номер транспорта";
                         data.Columns["driver_name"].ColumnName = "ФИО водителя";
                         data.Columns["model_name"].ColumnName = "Наименование модели";
-                        data.Columns["occupation"].ColumnName = "Занятость транспорта";
                         dataGridViewStopType.DataSource = data;
                         break;
                     }
@@ -222,14 +222,12 @@ namespace TransportCompany
                     {
                         try
                         {
-                            FormChangeTrans form = new FormChangeTrans("", "", "", "");
+                            FormChangeTrans form = new FormChangeTrans("", "", "");
                             form.ShowDialog();
                             string num = form.textBoxLicensePlate.Text.ToString();
                             string driver = form.comboBoxDrivers.SelectedItem.ToString();
                             string model = form.comboBoxModels.SelectedItem.ToString();
-                            string occup = form.textBoxOccupation.Text.ToString();
-                            Transport trans = new Transport(model, driver, num, occup);
-                            MessageBox.Show(num + " " + driver + " " + model + " " + occup);
+                            Transport trans = new Transport(model, driver, num);
                             daoTrans.addType(trans);
                         }
                         catch (SqlException odbcEx)
@@ -466,7 +464,6 @@ namespace TransportCompany
                             data.Columns["license_plate"].ColumnName = "Гос. номер транспорта";
                             data.Columns["driver_name"].ColumnName = "ФИО водителя";
                             data.Columns["model_name"].ColumnName = "Наименование модели";
-                            data.Columns["occupation"].ColumnName = "Занятость транспорта";
                             dataGridViewStopType.DataSource = data;
                         }
                         else MessageBox.Show("Ничего не найдено!", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
@@ -593,19 +590,17 @@ namespace TransportCompany
                             string n = dataGridViewStopType[0, rowNum].Value.ToString();
                             string d = dataGridViewStopType[1, rowNum].Value.ToString();
                             string m = dataGridViewStopType[2, rowNum].Value.ToString();
-                            string o = dataGridViewStopType[2, rowNum].Value.ToString();
-                            FormChangeTrans form = new FormChangeTrans(n, d, m, o);
+                            FormChangeTrans form = new FormChangeTrans(n, d, m);
                             form.ShowDialog();
                             string num = form.textBoxLicensePlate.Text.ToString();
                             string driver = form.comboBoxDrivers.SelectedItem.ToString();
                             string model = form.comboBoxModels.SelectedItem.ToString();
-                            string occup = form.textBoxOccupation.Text.ToString();
-                            Transport trans = new Transport(num, driver, model, occup);
+                            Transport trans = new Transport(num, driver, model);
                             daoTrans.updateType(n, trans);
                         }
                         catch (SqlException odbcEx)
                         {
-                            MessageBox.Show("Транспортный номер не должно повторяться!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            MessageBox.Show("Транспортный номер не должно повторяться!" + odbcEx, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         }
                         catch (Exception ex)
                         {

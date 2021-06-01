@@ -52,6 +52,7 @@
             this.Controls.Add(this.crystalReportViewer1);
             this.Name = "FormReport";
             this.Text = "Сведения о завершенных заказах";
+            this.Load += new System.EventHandler(this.FormReport_Load);
             this.ResumeLayout(false);
 
         }

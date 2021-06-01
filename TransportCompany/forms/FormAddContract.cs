@@ -35,7 +35,7 @@ namespace TransportCompany.forms
                 string customer = comboBoxCustomer.SelectedItem.ToString();
                 string sign = dateSign.Text;
                 string exp = dateExpierience.Text;
-                Contract contract = new Contract(num, sign, exp, customer, companyDAO.getCompanyName()[0]);
+                Contract contract = new Contract(num, sign, exp, customer, companyDAO.getCompanyName()[0], null, null);
                 contractDAO.addContract(contract);
                 if ((textBoxContractNum.Text.Equals("")) || (comboBoxCustomer.Text.Equals("")))
                     MessageBox.Show("Вы не ввели все необходимые данные!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);

@@ -211,6 +211,12 @@
     <Compile Include="forms\FormChooseEmployee.Designer.cs">
       <DependentUpon>FormChooseEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\FormCompleteOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\FormCompleteOrder.Designer.cs">
+      <DependentUpon>FormCompleteOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\FormContract.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,6 +241,12 @@
     <Compile Include="forms\FormCustomer.Designer.cs">
       <DependentUpon>FormCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\FormDelayedOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\FormDelayedOrders.Designer.cs">
+      <DependentUpon>FormDelayedOrders.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\FormEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,6 +264,12 @@
     </Compile>
     <Compile Include="forms\FormMainPage.Designer.cs">
       <DependentUpon>FormMainPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\FormOccupation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\FormOccupation.Designer.cs">
+      <DependentUpon>FormOccupation.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\FormReport.cs">
       <SubType>Form</SubType>
@@ -397,6 +415,9 @@
     <EmbeddedResource Include="forms\FormChooseEmployee.resx">
       <DependentUpon>FormChooseEmployee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\FormCompleteOrder.resx">
+      <DependentUpon>FormCompleteOrder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\FormContract.resx">
       <DependentUpon>FormContract.cs</DependentUpon>
     </EmbeddedResource>
@@ -409,6 +430,9 @@
     <EmbeddedResource Include="forms\FormCustomer.resx">
       <DependentUpon>FormCustomer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\FormDelayedOrders.resx">
+      <DependentUpon>FormDelayedOrders.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\FormEmployee.resx">
       <DependentUpon>FormEmployee.cs</DependentUpon>
     </EmbeddedResource>
@@ -417,6 +441,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\FormMainPage.resx">
       <DependentUpon>FormMainPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\FormOccupation.resx">
+      <DependentUpon>FormOccupation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\FormReport.resx">
       <DependentUpon>FormReport.cs</DependentUpon>
