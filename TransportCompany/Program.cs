@@ -16,7 +16,7 @@ namespace TransportCompany
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMainPage());
+            Application.Run(new FormAuthentication());
         }
     }
 }

@@ -363,5 +363,18 @@ namespace TransportCompany
                 MessageBox.Show("Что-то пошло не так!" + ex);
             }
         }
+
+        private void справкаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FormInfo form = new FormInfo();
+                form.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Что-то пошло не так!" + ex);
+            }
+        }
     }
 }

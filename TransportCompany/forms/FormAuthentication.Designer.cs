@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBoxLabel = new System.Windows.Forms.TextBox();
+            this.textBoxLogin = new System.Windows.Forms.TextBox();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.buttonLogIn = new System.Windows.Forms.Button();
@@ -57,19 +57,24 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Логин";
             // 
-            // textBoxLabel
+            // textBoxLogin
             // 
-            this.textBoxLabel.Location = new System.Drawing.Point(203, 131);
-            this.textBoxLabel.Name = "textBoxLabel";
-            this.textBoxLabel.Size = new System.Drawing.Size(263, 22);
-            this.textBoxLabel.TabIndex = 2;
+            this.textBoxLogin.Location = new System.Drawing.Point(203, 131);
+            this.textBoxLogin.MaxLength = 20;
+            this.textBoxLogin.Name = "textBoxLogin";
+            this.textBoxLogin.Size = new System.Drawing.Size(263, 22);
+            this.textBoxLogin.TabIndex = 2;
+            this.textBoxLogin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxLogin_KeyPress);
             // 
             // textBoxPassword
             // 
             this.textBoxPassword.Location = new System.Drawing.Point(203, 185);
+            this.textBoxPassword.MaxLength = 20;
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(263, 22);
             this.textBoxPassword.TabIndex = 4;
+            this.textBoxPassword.UseSystemPasswordChar = true;
+            this.textBoxPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPassword_KeyPress);
             // 
             // label3
             // 
@@ -90,6 +95,7 @@
             this.buttonLogIn.TabIndex = 5;
             this.buttonLogIn.Text = "Войти";
             this.buttonLogIn.UseVisualStyleBackColor = true;
+            this.buttonLogIn.Click += new System.EventHandler(this.buttonLogIn_Click);
             // 
             // FormAuthentication
             // 
@@ -100,10 +106,11 @@
             this.Controls.Add(this.buttonLogIn);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBoxLabel);
+            this.Controls.Add(this.textBoxLogin);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FormAuthentication";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Аутентификация пользователя";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -114,7 +121,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxLabel;
+        private System.Windows.Forms.TextBox textBoxLogin;
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button buttonLogIn;

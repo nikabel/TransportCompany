@@ -279,6 +279,7 @@
             this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
             this.справкаToolStripMenuItem.Size = new System.Drawing.Size(78, 24);
             this.справкаToolStripMenuItem.Text = "Справка";
+            this.справкаToolStripMenuItem.Click += new System.EventHandler(this.справкаToolStripMenuItem_Click);
             // 
             // выходИзСистемыToolStripMenuItem
             // 
@@ -345,6 +346,7 @@
             this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MainMenuStrip = this.menuStripMainPage;
             this.Name = "FormMainPage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Автоматизированная система учета работы компании ООО \"СДК-Магистраль\"";
             this.Load += new System.EventHandler(this.FormMainPage_Load);
             this.menuStripMainPage.ResumeLayout(false);

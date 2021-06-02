@@ -32,7 +32,7 @@ namespace TransportCompany.DAO
         {
             try
             {
-                string query = "SELECT DISTINCT c.contract_num, c.customer_name, c.sign_date, c.expiration_date FROM Contract c Join ApplicationForm a ON c.contract_num = a.contract_num JOIN Route r ON a.application_num = r.application_num join Stop rp ON r.route_id=rp.route_id where c.completion= 'В работе' and rp.fact_stop_date<=rp.plan_stop_date";
+                string query = "SELECT DISTINCT c.contract_num, c.customer_name, c.sign_date, c.expiration_date FROM Contract c Join ApplicationForm a ON c.contract_num = a.contract_num JOIN Route r ON a.application_num = r.application_num join Stop rp ON r.route_id=rp.route_id where c.completion= 'В работе' and rp.fact_stop_date>rp.plan_stop_date";
                 DataTable dt = connect.executeQuery(query);
                 return dt;
             }
