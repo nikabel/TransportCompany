@@ -27,6 +27,30 @@ namespace TransportCompany.DAO
             }
         }
 
+        public string[] getLogistBuch()
+        {
+            SqlConnection conn = connect.createConnection();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("select e.employee_name from OfficeEmployee oe JOIN Employee e ON oe.employee_name=e.employee_name WHERE e.department_name='Логистический отдел' OR e.department_name='Бухгалтерия'", conn);
+                conn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                var employees = new List<string>();
+                while (dr.Read())
+                {
+                    employees.Add(dr.GetString(0));
+                }
+
+                string[] employeeNames = employees.ToArray();
+                dr.Close();
+                conn.Close();
+                return employeeNames;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
         public string[] getAllEmployees()
         {
             SqlConnection conn = connect.createConnection();

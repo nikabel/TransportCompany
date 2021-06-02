@@ -46,6 +46,7 @@
             this.формированиеМаршрутаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.определениеСтатусаЗаказаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оформлениеАктаВыполненныхРаботПоЗаказуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.завершениеРаботыНадЗаказомToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчетыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.договорОбОказанииУслугToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.заявкаНаПеревозкуГрузаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,7 +60,6 @@
             this.buttonContract = new System.Windows.Forms.Button();
             this.buttonRequest = new System.Windows.Forms.Button();
             this.buttonCompletedWorks = new System.Windows.Forms.Button();
-            this.завершениеРаботыНадЗаказомToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMainPage.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -209,6 +209,13 @@
             this.оформлениеАктаВыполненныхРаботПоЗаказуToolStripMenuItem.Text = "Оформление акта выполненных работ по заказу";
             this.оформлениеАктаВыполненныхРаботПоЗаказуToolStripMenuItem.Click += new System.EventHandler(this.оформлениеАктаВыполненныхРаботПоЗаказуToolStripMenuItem_Click);
             // 
+            // завершениеРаботыНадЗаказомToolStripMenuItem
+            // 
+            this.завершениеРаботыНадЗаказомToolStripMenuItem.Name = "завершениеРаботыНадЗаказомToolStripMenuItem";
+            this.завершениеРаботыНадЗаказомToolStripMenuItem.Size = new System.Drawing.Size(435, 26);
+            this.завершениеРаботыНадЗаказомToolStripMenuItem.Text = "Завершение работы над заказом";
+            this.завершениеРаботыНадЗаказомToolStripMenuItem.Click += new System.EventHandler(this.завершениеРаботыНадЗаказомToolStripMenuItem_Click);
+            // 
             // отчетыToolStripMenuItem
             // 
             this.отчетыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -292,7 +299,7 @@
             // 
             this.buttonContract.BackColor = System.Drawing.SystemColors.HighlightText;
             this.buttonContract.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.buttonContract.Location = new System.Drawing.Point(582, 226);
+            this.buttonContract.Location = new System.Drawing.Point(582, 126);
             this.buttonContract.Name = "buttonContract";
             this.buttonContract.Size = new System.Drawing.Size(427, 52);
             this.buttonContract.TabIndex = 1;
@@ -304,7 +311,7 @@
             // 
             this.buttonRequest.BackColor = System.Drawing.SystemColors.HighlightText;
             this.buttonRequest.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.buttonRequest.Location = new System.Drawing.Point(582, 111);
+            this.buttonRequest.Location = new System.Drawing.Point(582, 232);
             this.buttonRequest.Name = "buttonRequest";
             this.buttonRequest.Size = new System.Drawing.Size(427, 57);
             this.buttonRequest.TabIndex = 2;
@@ -323,13 +330,6 @@
             this.buttonCompletedWorks.Text = "Составление акта выполненных работ";
             this.buttonCompletedWorks.UseVisualStyleBackColor = false;
             this.buttonCompletedWorks.Click += new System.EventHandler(this.buttonCompletedWorks_Click);
-            // 
-            // завершениеРаботыНадЗаказомToolStripMenuItem
-            // 
-            this.завершениеРаботыНадЗаказомToolStripMenuItem.Name = "завершениеРаботыНадЗаказомToolStripMenuItem";
-            this.завершениеРаботыНадЗаказомToolStripMenuItem.Size = new System.Drawing.Size(435, 26);
-            this.завершениеРаботыНадЗаказомToolStripMenuItem.Text = "Завершение работы над заказом";
-            this.завершениеРаботыНадЗаказомToolStripMenuItem.Click += new System.EventHandler(this.завершениеРаботыНадЗаказомToolStripMenuItem_Click);
             // 
             // FormMainPage
             // 

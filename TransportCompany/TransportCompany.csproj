@@ -78,6 +78,7 @@
     <Compile Include="DAO\TransportApplicationDAO.cs" />
     <Compile Include="DAO\TransportDAO.cs" />
     <Compile Include="DAO\TransportModelDAO.cs" />
+    <Compile Include="DAO\UserDAO.cs" />
     <Compile Include="DAO\WorkCertificateDAO.cs" />
     <Compile Include="forms\FormAddApplication.cs">
       <SubType>Form</SubType>

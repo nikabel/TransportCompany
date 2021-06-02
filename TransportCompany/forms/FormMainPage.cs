@@ -13,9 +13,43 @@ namespace TransportCompany
 {
     public partial class FormMainPage : Form
     {
-        public FormMainPage()
+        public FormMainPage(string role)
         {
             InitializeComponent();
+            if (role== "Администратор")
+            {
+                определениеСотрудниковДляРаботыНадЗаказомToolStripMenuItem.Enabled = false;
+                формированиеМаршрутаToolStripMenuItem.Enabled = false;
+                определениеСтатусаЗаказаToolStripMenuItem.Enabled = false;
+                оформлениеАктаВыполненныхРаботПоЗаказуToolStripMenuItem.Enabled = false;
+                завершениеРаботыНадЗаказомToolStripMenuItem.Enabled = false;
+                актВыполненныхРаботToolStripMenuItem.Enabled = false;
+                сведенияОЗавершенныхЗаказахToolStripMenuItem.Enabled = false;
+                запросыToolStripMenuItem.Enabled = false;
+                buttonCompletedWorks.Enabled = false;
+            }
+            else if (role == "Логист")
+            {
+                формированиеДоговораToolStripMenuItem.Enabled = false;
+                составлениеЗаявкиToolStripMenuItem.Enabled = false;
+                оформлениеАктаВыполненныхРаботПоЗаказуToolStripMenuItem.Enabled = false;
+                завершениеРаботыНадЗаказомToolStripMenuItem.Enabled = false;
+                отчетыToolStripMenuItem.Enabled = false;
+                buttonRequest.Enabled = false;
+                buttonContract.Enabled = false;
+            }
+            else if (role == "Бухгалтер")
+            {
+                формированиеДоговораToolStripMenuItem.Enabled = false;
+                определениеСотрудниковДляРаботыНадЗаказомToolStripMenuItem.Enabled = false;
+                формированиеМаршрутаToolStripMenuItem.Enabled = false;
+                определениеСтатусаЗаказаToolStripMenuItem.Enabled = false;
+                составлениеЗаявкиToolStripMenuItem.Enabled = false;
+                договорОбОказанииУслугToolStripMenuItem.Enabled = false;
+                заявкаНаПеревозкуГрузаToolStripMenuItem.Enabled = false;
+                buttonRequest.Enabled = false;
+                buttonContract.Enabled = false;
+            }
         }
 
         private void отToolStripMenuItem_Click(object sender, EventArgs e)

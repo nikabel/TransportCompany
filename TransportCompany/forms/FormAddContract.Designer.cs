@@ -134,6 +134,7 @@
             this.Controls.Add(this.comboBoxCustomer);
             this.Controls.Add(this.label2);
             this.Name = "FormAddContract";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Формирование договора";
             this.ResumeLayout(false);
             this.PerformLayout();

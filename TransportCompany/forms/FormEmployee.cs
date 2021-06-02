@@ -13,11 +13,16 @@ namespace TransportCompany.forms
         EmployeeDAO daoEmp = new EmployeeDAO();
         DriverDAO daoDr = new DriverDAO();
         OfficeEmployeeDAO daoOf = new OfficeEmployeeDAO();
+        UserDAO daoUser = new UserDAO();
         public FormEmployee()
         {
             InitializeComponent();
             connect.createConnection();
+            tabPage1.Text = "Сведения о сотрудниках";
+            tabPage2.Text = "Сведения о пользователях";
+            comboBoxEmployees.Items.AddRange(daoOf.getLogistBuch());
             updateTable();
+            updateUsers();
         }
         public void updateTable()
         {
@@ -37,6 +42,15 @@ namespace TransportCompany.forms
             dataGridViewEmployee.DataSource = dataEmp;
             dataGridViewDriver.DataSource = dataDr;
             dataGridViewOfficeEmployee.DataSource = dataOf;
+        }
+
+        public void updateUsers()
+        {
+            DataTable dataUsers = daoUser.getAll();
+            dataUsers.Columns["employee_name"].ColumnName = "ФИО сотрудника";
+            dataUsers.Columns["user_login"].ColumnName = "Логин";
+            dataUsers.Columns["user_password"].ColumnName = "Пароль";
+            dataGridViewUsers.DataSource = dataUsers;
         }
 
         private void groupBox3_Enter(object sender, EventArgs e)
@@ -237,6 +251,70 @@ namespace TransportCompany.forms
             catch (Exception ex)
             {
                 MessageBox.Show("Ошибка при изменении!" + ex);
+            }
+        }
+
+        private void textBoxLogin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char symb = e.KeyChar;
+            if (!Char.IsDigit(symb) && (symb < 'A' || symb > 'z') && symb != '\b' && symb != '-' && symb != '_' && symb != '.')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char symb = e.KeyChar;
+            if (!Char.IsDigit(symb) && (symb < 'A' || symb > 'z') && symb != '\b' && symb != '-' && symb != '_' && symb != '.')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void buttonAddUser_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if ((textBoxPassword.Text.Equals("")) || (textBoxLogin.Text.Equals("")) || (comboBoxEmployees.Text.Equals("")))
+                    MessageBox.Show("Вы не ввели все необходимые данные!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                else 
+                {
+                    daoUser.addUser(textBoxLogin.Text, comboBoxEmployees.Text, textBoxPassword.Text);
+                    updateUsers();
+                }
+            }
+            catch (SqlException odbcEx)
+            {
+                MessageBox.Show("Данный логин уже существует! Введите другой логин.", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка при добавлении пользователя!" + ex);
+            }
+        }
+
+        private void buttonDeleteUser_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Вы уверены, что хотите удалить данные?", "Сообщение",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    int rowNum = dataGridViewUsers.CurrentCell.RowIndex;
+                    string login = dataGridViewUsers[0, rowNum].Value.ToString();
+                    daoUser.deleteByLogin(login);
+                    updateUsers();
+                }
+                catch (SqlException odbcEx)
+                {
+                    MessageBox.Show("Невозможно удалить данные, так как они используются!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка при удалении!" + ex);
+                }
             }
         }
     }
