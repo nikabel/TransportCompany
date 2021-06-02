@@ -94,11 +94,12 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(447, 375);
+            this.label2.Location = new System.Drawing.Point(390, 375);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(136, 17);
             this.label2.TabIndex = 38;
             this.label2.Text = "Юридические лица";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -114,12 +115,12 @@
             this.dataGridViewEntityCustomer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridViewEntityCustomer.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewEntityCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewEntityCustomer.Location = new System.Drawing.Point(450, 395);
+            this.dataGridViewEntityCustomer.Location = new System.Drawing.Point(393, 395);
             this.dataGridViewEntityCustomer.Name = "dataGridViewEntityCustomer";
             this.dataGridViewEntityCustomer.RowHeadersVisible = false;
             this.dataGridViewEntityCustomer.RowHeadersWidth = 51;
             this.dataGridViewEntityCustomer.RowTemplate.Height = 24;
-            this.dataGridViewEntityCustomer.Size = new System.Drawing.Size(515, 205);
+            this.dataGridViewEntityCustomer.Size = new System.Drawing.Size(572, 205);
             this.dataGridViewEntityCustomer.TabIndex = 36;
             // 
             // dataGridViewIndividualCustomer
@@ -132,7 +133,7 @@
             this.dataGridViewIndividualCustomer.RowHeadersVisible = false;
             this.dataGridViewIndividualCustomer.RowHeadersWidth = 51;
             this.dataGridViewIndividualCustomer.RowTemplate.Height = 24;
-            this.dataGridViewIndividualCustomer.Size = new System.Drawing.Size(410, 205);
+            this.dataGridViewIndividualCustomer.Size = new System.Drawing.Size(360, 205);
             this.dataGridViewIndividualCustomer.TabIndex = 35;
             // 
             // buttonDeleteCustomer
@@ -221,6 +222,7 @@
             this.Controls.Add(this.buttonAddIndividual);
             this.Controls.Add(this.groupBox3);
             this.Name = "FormCustomer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Информация о заказчиках";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEntityCustomer)).EndInit();

@@ -132,6 +132,7 @@
             this.Controls.Add(this.buttonAddStopType);
             this.Controls.Add(this.groupBox3);
             this.Name = "StopTypeForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Информация о видах остановок";
             this.Load += new System.EventHandler(this.StopTypeForm_Load);
             this.groupBox3.ResumeLayout(false);

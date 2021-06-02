@@ -13,9 +13,11 @@ namespace TransportCompany
 {
     public partial class FormMainPage : Form
     {
+        string user;
         public FormMainPage(string role)
         {
             InitializeComponent();
+            user = role;
             if (role== "Администратор")
             {
                 определениеСотрудниковДляРаботыНадЗаказомToolStripMenuItem.Enabled = false;
@@ -79,7 +81,7 @@ namespace TransportCompany
         {
             try
             {
-                StopTypeForm form = new StopTypeForm("Operation");
+                StopTypeForm form = new StopTypeForm("Operation", user);
                 form.ShowDialog();
             }
             catch (Exception ex)
@@ -101,7 +103,7 @@ namespace TransportCompany
         {
             try
             {
-                FormEmployee form = new FormEmployee();
+                FormEmployee form = new FormEmployee(user);
                 form.ShowDialog();
             }
             catch (Exception ex)
@@ -119,7 +121,7 @@ namespace TransportCompany
         {
             try
             {
-                StopTypeForm form = new StopTypeForm("Department");
+                StopTypeForm form = new StopTypeForm("Department", user);
                 form.ShowDialog();
             }
             catch (Exception ex)
@@ -132,7 +134,7 @@ namespace TransportCompany
         {
             try
             {
-                StopTypeForm form = new StopTypeForm("CargoType");
+                StopTypeForm form = new StopTypeForm("CargoType", user);
                 form.ShowDialog();
             }
             catch (Exception ex)
@@ -145,7 +147,7 @@ namespace TransportCompany
         {
             try
             {
-                StopTypeForm form = new StopTypeForm("Specialization");
+                StopTypeForm form = new StopTypeForm("Specialization", user);
                 form.ShowDialog();
             }
             catch (Exception ex)
@@ -158,7 +160,7 @@ namespace TransportCompany
         {
             try
             {
-                StopTypeForm form = new StopTypeForm("Transport");
+                StopTypeForm form = new StopTypeForm("Transport", user);
                 form.ShowDialog();
             }
             catch (Exception ex)
@@ -171,7 +173,7 @@ namespace TransportCompany
         {
             try
             {
-                StopTypeForm form = new StopTypeForm("TransportModel");
+                StopTypeForm form = new StopTypeForm("TransportModel", user);
                 form.ShowDialog();
             }
             catch (Exception ex)
@@ -184,7 +186,7 @@ namespace TransportCompany
         {
             try
             {
-                FormCustomer form = new FormCustomer();
+                FormCustomer form = new FormCustomer(user);
                 form.ShowDialog();
             }
             catch (Exception ex)

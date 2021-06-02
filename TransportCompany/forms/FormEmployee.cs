@@ -14,7 +14,7 @@ namespace TransportCompany.forms
         DriverDAO daoDr = new DriverDAO();
         OfficeEmployeeDAO daoOf = new OfficeEmployeeDAO();
         UserDAO daoUser = new UserDAO();
-        public FormEmployee()
+        public FormEmployee(string role)
         {
             InitializeComponent();
             connect.createConnection();
@@ -23,7 +23,34 @@ namespace TransportCompany.forms
             comboBoxEmployees.Items.AddRange(daoOf.getLogistBuch());
             updateTable();
             updateUsers();
+            if (role == "Логист")
+            {
+                buttonDeleteEmployee.Enabled = false;
+                buttonAddEmployee.Enabled = false;
+                buttonAddDriver.Enabled = false;
+                buttonChangeEmployee.Enabled = false;
+                buttonChangeDriver.Enabled = false;
+                tabPage2.Enabled = false;
+            }
+            else if (role == "Бухгалтер")
+            {
+                buttonDeleteEmployee.Enabled = false;
+                buttonAddEmployee.Enabled = false;
+                buttonAddDriver.Enabled = false;
+                buttonChangeEmployee.Enabled = false;
+                buttonChangeDriver.Enabled = false;
+                tabPage2.Enabled = false;
+            }
         }
+
+        private void tabControl1_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+            if (!e.TabPage.Enabled)
+            {
+                e.Cancel = true;
+            }
+        }
+
         public void updateTable()
         {
             DataTable dataEmp = daoEmp.getAll();

@@ -21,11 +21,27 @@ namespace TransportCompany.forms
         IndividualCustomerDAO daoIC = new IndividualCustomerDAO();
         BankDetailsDAO daoBD = new BankDetailsDAO();
 
-        public FormCustomer()
+        public FormCustomer(string role)
         {
             InitializeComponent();
             connect.createConnection();
             updateTable();
+            if (role == "Логист")
+            {
+                buttonDeleteCustomer.Enabled = false;
+                buttonAddIndividual.Enabled = false;
+                buttonAddEntity.Enabled = false;
+                buttonChangeIndividual.Enabled = false;
+                buttonChangeEntity.Enabled = false;
+            }
+            else if (role == "Бухгалтер")
+            {
+                buttonDeleteCustomer.Enabled = false;
+                buttonAddIndividual.Enabled = false;
+                buttonAddEntity.Enabled = false;
+                buttonChangeIndividual.Enabled = false;
+                buttonChangeEntity.Enabled = false;
+            }
         }
 
         public void updateTable()
@@ -268,6 +284,11 @@ namespace TransportCompany.forms
             {
                 MessageBox.Show("Ошибка при изменении!" + ex);
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

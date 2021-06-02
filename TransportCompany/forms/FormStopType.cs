@@ -19,7 +19,7 @@ namespace TransportCompany
         
         String directory;
 
-        public StopTypeForm(string type)
+        public StopTypeForm(string type, string role)
         {
             InitializeComponent();
             connect.createConnection();
@@ -70,6 +70,18 @@ namespace TransportCompany
                     }
             }
             updateTable();
+            if (role == "Логист")
+            {
+                buttonChangeStopType.Enabled = false;
+                buttonDeleteStopType.Enabled = false;
+                buttonAddStopType.Enabled = false;
+            }
+            else if (role == "Бухгалтер")
+            {
+                buttonChangeStopType.Enabled = false;
+                buttonDeleteStopType.Enabled = false;
+                buttonAddStopType.Enabled = false;
+            }
         }
 
         public void updateTable()
