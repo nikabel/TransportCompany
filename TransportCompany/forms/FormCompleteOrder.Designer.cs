@@ -36,7 +36,9 @@
             // 
             // dataGridViewContracts
             // 
-            this.dataGridViewContracts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridViewContracts.AllowUserToAddRows = false;
+            this.dataGridViewContracts.AllowUserToDeleteRows = false;
+            this.dataGridViewContracts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewContracts.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewContracts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewContracts.Location = new System.Drawing.Point(12, 85);
@@ -62,7 +64,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(279, 33);
+            this.label1.Location = new System.Drawing.Point(12, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(245, 29);
             this.label1.TabIndex = 21;
@@ -77,6 +79,7 @@
             this.Controls.Add(this.buttonComplete);
             this.Controls.Add(this.dataGridViewContracts);
             this.Name = "FormCompleteOrder";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Завершение работы над заказом";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewContracts)).EndInit();
             this.ResumeLayout(false);

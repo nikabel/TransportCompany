@@ -95,7 +95,9 @@
             // 
             // dataGridViewOccTrans
             // 
-            this.dataGridViewOccTrans.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridViewOccTrans.AllowUserToAddRows = false;
+            this.dataGridViewOccTrans.AllowUserToDeleteRows = false;
+            this.dataGridViewOccTrans.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewOccTrans.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewOccTrans.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewOccTrans.Location = new System.Drawing.Point(8, 271);
@@ -110,7 +112,7 @@
             // 
             this.dataGridViewFreeTrans.AllowUserToAddRows = false;
             this.dataGridViewFreeTrans.AllowUserToDeleteRows = false;
-            this.dataGridViewFreeTrans.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridViewFreeTrans.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewFreeTrans.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewFreeTrans.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewFreeTrans.Location = new System.Drawing.Point(8, 43);
@@ -157,7 +159,7 @@
             // 
             // dataGridViewOccDriver
             // 
-            this.dataGridViewOccDriver.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridViewOccDriver.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewOccDriver.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewOccDriver.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewOccDriver.Location = new System.Drawing.Point(9, 270);
@@ -170,7 +172,9 @@
             // 
             // dataGridViewFreeDriver
             // 
-            this.dataGridViewFreeDriver.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridViewFreeDriver.AllowUserToAddRows = false;
+            this.dataGridViewFreeDriver.AllowUserToDeleteRows = false;
+            this.dataGridViewFreeDriver.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewFreeDriver.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewFreeDriver.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewFreeDriver.Location = new System.Drawing.Point(8, 46);
@@ -188,6 +192,7 @@
             this.ClientSize = new System.Drawing.Size(800, 502);
             this.Controls.Add(this.tabControl1);
             this.Name = "FormOccupation";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Сведения о занятости транспорта и водителей";
             this.Load += new System.EventHandler(this.FormOccupation_Load);
             this.tabControl1.ResumeLayout(false);

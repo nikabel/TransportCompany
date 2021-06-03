@@ -42,7 +42,7 @@
             // 
             // buttonDeleteStopType
             // 
-            this.buttonDeleteStopType.Location = new System.Drawing.Point(626, 50);
+            this.buttonDeleteStopType.Location = new System.Drawing.Point(638, 50);
             this.buttonDeleteStopType.Name = "buttonDeleteStopType";
             this.buttonDeleteStopType.Size = new System.Drawing.Size(123, 32);
             this.buttonDeleteStopType.TabIndex = 12;
@@ -52,7 +52,7 @@
             // 
             // buttonChangeStopType
             // 
-            this.buttonChangeStopType.Location = new System.Drawing.Point(626, 12);
+            this.buttonChangeStopType.Location = new System.Drawing.Point(638, 12);
             this.buttonChangeStopType.Name = "buttonChangeStopType";
             this.buttonChangeStopType.Size = new System.Drawing.Size(123, 32);
             this.buttonChangeStopType.TabIndex = 13;
@@ -62,7 +62,7 @@
             // 
             // buttonAddStopType
             // 
-            this.buttonAddStopType.Location = new System.Drawing.Point(626, 88);
+            this.buttonAddStopType.Location = new System.Drawing.Point(637, 88);
             this.buttonAddStopType.Name = "buttonAddStopType";
             this.buttonAddStopType.Size = new System.Drawing.Size(124, 32);
             this.buttonAddStopType.TabIndex = 14;
@@ -110,7 +110,9 @@
             // 
             // dataGridViewStopType
             // 
-            this.dataGridViewStopType.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridViewStopType.AllowUserToAddRows = false;
+            this.dataGridViewStopType.AllowUserToDeleteRows = false;
+            this.dataGridViewStopType.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewStopType.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewStopType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewStopType.Location = new System.Drawing.Point(12, 126);

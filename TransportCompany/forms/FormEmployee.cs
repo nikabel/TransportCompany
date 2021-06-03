@@ -97,7 +97,9 @@ namespace TransportCompany.forms
                     int rowNum = dataGridViewEmployee.CurrentCell.RowIndex;
                     string name = dataGridViewEmployee[0, rowNum].Value.ToString();
                     daoEmp.deleteByName(name);
+                    comboBoxEmployees.Items.AddRange(daoOf.getLogistBuch());
                     updateTable();
+                    updateUsers();
                 }
                 catch (SqlException odbcEx)
                 {
@@ -130,7 +132,9 @@ namespace TransportCompany.forms
                 OfficeEmployee officeEmployee = new OfficeEmployee(name, dep, pos, tel, adr, spec);
                 daoEmp.updateEmployee(n, newEmp);
                 daoOf.updateEmployee(n, officeEmployee);
+                comboBoxEmployees.Items.AddRange(daoOf.getLogistBuch());
                 updateTable();
+                updateUsers();
             }
             catch (SqlException odbcEx)
             {
@@ -158,7 +162,9 @@ namespace TransportCompany.forms
                 OfficeEmployee officeEmployee = new OfficeEmployee(name, dep, pos, tel, adr, spec);
                 daoEmp.addEmployee(emp);
                 daoOf.addEmployee(officeEmployee);
+                comboBoxEmployees.Items.AddRange(daoOf.getLogistBuch());
                 updateTable();
+                updateUsers();
             }
             catch (SqlException odbcEx)
             {

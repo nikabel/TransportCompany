@@ -125,12 +125,16 @@
             // 
             // dataGridViewStops
             // 
+            this.dataGridViewStops.AllowUserToAddRows = false;
+            this.dataGridViewStops.AllowUserToDeleteRows = false;
+            this.dataGridViewStops.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewStops.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewStops.Location = new System.Drawing.Point(496, 51);
             this.dataGridViewStops.Name = "dataGridViewStops";
+            this.dataGridViewStops.RowHeadersVisible = false;
             this.dataGridViewStops.RowHeadersWidth = 51;
             this.dataGridViewStops.RowTemplate.Height = 24;
-            this.dataGridViewStops.Size = new System.Drawing.Size(687, 313);
+            this.dataGridViewStops.Size = new System.Drawing.Size(687, 232);
             this.dataGridViewStops.TabIndex = 94;
             // 
             // labelRouteNum
@@ -156,7 +160,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1197, 376);
+            this.ClientSize = new System.Drawing.Size(1197, 300);
             this.Controls.Add(this.labelRouteNum);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewStops);

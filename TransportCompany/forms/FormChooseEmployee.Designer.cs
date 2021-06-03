@@ -128,12 +128,16 @@
             // 
             // dataGridViewServices
             // 
+            this.dataGridViewServices.AllowUserToAddRows = false;
+            this.dataGridViewServices.AllowUserToDeleteRows = false;
+            this.dataGridViewServices.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewServices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewServices.Location = new System.Drawing.Point(526, 53);
+            this.dataGridViewServices.Location = new System.Drawing.Point(510, 53);
             this.dataGridViewServices.Name = "dataGridViewServices";
+            this.dataGridViewServices.RowHeadersVisible = false;
             this.dataGridViewServices.RowHeadersWidth = 51;
             this.dataGridViewServices.RowTemplate.Height = 24;
-            this.dataGridViewServices.Size = new System.Drawing.Size(696, 254);
+            this.dataGridViewServices.Size = new System.Drawing.Size(712, 233);
             this.dataGridViewServices.TabIndex = 66;
             // 
             // labelContractNum
@@ -161,7 +165,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1234, 335);
+            this.ClientSize = new System.Drawing.Size(1234, 300);
             this.Controls.Add(this.labelContractNum);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridViewServices);
@@ -175,6 +179,7 @@
             this.Controls.Add(this.comboBoxName);
             this.Controls.Add(this.label1);
             this.Name = "FormChooseEmployee";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Назначение сотрудников для работы над заказом";
             this.Load += new System.EventHandler(this.FormChooseEmployee_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewServices)).EndInit();

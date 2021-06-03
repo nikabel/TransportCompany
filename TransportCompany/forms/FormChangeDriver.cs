@@ -42,6 +42,14 @@ namespace TransportCompany.forms
             else this.Close();
         }
 
+        private void textBoxLicense_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            if ((number < 'A' || number > 'z') && !Char.IsDigit(number) && number != 8)
+            {
+                e.Handled = true;
+            }
+        }
         private void textBoxExp_KeyPress(object sender, KeyPressEventArgs e)
         {
             char number = e.KeyChar;

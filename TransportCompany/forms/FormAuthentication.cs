@@ -37,6 +37,7 @@ namespace TransportCompany
                         string role;
                         if (textBoxLogin.Text == "admin") role = "Администратор";
                         else role = dao.getUserDepartment(textBoxLogin.Text);
+                        this.Visible = false;
                         FormMainPage form = new FormMainPage(role);
                         form.ShowDialog();
                         textBoxLogin.Clear();

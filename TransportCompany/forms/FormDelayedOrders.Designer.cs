@@ -35,7 +35,9 @@
             // 
             // dataGridViewContracts
             // 
-            this.dataGridViewContracts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridViewContracts.AllowUserToAddRows = false;
+            this.dataGridViewContracts.AllowUserToDeleteRows = false;
+            this.dataGridViewContracts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewContracts.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewContracts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewContracts.Location = new System.Drawing.Point(12, 82);
@@ -43,7 +45,7 @@
             this.dataGridViewContracts.RowHeadersVisible = false;
             this.dataGridViewContracts.RowHeadersWidth = 51;
             this.dataGridViewContracts.RowTemplate.Height = 24;
-            this.dataGridViewContracts.Size = new System.Drawing.Size(748, 312);
+            this.dataGridViewContracts.Size = new System.Drawing.Size(748, 229);
             this.dataGridViewContracts.TabIndex = 19;
             // 
             // label1
@@ -60,10 +62,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(770, 405);
+            this.ClientSize = new System.Drawing.Size(770, 324);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewContracts);
             this.Name = "FormDelayedOrders";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Сведения о заказах, отстающих от графика";
             this.Load += new System.EventHandler(this.FormDelayedOrders_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewContracts)).EndInit();

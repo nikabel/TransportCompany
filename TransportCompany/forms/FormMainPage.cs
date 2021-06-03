@@ -95,6 +95,9 @@ namespace TransportCompany
             DialogResult result = MessageBox.Show("Вы уверены, что хотите выйти?", "Выход", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (result == DialogResult.OK)
             {
+                this.Visible = false;
+                FormAuthentication form = new FormAuthentication();
+                form.ShowDialog();
                 this.Close();
             }
         }

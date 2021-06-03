@@ -67,12 +67,16 @@
             // 
             // dataGridViewStops
             // 
+            this.dataGridViewStops.AllowUserToAddRows = false;
+            this.dataGridViewStops.AllowUserToDeleteRows = false;
+            this.dataGridViewStops.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewStops.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewStops.Location = new System.Drawing.Point(12, 60);
             this.dataGridViewStops.Name = "dataGridViewStops";
+            this.dataGridViewStops.RowHeadersVisible = false;
             this.dataGridViewStops.RowHeadersWidth = 51;
             this.dataGridViewStops.RowTemplate.Height = 24;
-            this.dataGridViewStops.Size = new System.Drawing.Size(775, 238);
+            this.dataGridViewStops.Size = new System.Drawing.Size(775, 214);
             this.dataGridViewStops.TabIndex = 79;
             // 
             // labelRouteId
@@ -98,7 +102,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1171, 315);
+            this.ClientSize = new System.Drawing.Size(1171, 286);
             this.Controls.Add(this.labelRouteId);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewStops);
@@ -106,6 +110,7 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.dateStop);
             this.Name = "FormControlOrder";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Контроль за ходом выполнения заказа";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStops)).EndInit();
             this.ResumeLayout(false);

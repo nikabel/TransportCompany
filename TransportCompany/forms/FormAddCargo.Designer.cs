@@ -186,7 +186,9 @@
             // 
             // dataGridViewCargo
             // 
-            this.dataGridViewCargo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridViewCargo.AllowUserToAddRows = false;
+            this.dataGridViewCargo.AllowUserToDeleteRows = false;
+            this.dataGridViewCargo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewCargo.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewCargo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewCargo.Location = new System.Drawing.Point(511, 65);
