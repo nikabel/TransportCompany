@@ -163,7 +163,7 @@
             // textBoxOGRN
             // 
             this.textBoxOGRN.Location = new System.Drawing.Point(202, 344);
-            this.textBoxOGRN.MaxLength = 15;
+            this.textBoxOGRN.MaxLength = 13;
             this.textBoxOGRN.Name = "textBoxOGRN";
             this.textBoxOGRN.Size = new System.Drawing.Size(238, 22);
             this.textBoxOGRN.TabIndex = 97;
@@ -268,6 +268,7 @@
             this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.buttonChange);
             this.Name = "FormChangeIndividual";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Информация о заказчиках";
             this.ResumeLayout(false);
             this.PerformLayout();

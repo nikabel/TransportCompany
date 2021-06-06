@@ -46,6 +46,7 @@
             this.dataGridViewCargo = new System.Windows.Forms.DataGridView();
             this.labelCargo = new System.Windows.Forms.Label();
             this.labelApplicationNum = new System.Windows.Forms.Label();
+            this.buttonDeleteCargo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCargo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -219,11 +220,22 @@
             this.labelApplicationNum.Size = new System.Drawing.Size(0, 25);
             this.labelApplicationNum.TabIndex = 122;
             // 
+            // buttonDeleteCargo
+            // 
+            this.buttonDeleteCargo.Location = new System.Drawing.Point(1227, 193);
+            this.buttonDeleteCargo.Name = "buttonDeleteCargo";
+            this.buttonDeleteCargo.Size = new System.Drawing.Size(122, 38);
+            this.buttonDeleteCargo.TabIndex = 123;
+            this.buttonDeleteCargo.Text = "Удалить груз";
+            this.buttonDeleteCargo.UseVisualStyleBackColor = true;
+            this.buttonDeleteCargo.Click += new System.EventHandler(this.buttonDeleteCargo_Click);
+            // 
             // FormAddCargo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1211, 395);
+            this.ClientSize = new System.Drawing.Size(1361, 388);
+            this.Controls.Add(this.buttonDeleteCargo);
             this.Controls.Add(this.labelApplicationNum);
             this.Controls.Add(this.labelCargo);
             this.Controls.Add(this.dataGridViewCargo);
@@ -270,5 +282,6 @@
         private System.Windows.Forms.DataGridView dataGridViewCargo;
         private System.Windows.Forms.Label labelCargo;
         private System.Windows.Forms.Label labelApplicationNum;
+        private System.Windows.Forms.Button buttonDeleteCargo;
     }
 }

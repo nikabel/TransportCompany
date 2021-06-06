@@ -53,7 +53,7 @@ namespace TransportCompany.forms
                 || (textBoxRCBIC.Equals("")) || (textBoxOGRN.Equals("")) || (textBoxCorrACC.Equals("")) || (textBoxBankName.Equals("")))
                 MessageBox.Show("Вы не ввели все необходимые данные!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
             else if ((textBoxACC.Text.Length != 20) || (textBoxINN.Text.Length != 12) || (textBoxRCBIC.Text.Length != 9) ||
-                ((textBoxOGRN.Text.Length !=13) || (textBoxOGRN.Text.Length != 15)) || (textBoxCorrACC.Text.Length != 20))
+                 (textBoxOGRN.Text.Length != 15) || (textBoxCorrACC.Text.Length != 20))
                 MessageBox.Show("Неверное введены банковские данные!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
             else if (textBoxTel.Text.Length != 11)
                 MessageBox.Show("Неверно введен номер телефона!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);

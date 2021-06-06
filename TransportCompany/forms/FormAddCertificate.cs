@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -26,24 +27,29 @@ namespace TransportCompany.forms
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            try
+            if ((textBoxCertificateNum.Text.Equals("")) || (comboBoxContracts.Text.Equals("")))
+                MessageBox.Show("Вы не ввели все необходимые данные!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+            else
             {
-                string num =textBoxCertificateNum.Text.ToString();
-                string contractNum = comboBoxContracts.SelectedItem.ToString();
-                string date = dateSign.Text;
-                if ((textBoxCertificateNum.Text.Equals("")) || (comboBoxContracts.Text.Equals("")))
-                    MessageBox.Show("Вы не ввели все необходимые данные!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
-                else
+                try
                 {
+                    string num = textBoxCertificateNum.Text.ToString();
+                    string contractNum = comboBoxContracts.SelectedItem.ToString();
+                    string date = dateSign.Text;
                     WorkCertificate certificate = new WorkCertificate(num, date, contractNum);
                     certificateDAO.addCertificate(certificate);
                     serviceDAO.updateService(num, contractNum);
                     this.Close();
+
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ошибка при формировании акта выполненных работ!");
+                catch (SqlException odbcEx)
+                {
+                    MessageBox.Show("Номер акта выполненных работ не должен повторяться!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка при формировании акта выполненных работ!");
+                }
             }
         }
     }

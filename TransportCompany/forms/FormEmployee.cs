@@ -192,7 +192,7 @@ namespace TransportCompany.forms
             DataTable dataEmp = daoEmp.searchByName(name);
             DataTable dataDr = daoDr.searchByName(name);
             DataTable dataOf = daoOf.searchByName(name);
-            if (dataEmp.Rows.Count > 1)
+            if (dataEmp.Rows.Count > 0)
             {
                 dataEmp.Columns["employee_name"].ColumnName = "ФИО";
                 dataEmp.Columns["position"].ColumnName = "Должность";
@@ -314,6 +314,8 @@ namespace TransportCompany.forms
                 else 
                 {
                     daoUser.addUser(textBoxLogin.Text, comboBoxEmployees.Text, textBoxPassword.Text);
+                    textBoxLogin.Clear();
+                    textBoxPassword.Clear();
                     updateUsers();
                 }
             }
@@ -348,6 +350,15 @@ namespace TransportCompany.forms
                 {
                     MessageBox.Show("Ошибка при удалении!" + ex);
                 }
+            }
+        }
+
+        private void textBoxSearchEmployee_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char symb = e.KeyChar;
+            if ((symb < 'А' || symb > 'я') && symb != '\b' && symb != ' ')
+            {
+                e.Handled = true;
             }
         }
     }

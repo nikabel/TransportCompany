@@ -70,31 +70,31 @@ namespace TransportCompany.forms
 
         private void buttonChoose_Click(object sender, EventArgs e)
         {
-            try
+            if ((textBoxService.Text.Equals("")) || (textBoxCost.Text.Equals("")) || (comboBoxName.Text.Equals("")))
+                MessageBox.Show("Вы не ввели все необходимые данные!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+            else
             {
-                string num= labelContractNum.Text.ToString();
-                string name = textBoxService.Text.ToString();
-                int cost = int.Parse(textBoxCost.Text.ToString());
-                string employee = comboBoxName.SelectedItem.ToString();
-                string date = dateService.Text;
-                if ((textBoxService.Text.Equals("")) || (textBoxCost.Text.Equals("")) || (comboBoxName.Text.Equals("")))
-                    MessageBox.Show("Вы не ввели все необходимые данные!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
-                else
+                try
                 {
+                    string num = labelContractNum.Text.ToString();
+                    string name = textBoxService.Text.ToString();
+                    int cost = int.Parse(textBoxCost.Text.ToString());
+                    string employee = comboBoxName.SelectedItem.ToString();
+                    string date = dateService.Text;
                     Service service = new Service(name, employee, cost, date, null, num);
                     daoS.addService(service);
                     textBoxService.Clear();
                     textBoxCost.Clear();
                     updateTable(num);
                 }
-            }
-            catch (SqlException odbcEx)
-            {
-                MessageBox.Show("Наименование услуги не должно повторяться!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ошибка при назначении!" + ex);
+                catch (SqlException odbcEx)
+                {
+                    MessageBox.Show("Наименование услуги не должно повторяться!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка при назначении!" + ex);
+                }
             }
         }
 
@@ -106,6 +106,32 @@ namespace TransportCompany.forms
         private void labelContractNum_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Вы уверены, что хотите удалить данные?", "Сообщение",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    string num = labelContractNum.Text.ToString();
+                    int rowNum = dataGridViewServices.CurrentCell.RowIndex;
+                    string name = dataGridViewServices[0, rowNum].Value.ToString();
+                    daoS.deleteService(name, num);
+                    updateTable(num);
+                }
+                catch (SqlException odbcEx)
+                {
+                    MessageBox.Show("Невозможно удалить данные, так как они используются!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка при удалении!" + ex);
+                }
+            }
         }
     }
 }

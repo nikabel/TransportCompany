@@ -139,9 +139,11 @@
             // textBoxSearchEmployee
             // 
             this.textBoxSearchEmployee.Location = new System.Drawing.Point(138, 37);
+            this.textBoxSearchEmployee.MaxLength = 50;
             this.textBoxSearchEmployee.Name = "textBoxSearchEmployee";
             this.textBoxSearchEmployee.Size = new System.Drawing.Size(274, 22);
             this.textBoxSearchEmployee.TabIndex = 1;
+            this.textBoxSearchEmployee.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearchEmployee_KeyPress);
             // 
             // buttonSearchEmployee
             // 
@@ -381,6 +383,9 @@
             // 
             // dataGridViewUsers
             // 
+            this.dataGridViewUsers.AllowUserToAddRows = false;
+            this.dataGridViewUsers.AllowUserToDeleteRows = false;
+            this.dataGridViewUsers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewUsers.Location = new System.Drawing.Point(8, 307);
             this.dataGridViewUsers.Name = "dataGridViewUsers";

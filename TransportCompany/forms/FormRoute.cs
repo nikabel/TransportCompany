@@ -33,27 +33,27 @@ namespace TransportCompany.forms
 
         private void buttonAddStop_Click(object sender, EventArgs e)
         {
-            try
-            {
-                string num = textBoxRouteNum.Text.ToString();
-                string appNum = comboBoxApplicationNum.SelectedItem.ToString();
-                int distance = int.Parse(textBoxDistance.Text.ToString());
-                string emp = comboBoxEmployee.SelectedItem.ToString();
-
-                string depId = textBoxDepartureNum.Text;
-                string depAdr = textBoxDepartureAddress.Text;
-                string dateDep = dateDeparture.Text;
-                string arrId = textBoxArrivalNum.Text;
-                string arrAdr = textBoxArrivalAddress.Text;
-                string dateArr = dateArrival.Text;
-
-                if ((textBoxRouteNum.Text.Equals("")) || (comboBoxApplicationNum.Text.Equals("")) || (textBoxDistance.Text.Equals("")) || (comboBoxEmployee.Text.Equals(""))
+            if ((textBoxRouteNum.Text.Equals("")) || (comboBoxApplicationNum.Text.Equals("")) || (textBoxDistance.Text.Equals("")) || (comboBoxEmployee.Text.Equals(""))
                || (textBoxDepartureNum.Text.Equals("")) || (textBoxDepartureAddress.Text.Equals("")) || (textBoxArrivalNum.Text.Equals("")) || (textBoxArrivalAddress.Text.Equals("")))
-                    MessageBox.Show("Вы не ввели все необходимые данные!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
-                else if (textBoxDepartureNum.Text == textBoxArrivalNum.Text)
-                    MessageBox.Show("Номера прибытия и отправления не должны совпадать! Введите другие номера!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
-                else
+                MessageBox.Show("Вы не ввели все необходимые данные!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+            else if (textBoxDepartureNum.Text == textBoxArrivalNum.Text)
+                MessageBox.Show("Номера прибытия и отправления не должны совпадать! Введите другие номера!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+            else
+            {
+                try
                 {
+                    string num = textBoxRouteNum.Text.ToString();
+                    string appNum = comboBoxApplicationNum.SelectedItem.ToString();
+                    int distance = int.Parse(textBoxDistance.Text.ToString());
+                    string emp = comboBoxEmployee.SelectedItem.ToString();
+
+                    string depId = textBoxDepartureNum.Text;
+                    string depAdr = textBoxDepartureAddress.Text;
+                    string dateDep = dateDeparture.Text;
+                    string arrId = textBoxArrivalNum.Text;
+                    string arrAdr = textBoxArrivalAddress.Text;
+                    string dateArr = dateArrival.Text;
+
                     Route route = new Route(num, emp, appNum, distance);
                     routeDAO.addRoute(route);
                     Stop dep = new Stop(depId, depAdr, num, "Отправление", dateDep, null);
@@ -64,14 +64,14 @@ namespace TransportCompany.forms
                     FormAddStop form = new FormAddStop(num);
                     form.ShowDialog();
                 }
-            }
-            catch (SqlException odbcEx)
-            {
-                MessageBox.Show("Номер маршрута не должен повторяться!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ошибка при создании маршрута!" + ex);
+                catch (SqlException odbcEx)
+                {
+                    MessageBox.Show("Номер маршрута не должен повторяться!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка при создании маршрута!" + ex);
+                }
             }
         }
 

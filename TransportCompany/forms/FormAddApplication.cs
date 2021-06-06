@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -27,30 +28,35 @@ namespace TransportCompany.forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                string num = textBoxApplicationNum.Text.ToString();
-                string contractNum = comboBoxContracts.SelectedItem.ToString();
-                string date = dateSign.Text;
-                string dateDel = dateDelivery.Text;
-                int freight = int.Parse(textBoxFreight.Text.ToString());
-                string insurance = comboBoxInsurance.SelectedItem.ToString();
-                string customer = contractDAO.getContractByNum(contractNum);
-                Application application = new Application(num, contractNum, customer, date, freight, insurance, dateDel);
-                applicationDAO.addApplication(application);
-                if ((textBoxApplicationNum.Text.Equals("")) || (comboBoxContracts.Text.Equals("")) || (textBoxFreight.Text.Equals(""))
+            if ((textBoxApplicationNum.Text.Equals("")) || (comboBoxContracts.Text.Equals("")) || (textBoxFreight.Text.Equals(""))
                     || (comboBoxInsurance.Text.Equals("")))
-                    MessageBox.Show("Вы не ввели все необходимые данные!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
-                else
+                MessageBox.Show("Вы не ввели все необходимые данные!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+            else
+            {
+                try
                 {
+                    string num = textBoxApplicationNum.Text.ToString();
+                    string contractNum = comboBoxContracts.SelectedItem.ToString();
+                    string date = dateSign.Text;
+                    string dateDel = dateDelivery.Text;
+                    int freight = int.Parse(textBoxFreight.Text.ToString());
+                    string insurance = comboBoxInsurance.SelectedItem.ToString();
+                    string customer = contractDAO.getContractByNum(contractNum);
+                    Application application = new Application(num, contractNum, customer, date, freight, insurance, dateDel);
+                    applicationDAO.addApplication(application);
                     this.Close();
                     FormAddCargo form = new FormAddCargo(num);
                     form.ShowDialog();
+
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Что-то пошло не так!" + ex);
+                catch (SqlException odbcEx)
+                {
+                    MessageBox.Show("Номер заявки не должен повторяться! Введите другой номер!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка при добавлении заявки в базу данных!" + ex);
+                }
             }
         }
 

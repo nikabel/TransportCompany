@@ -70,6 +70,7 @@
             this.Controls.Add(this.textBoxSpecName);
             this.Controls.Add(this.buttonChange);
             this.Name = "FormChangeSpec";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Информация о специализациях сотрудников";
             this.Load += new System.EventHandler(this.FormChangeSpec_Load);
             this.ResumeLayout(false);

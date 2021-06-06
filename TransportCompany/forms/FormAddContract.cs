@@ -29,25 +29,28 @@ namespace TransportCompany.forms
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            try
+            if ((textBoxContractNum.Text.Equals("")) || (comboBoxCustomer.Text.Equals("")))
+                MessageBox.Show("Вы не ввели все необходимые данные!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+            else
             {
-                string num = textBoxContractNum.Text.ToString();
-                string customer = comboBoxCustomer.SelectedItem.ToString();
-                string sign = dateSign.Text;
-                string exp = dateExpierience.Text;
-                Contract contract = new Contract(num, sign, exp, customer, companyDAO.getCompanyName()[0], null, null);
-                contractDAO.addContract(contract);
-                if ((textBoxContractNum.Text.Equals("")) || (comboBoxCustomer.Text.Equals("")))
-                    MessageBox.Show("Вы не ввели все необходимые данные!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
-                else this.Close();
-            }
-            catch (SqlException odbcEx)
-            {
-                MessageBox.Show("Данный номер договора уже существует! Введите другой номер договора.", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ошибка при создании договора!" + ex);
+                try
+                {
+                    string num = textBoxContractNum.Text.ToString();
+                    string customer = comboBoxCustomer.SelectedItem.ToString();
+                    string sign = dateSign.Text;
+                    string exp = dateExpierience.Text;
+                    Contract contract = new Contract(num, sign, exp, customer, companyDAO.getCompanyName()[0], null, null);
+                    contractDAO.addContract(contract);
+                    this.Close();
+                }
+                catch (SqlException odbcEx)
+                {
+                    MessageBox.Show("Данный номер договора уже существует! Введите другой номер договора.", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка при создании договора!" + ex);
+                }
             }
         }
 

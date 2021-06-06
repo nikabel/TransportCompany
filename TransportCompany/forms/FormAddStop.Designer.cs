@@ -40,6 +40,7 @@
             this.dataGridViewStops = new System.Windows.Forms.DataGridView();
             this.labelRouteNum = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.buttonDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStops)).BeginInit();
             this.SuspendLayout();
             // 
@@ -156,11 +157,22 @@
             this.label1.TabIndex = 95;
             this.label1.Text = "Список остановок в маршруте №";
             // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Location = new System.Drawing.Point(1194, 141);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(102, 33);
+            this.buttonDelete.TabIndex = 97;
+            this.buttonDelete.Text = "Удалить";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+            // 
             // FormAddStop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1197, 300);
+            this.ClientSize = new System.Drawing.Size(1308, 300);
+            this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.labelRouteNum);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewStops);
@@ -174,6 +186,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label10);
             this.Name = "FormAddStop";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавление остановки";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStops)).EndInit();
             this.ResumeLayout(false);
@@ -195,5 +208,6 @@
         private System.Windows.Forms.DataGridView dataGridViewStops;
         private System.Windows.Forms.Label labelRouteNum;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonDelete;
     }
 }

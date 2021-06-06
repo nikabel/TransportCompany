@@ -48,22 +48,21 @@ namespace TransportCompany.forms
 
         private void buttonAddCargo_Click(object sender, EventArgs e)
         {
-            try
-            {
-                string num = labelApplicationNum.Text.ToString();
-                string name = textBoxCargoName.Text.ToString();
-                string cargoNum = textBoxCargoNum.Text.ToString();
-                int cost = int.Parse(textBoxCargoCost.Text.ToString());
-                int weight = int.Parse(textBoxCargoWeight.Text.ToString());
-                int volume = int.Parse(textBoxCargoVolume.Text.ToString());
-                string transport = comboBoxTransport.SelectedItem.ToString();
-                string type = comboBoxCargoType.SelectedItem.ToString();
-
-                if ((textBoxCargoName.Text.Equals("")) || (textBoxCargoNum.Text.Equals("")) || (textBoxCargoCost.Text.Equals("")) || (textBoxCargoWeight.Text.Equals(""))
+            if ((textBoxCargoName.Text.Equals("")) || (textBoxCargoNum.Text.Equals("")) || (textBoxCargoCost.Text.Equals("")) || (textBoxCargoWeight.Text.Equals(""))
                 || (textBoxCargoVolume.Text.Equals("")) || (comboBoxTransport.Text.Equals("")) || (comboBoxCargoType.Text.Equals("")))
-                    MessageBox.Show("Вы не ввели все необходимые данные!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
-                else 
+                MessageBox.Show("Вы не ввели все необходимые данные!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+            else
+            {
+                try
                 {
+                    string num = labelApplicationNum.Text.ToString();
+                    string name = textBoxCargoName.Text.ToString();
+                    string cargoNum = textBoxCargoNum.Text.ToString();
+                    int cost = int.Parse(textBoxCargoCost.Text.ToString());
+                    int weight = int.Parse(textBoxCargoWeight.Text.ToString());
+                    int volume = int.Parse(textBoxCargoVolume.Text.ToString());
+                    string transport = comboBoxTransport.SelectedItem.ToString();
+                    string type = comboBoxCargoType.SelectedItem.ToString();
                     Cargo cargo = new Cargo(cargoNum, num, name, type, weight, volume, cost);
                     TransportApplication ta = new TransportApplication(transport, num);
                     cargoDAO.addCargo(cargo);
@@ -73,16 +72,16 @@ namespace TransportCompany.forms
                     textBoxCargoCost.Clear();
                     textBoxCargoWeight.Clear();
                     textBoxCargoVolume.Clear();
-                    updateTable(num); 
+                    updateTable(num);
                 }
-            }
-            catch (SqlException odbcEx)
-            {
-                MessageBox.Show("Данный номер груза уже существует! Введите другой номер груза.", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ошибка при добавлении груза!" + ex);
+                catch (SqlException odbcEx)
+                {
+                    MessageBox.Show("Данный номер груза уже существует! Введите другой номер груза.", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка при добавлении груза!" + ex);
+                }
             }
         }
 
@@ -125,6 +124,32 @@ namespace TransportCompany.forms
         private void FormAddCargo_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonDeleteCargo_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Вы уверены, что хотите удалить данные?", "Сообщение",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    string app = labelApplicationNum.Text.ToString();
+                    int rowNum = dataGridViewCargo.CurrentCell.RowIndex;
+                    string num = dataGridViewCargo[0, rowNum].Value.ToString();
+                    cargoDAO.deleteCargo(num);
+                    updateTable(app);
+                }
+                catch (SqlException odbcEx)
+                {
+                    MessageBox.Show("Невозможно удалить данные, так как они используются!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка при удалении!" + ex);
+                }
+            }
         }
     }
 }

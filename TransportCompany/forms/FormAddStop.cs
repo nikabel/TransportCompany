@@ -39,32 +39,57 @@ namespace TransportCompany.forms
 
         private void buttonAddStop_Click(object sender, EventArgs e)
         {
-            try
+            if ((textBoxStopNum.Text.Equals("")) || (textBoxStopAddress.Text.Equals("")) || (comboBoxOperation.Text.Equals("")))
+                MessageBox.Show("Вы не ввели все необходимые данные!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+            else
             {
-                string num = labelRouteNum.Text.ToString();
-                string id = textBoxStopNum.Text.ToString();
-                string address = textBoxStopAddress.Text.ToString();
-                string operation = comboBoxOperation.SelectedItem.ToString();
-                string planDate = dateStop.Text;
-                
-                if ((textBoxStopNum.Text.Equals("")) || (textBoxStopAddress.Text.Equals("")) || (comboBoxOperation.Text.Equals("")))
-                    MessageBox.Show("Вы не ввели все необходимые данные!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
-                else
+                try
                 {
+                    string num = labelRouteNum.Text.ToString();
+                    string id = textBoxStopNum.Text.ToString();
+                    string address = textBoxStopAddress.Text.ToString();
+                    string operation = comboBoxOperation.SelectedItem.ToString();
+                    string planDate = dateStop.Text;
                     Stop stop = new Stop(id, address, num, operation, planDate, null);
                     stopDAO.addStop(stop);
                     textBoxStopNum.Clear();
                     textBoxStopAddress.Clear();
                     updateTable(num);
                 }
+                catch (SqlException odbcEx)
+                {
+                    MessageBox.Show("Номер остановки не должен повторяться!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка при добавлении остановки!" + ex);
+                }
             }
-            catch (SqlException odbcEx)
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Вы уверены, что хотите удалить данные?", "Сообщение",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
             {
-                MessageBox.Show("Номер остановки не должен повторяться!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ошибка при добавлении остановки!" + ex);
+                try
+                {
+                    string app = labelRouteNum.Text.ToString();
+                    int rowNum = dataGridViewStops.CurrentCell.RowIndex;
+                    string num = dataGridViewStops[0, rowNum].Value.ToString();
+                    stopDAO.deleteStop(num);
+                    updateTable(app);
+                }
+                catch (SqlException odbcEx)
+                {
+                    MessageBox.Show("Невозможно удалить данные, так как они используются!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка при удалении!" + ex);
+                }
             }
         }
     }

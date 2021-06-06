@@ -79,7 +79,7 @@ namespace TransportCompany.forms
             dataGridViewCustomer.DataSource = dataC;
             dataGridViewEntityCustomer.DataSource = dataEC;
             dataGridViewIndividualCustomer.DataSource = dataIC;
-            if (dataC.Rows.Count > 1)
+            if (dataC.Rows.Count > 0)
             {
                 dataC.Columns["customer_name"].ColumnName = "ФИО";
                 dataC.Columns["email"].ColumnName = "E-mail";

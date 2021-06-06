@@ -39,6 +39,7 @@ namespace TransportCompany
                 отчетыToolStripMenuItem.Enabled = false;
                 buttonRequest.Enabled = false;
                 buttonContract.Enabled = false;
+                buttonCompletedWorks.Enabled = false;
             }
             else if (role == "Бухгалтер")
             {

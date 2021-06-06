@@ -57,6 +57,19 @@ namespace TransportCompany.DAO
             }
         }
 
+        public void deleteStop(string num)
+        {
+            try
+            {
+                string query = String.Format("Delete from Stop where stop_id = '{0}'", num);
+                connect.executeNonQuery(query);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         /*public Stop getStopById(string id)
         {
             SqlConnection conn = connect.createConnection();

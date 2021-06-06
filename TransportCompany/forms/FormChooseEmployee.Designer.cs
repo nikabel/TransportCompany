@@ -40,6 +40,7 @@
             this.dataGridViewServices = new System.Windows.Forms.DataGridView();
             this.labelContractNum = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.buttonDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewServices)).BeginInit();
             this.SuspendLayout();
             // 
@@ -161,11 +162,22 @@
             this.label2.Text = "Список сотрудников для работы над договором №";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Location = new System.Drawing.Point(1234, 153);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(105, 33);
+            this.buttonDelete.TabIndex = 99;
+            this.buttonDelete.Text = "Удалить";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+            // 
             // FormChooseEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1234, 300);
+            this.ClientSize = new System.Drawing.Size(1351, 300);
+            this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.labelContractNum);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridViewServices);
@@ -201,5 +213,6 @@
         private System.Windows.Forms.DataGridView dataGridViewServices;
         private System.Windows.Forms.Label labelContractNum;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button buttonDelete;
     }
 }

@@ -40,5 +40,18 @@ namespace TransportCompany.DAO
                 throw ex;
             }
         }
+
+        public void deleteCargo(string num)
+        {
+            try
+            {
+                string query = String.Format("Delete from Cargo where cargo_num = '{0}'", num);
+                connect.executeNonQuery(query);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

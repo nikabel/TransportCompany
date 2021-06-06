@@ -310,6 +310,7 @@
             this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.buttonChange);
             this.Name = "FormChangeEntity";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Информация о заказчиках";
             this.ResumeLayout(false);
             this.PerformLayout();

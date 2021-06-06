@@ -113,7 +113,7 @@ namespace TransportCompany.DAO
         {
             try
             {
-                string query = String.Format("UPDATE Operation SET operation_name = '{0}' WHERE operation_name = '1}' ", newOperation.OperationName, oldName);
+                string query = String.Format("UPDATE Operation SET operation_name = '{0}' WHERE operation_name = '{1}' ", newOperation.OperationName, oldName);
                 connect.executeNonQuery(query);
             }
             catch (Exception ex)

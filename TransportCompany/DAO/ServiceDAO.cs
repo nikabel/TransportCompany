@@ -67,5 +67,18 @@ namespace TransportCompany.DAO
                 throw ex;
             }
         }
+
+        public void deleteService(string name, string num)
+        {
+            try
+            {
+                string query = String.Format("Delete from Service where service_name = '{0}' and contract_num = '{1}'", name, num);
+                connect.executeNonQuery(query);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

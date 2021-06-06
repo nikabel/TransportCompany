@@ -201,6 +201,7 @@
             this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.buttonChange);
             this.Name = "FormChangeDriver";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Информация о водителях";
             this.Load += new System.EventHandler(this.FormChangeDriver_Load);
             this.ResumeLayout(false);

@@ -326,10 +326,10 @@
     <Compile Include="models\WorkCertificate.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="reports\ApplicationForm.cs">
+    <Compile Include="reports\Application.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ApplicationForm.rpt</DependentUpon>
+      <DependentUpon>Application.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="reports\CompletedReport.cs">
@@ -470,9 +470,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="reports\ApplicationForm.rpt">
+    <EmbeddedResource Include="reports\Application.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ApplicationForm.cs</LastGenOutput>
+      <LastGenOutput>Application.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="reports\CompletedReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

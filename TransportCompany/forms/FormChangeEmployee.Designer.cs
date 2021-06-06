@@ -180,6 +180,7 @@
             this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.buttonChange);
             this.Name = "FormChangeEmployee";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Информация о сотрудниках";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -239,7 +239,7 @@ namespace TransportCompany
                             string num = form.textBoxLicensePlate.Text.ToString();
                             string driver = form.comboBoxDrivers.SelectedItem.ToString();
                             string model = form.comboBoxModels.SelectedItem.ToString();
-                            Transport trans = new Transport(model, driver, num);
+                            Transport trans = new Transport(num, driver, model);
                             daoTrans.addType(trans);
                         }
                         catch (SqlException odbcEx)
@@ -418,7 +418,7 @@ namespace TransportCompany
                     {
                         string name = textBoxSearchStopType.Text.ToString();
                         DataTable data = daoST.searchByName(name);
-                        if (data.Rows.Count>1)
+                        if (data.Rows.Count>0)
                         {
                             data.Columns["operation_name"].ColumnName = "Наименование операции";
                             dataGridViewStopType.DataSource = data;
@@ -431,7 +431,7 @@ namespace TransportCompany
                     {
                         string name = textBoxSearchStopType.Text.ToString();
                         DataTable data = daoDep.searchByName(name);
-                        if (data.Rows.Count > 1)
+                        if (data.Rows.Count > 0)
                         {
                             data.Columns["department_name"].ColumnName = "Наименование отдела";
                             data.Columns["company_name"].ColumnName = "Наименование компании";
@@ -445,7 +445,7 @@ namespace TransportCompany
                     {
                         string name = textBoxSearchStopType.Text.ToString();
                         DataTable data = daoCT.searchByName(name);
-                        if (data.Rows.Count > 1)
+                        if (data.Rows.Count > 0)
                         {
                             data.Columns["cargo_type_name"].ColumnName = "Наименование типа груза";
                             dataGridViewStopType.DataSource = data;
@@ -458,7 +458,7 @@ namespace TransportCompany
                     {
                         string name = textBoxSearchStopType.Text.ToString();
                         DataTable data = daoSpec.searchByName(name);
-                        if (data.Rows.Count > 1)
+                        if (data.Rows.Count > 0)
                         {
                             data.Columns["spec_name"].ColumnName = "Наименование специализации";
                             dataGridViewStopType.DataSource = data;
@@ -471,7 +471,7 @@ namespace TransportCompany
                     {
                         string name = textBoxSearchStopType.Text.ToString();
                         DataTable data = daoTrans.searchByName(name);
-                        if (data.Rows.Count > 1)
+                        if (data.Rows.Count > 0)
                         {
                             data.Columns["license_plate"].ColumnName = "Гос. номер транспорта";
                             data.Columns["driver_name"].ColumnName = "ФИО водителя";
@@ -486,7 +486,7 @@ namespace TransportCompany
                     {
                         string name = textBoxSearchStopType.Text.ToString();
                         DataTable data = daoTransModel.searchByName(name);
-                        if (data.Rows.Count > 1)
+                        if (data.Rows.Count > 0)
                         {
                             data.Columns["model_name"].ColumnName = "Наименование модели";
                             data.Columns["mark_name"].ColumnName = "Наименование марки";
